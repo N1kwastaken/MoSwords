@@ -5,7 +5,7 @@
   "experience": 1.0,
   "group": "ruby",
   "ingredient": {
-    "item": "moswords:ruby_deepslate_ore"
+    "item": "moswords:saphire_ore"
   },
-  "result": "moswords:ruby"
+  "result": "moswords:saphire"
 }

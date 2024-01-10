@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "moswords:ruby_block"
+      "item": "moswords:saphire_block"
     }
   ],
   "result": {
-    "item": "moswords:ruby",
+    "item": "moswords:saphire",
     "count": 9
   }
 }

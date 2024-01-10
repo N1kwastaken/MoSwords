@@ -2,9 +2,14 @@
   "item.moswords.ruby": "Ruby",
   "item.moswords.raw_ruby": "Raw Ruby",
   "item.moswords.devils_eye":"Devil's Eye",
+  "item.moswords.saphire": "Saphire",
+  "item.moswords.raw_saphire": "Raw Saphire",
 
-  "block.moswords.ruby_block": "Ruby block",
+  "block.moswords.saphire_ore": "Saphire Ore",
+  "block.moswords.ruby_block": "Ruby Block",
+  "block.moswords.saphire_block": "Saphire Block",
   "block.moswords.ruby_deepslate_ore": "Ruby Deepslate Ore",
+
 
   "itemgroup.ruby": "Mo'Swords"
 }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "moswords:ruby_block",
+    "moswords:ruby_deepslate_ore",
+    "moswords:saphire_block",
+    "moswords:saphire_ore"
+  ]
+}

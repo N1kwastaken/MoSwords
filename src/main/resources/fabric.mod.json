@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "moswords",
 	"version": "${version}",
-	"name": "Tutorial Mod",
-	"description": "This is a Tutorial Mod made by Kaupenjoe :)",
+	"name": "Mo'Swords",
+	"description": "Wanna more swords? we got ya!",
 	"authors": [
 		"Kaupenjoe!"
 	],

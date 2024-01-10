@@ -12,11 +12,15 @@ public class ModItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item RAW_RUBY = registerItem("raw_ruby", new Item(new FabricItemSettings()));
     public static final Item DEVILS_EYE = registerItem("devils_eye", new Item(new FabricItemSettings()));
+    public static final Item SAPHIRE = registerItem("saphire", new Item(new FabricItemSettings()));
+    public static final Item RAW_SAPHIRE = registerItem("raw_saphire", new Item(new FabricItemSettings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);
         entries.add(RAW_RUBY);
         entries.add(DEVILS_EYE);
+        entries.add(RAW_SAPHIRE);
+        entries.add(SAPHIRE);
     }
 
     private static Item registerItem(String name, Item item) {

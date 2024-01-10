@@ -15,22 +15,22 @@ public class ModItemGroups {
             new Identifier(MoSwords.MOD_ID, "ruby"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
                     .icon(() -> new ItemStack(ModItems.DEVILS_EYE)).entries((displayContext, entries) -> {
-                       //put here the materials to craft swords
-
                         entries.add(ModItems.RUBY);
-                        entries.add(ModItems.RAW_RUBY);
-                        entries.add(ModItems.DEVILS_EYE);
-
-
-                       //here put blocks
-
+                        entries.add(ModItems.SAPHIRE);
                         entries.add(ModBlocks.RUBY_BLOCK);
+                        entries.add(ModBlocks.SAPHIRE_BLOCK);
+                        entries.add(ModItems.RAW_RUBY);
+                        entries.add(ModItems.RAW_SAPHIRE);
                         entries.add(ModBlocks.RUBY_DEEPSLATE_ORE);
+                        entries.add(ModBlocks.SAPHIRE_ORE);
 
-                       //and here the extras
 
-                       //here put the swords
 
+
+
+
+
+                        entries.add(ModItems.DEVILS_EYE);
 
                     }).build());
 

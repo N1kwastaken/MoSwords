@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "moswords:ruby_deepslate_ore"
+              "name": "moswords:saphire_ore"
             },
             {
               "type": "minecraft:item",
@@ -34,7 +34,7 @@
                   "count": {
                     "type": "minecraft:uniform",
                     "max": 1.0,
-                    "min": 1.0
+                    "min": 2.0
                   },
                   "function": "minecraft:set_count"
                 },
@@ -47,7 +47,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "moswords:raw_ruby"
+              "name": "moswords:raw_saphire"
             }
           ]
         }
@@ -55,5 +55,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "moswords:blocks/ruby_deepslate_ore"
+  "random_sequence": "moswords:blocks/saphire_ore"
 }

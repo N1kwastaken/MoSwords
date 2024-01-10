@@ -3,9 +3,9 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 1.0,
-  "group": "ruby",
+  "group": "saphire",
   "ingredient": {
-    "item": "moswords:ruby_deepslate_ore"
+    "item": "moswords:saphire_ore"
   },
-  "result": "moswords:ruby"
+  "result": "moswords:saphire"
 }
