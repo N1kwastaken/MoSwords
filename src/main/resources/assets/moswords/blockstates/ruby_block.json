@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "moswords:block/ruby_block"
+    }
+  }
+}

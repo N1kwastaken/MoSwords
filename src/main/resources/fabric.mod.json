@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "moswords",
+	"version": "${version}",
+	"name": "Tutorial Mod",
+	"description": "This is a Tutorial Mod made by Kaupenjoe :)",
+	"authors": [
+		"Kaupenjoe!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/tutorialmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.kaupenjoe.moswords.MoSwords"
+		],
+		"client": [
+			"net.kaupenjoe.moswords.MoSwordsClient"
+		],
+		"fabric-datagen": [
+			"net.kaupenjoe.moswords.MoSwordsDataGenerator"
+		]
+	},
+	"mixins": [
+		"tutorialmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
