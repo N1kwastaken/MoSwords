@@ -51,16 +51,5 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STONE), conditionsFromItem(Items.STONE))
                 .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.RAW_RUBY)));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_SAPHIRE, 1)
-                .pattern("SSS")
-                .pattern("SRS")
-                .pattern("SSS")
-                .input('S', Items.STONE)
-                .input('R', ModItems.SAPHIRE)
-                .criterion(hasItem(Items.STONE), conditionsFromItem(Items.STONE))
-                .criterion(hasItem(ModItems.SAPHIRE), conditionsFromItem(ModItems.SAPHIRE))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.RAW_SAPHIRE)));
     }
-
 }
