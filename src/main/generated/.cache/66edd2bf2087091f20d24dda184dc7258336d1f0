@@ -1,0 +1,6 @@
+// 1.20.1	2024-01-10T18:11:41.0984308	Mo'Swords/Tags for minecraft:block
+15705190bc337bfa100f1bcf4d1748e60a0fd7a2 data\fabric\tags\blocks\needs_tool_level_4.json
+bac8aeedc5b468a9f5839ad23be7ebb0e0910955 data\minecraft\tags\blocks\needs_iron_tool.json
+7612590f7c81d752179a4249d351a418a3318a2c data\minecraft\tags\blocks\needs_diamond_tool.json
+8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\minecraft\tags\blocks\needs_stone_tool.json
+ca2901afd4e33e448239afef6172be5af80ca822 data\minecraft\tags\blocks\mineable\pickaxe.json
