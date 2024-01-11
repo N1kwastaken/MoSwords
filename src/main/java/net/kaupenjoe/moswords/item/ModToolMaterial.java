@@ -7,8 +7,11 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {
-    RUBY(5, 4000, 12, 4, 40,
-            () -> Ingredient.ofItems(ModItems.RUBY));
+    RUBY(5, 4000, 5, 6, 40,
+            () -> Ingredient.ofItems(ModItems.RUBY)),
+    SAPHIRE(4, 3000, 16, 3, 30,
+            () -> Ingredient.ofItems(ModItems.SAPHIRE));
+
 
     private final int miningLevel;
     private final int ItemDurability;
@@ -25,6 +28,8 @@ public enum ModToolMaterial implements ToolMaterial {
         this.enchantability = enchantability;
         this.repairIngredient = repairIngredient;
     }
+
+    
 
     @Override
     public int getDurability() {

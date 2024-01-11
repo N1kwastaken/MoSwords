@@ -26,7 +26,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.RUBY_SWORD);
                         entries.add(ModItems.DEVILS_EYE_SWORD);
-
+                        entries.add(ModItems.SUN_SWORD);
+                        entries.add(ModItems.MOON_SWORD);
 
 
 

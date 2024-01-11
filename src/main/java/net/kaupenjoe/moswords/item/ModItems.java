@@ -17,9 +17,14 @@ public class ModItems {
     public static final Item RAW_SAPHIRE = registerItem("raw_saphire", new Item(new FabricItemSettings()));
 
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
-            new SwordItem(ModToolMaterial.RUBY, 20, 4f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.RUBY, 20, 4, new FabricItemSettings()));
     public static final Item DEVILS_EYE_SWORD = registerItem("devils_eye_sword",
-            new SwordItem(ModToolMaterial.RUBY, 50, 3f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.RUBY, 50, 0.5f, new FabricItemSettings()));
+    public static final Item MOON_SWORD = registerItem("devils_eye_sword",
+            new SwordItem(ModToolMaterial.SAPHIRE, 15, 6, new FabricItemSettings()));
+
+    public static final Item SUN_SWORD = registerItem("sun_sword",
+            new SwordItem(ModToolMaterial.RUBY, 30, 0.3f, new FabricItemSettings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);
@@ -30,6 +35,8 @@ public class ModItems {
         entries.add(RUBY_SWORD);
         entries.add(DEVILS_EYE);
         entries.add(DEVILS_EYE_SWORD);
+        entries.add(SUN_SWORD);
+        entries.add(MOON_SWORD);
 
     }
 

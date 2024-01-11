@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "moswords:devils_eye"
+    },
+    "R": {
+      "item": "moswords:ruby_sword"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "R",
+    "E",
+    "S"
+  ],
+  "result": {
+    "item": "moswords:devils_eye_sword"
+  },
+  "show_notification": true
+}
