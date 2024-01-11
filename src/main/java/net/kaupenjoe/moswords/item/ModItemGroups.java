@@ -24,8 +24,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RUBY_DEEPSLATE_ORE);
                         entries.add(ModBlocks.SAPHIRE_ORE);
 
-
-
+                        entries.add(ModItems.RUBY_SWORD);
+                        entries.add(ModItems.DEVILS_EYE_SWORD);
 
 
 

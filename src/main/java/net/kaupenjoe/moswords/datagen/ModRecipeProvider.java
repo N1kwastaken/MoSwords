@@ -51,5 +51,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STONE), conditionsFromItem(Items.STONE))
                 .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.RAW_RUBY)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RUBY_SWORD, 1)
+                .pattern("R")
+                .pattern("R")
+                .pattern("S")
+                .input('S', Items.STICK)
+                .input('R', ModItems.RUBY)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.RUBY_SWORD)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DEVILS_EYE_SWORD, 1)
+                .pattern("R")
+                .pattern("E")
+                .pattern("S")
+                .input('S', Items.STICK)
+                .input('R', ModItems.RUBY_SWORD)
+                .input('E', ModItems.DEVILS_EYE)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
+                .criterion(hasItem(ModItems.DEVILS_EYE), conditionsFromItem(ModItems.DEVILS_EYE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DEVILS_EYE_SWORD)));
     }
 }

@@ -28,7 +28,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SAPHIRE_BLOCK);
 
         addDrop(ModBlocks.SAPHIRE_ORE, copperLikeOreDrops(ModBlocks.SAPHIRE_ORE, ModItems.SAPHIRE));
-        addDrop(ModBlocks.RUBY_DEEPSLATE_ORE, OneDropOnlyCopperLikeOre(ModBlocks.RUBY_DEEPSLATE_ORE, ModItems.RUBY));
+        addDrop(ModBlocks.RUBY_DEEPSLATE_ORE, OneDropOnlyCopperLikeOre(ModBlocks.RUBY_DEEPSLATE_ORE, ModItems.RAW_RUBY));
 
 
     }

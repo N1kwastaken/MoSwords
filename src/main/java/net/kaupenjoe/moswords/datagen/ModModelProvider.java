@@ -27,6 +27,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SAPHIRE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_RUBY, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_SAPHIRE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DEVILS_EYE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RUBY_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DEVILS_EYE_SWORD, Models.HANDHELD);
     }
 }
 
