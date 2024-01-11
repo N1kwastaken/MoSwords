@@ -1,4 +1,4 @@
-package net.kaupenjoe.moswords.mixin;
+package net.n1kwastaken.moswords.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

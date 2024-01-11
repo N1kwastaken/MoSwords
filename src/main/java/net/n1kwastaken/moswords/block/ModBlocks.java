@@ -1,8 +1,8 @@
-package net.kaupenjoe.moswords.block;
+package net.n1kwastaken.moswords.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.kaupenjoe.moswords.MoSwords;
+import net.n1kwastaken.moswords.MoSwords;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;

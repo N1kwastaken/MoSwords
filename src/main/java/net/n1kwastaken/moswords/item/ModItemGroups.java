@@ -1,8 +1,8 @@
-package net.kaupenjoe.moswords.item;
+package net.n1kwastaken.moswords.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.kaupenjoe.moswords.MoSwords;
-import net.kaupenjoe.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.MoSwords;
+import net.n1kwastaken.moswords.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -25,9 +25,11 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SAPHIRE_ORE);
 
                         entries.add(ModItems.RUBY_SWORD);
+                        entries.add(ModItems.BIG_RUBY_SWORD);
                         entries.add(ModItems.DEVILS_EYE_SWORD);
                         entries.add(ModItems.SUN_SWORD);
                         entries.add(ModItems.MOON_SWORD);
+
 
 
 

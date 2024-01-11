@@ -1,4 +1,4 @@
-package net.kaupenjoe.moswords.datagen;
+package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

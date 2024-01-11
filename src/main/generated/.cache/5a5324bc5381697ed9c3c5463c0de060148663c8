@@ -1,8 +1,10 @@
-// 1.20.1	2024-01-11T13:20:27.8971237	Mo'Swords/Model Definitions
+// 1.20.1	2024-01-11T19:22:58.7476393	Mo'Swords/Model Definitions
 d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deepslate_ore.json
 de8c6667f281862cbd73843fcdb4b07be3fda5c7 assets\moswords\blockstates\saphire_ore.json
 c7540293da086948387c0fa113a68d4a89a3c740 assets\moswords\models\item\saphire.json
+5a8b5af7300756e3fa2cd3130eb76dd6a12159ba assets\moswords\models\item\moon_sword.json
 862396bfa4cd85bef633541b9b0ec9662e833c05 assets\moswords\models\item\ruby.json
+43658d92904b48d732fc3a4cb2b3337ca78b644b assets\moswords\models\item\big_ruby_sword.json
 844625a821f8acb4e551d680e113b585de5da128 assets\moswords\models\item\raw_ruby.json
 9ba128ebc2f63ceaba8617afc87a803fc7c27060 assets\moswords\models\item\ruby_sword.json
 ce6fc363440bffcc1a5ebddb2a9e20771f39ba27 assets\moswords\models\block\saphire_ore.json

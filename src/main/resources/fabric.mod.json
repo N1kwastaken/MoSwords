@@ -5,7 +5,7 @@
 	"name": "Mo'Swords",
 	"description": "Wanna more swords? we got ya!",
 	"authors": [
-		"Kaupenjoe!"
+		"N1k, Hollow!"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -16,13 +16,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.kaupenjoe.moswords.MoSwords"
+			"net.n1kwastaken.moswords.MoSwords"
 		],
 		"client": [
-			"net.kaupenjoe.moswords.MoSwordsClient"
+			"net.n1kwastaken.moswords.MoSwordsClient"
 		],
 		"fabric-datagen": [
-			"net.kaupenjoe.moswords.MoSwordsDataGenerator"
+			"net.n1kwastaken.moswords.MoSwordsDataGenerator"
 		]
 	},
 	"mixins": [

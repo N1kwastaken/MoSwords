@@ -1,4 +1,4 @@
-package net.kaupenjoe.moswords;
+package net.n1kwastaken.moswords;
 
 import net.fabricmc.api.ClientModInitializer;
 

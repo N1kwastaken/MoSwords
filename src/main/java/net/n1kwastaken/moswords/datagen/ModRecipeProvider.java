@@ -1,9 +1,9 @@
-package net.kaupenjoe.moswords.datagen;
+package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.kaupenjoe.moswords.block.ModBlocks;
-import net.kaupenjoe.moswords.item.ModItems;
+import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.item.ModItems;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;

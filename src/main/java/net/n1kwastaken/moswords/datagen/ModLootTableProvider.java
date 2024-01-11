@@ -1,14 +1,13 @@
-package net.kaupenjoe.moswords.datagen;
+package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.kaupenjoe.moswords.block.ModBlocks;
-import net.kaupenjoe.moswords.item.ModItems;
+import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;

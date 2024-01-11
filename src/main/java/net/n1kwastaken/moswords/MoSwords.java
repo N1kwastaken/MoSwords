@@ -1,10 +1,10 @@
-package net.kaupenjoe.moswords;
+package net.n1kwastaken.moswords;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.kaupenjoe.moswords.block.ModBlocks;
-import net.kaupenjoe.moswords.item.ModItemGroups;
-import net.kaupenjoe.moswords.item.ModItems;
+import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.item.ModItemGroups;
+import net.n1kwastaken.moswords.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

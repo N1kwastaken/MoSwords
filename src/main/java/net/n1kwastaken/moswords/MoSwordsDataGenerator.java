@@ -1,8 +1,8 @@
-package net.kaupenjoe.moswords;
+package net.n1kwastaken.moswords;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.kaupenjoe.moswords.datagen.*;
+import net.n1kwastaken.moswords.datagen.*;
 
 public class MoSwordsDataGenerator implements DataGeneratorEntrypoint {
 	@Override

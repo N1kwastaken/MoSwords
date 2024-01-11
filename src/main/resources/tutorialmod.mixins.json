@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "net.kaupenjoe.moswords.mixin",
+	"package": "net.n1kwastaken.moswords.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"ExampleMixin"

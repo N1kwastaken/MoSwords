@@ -1,9 +1,9 @@
-package net.kaupenjoe.moswords.datagen;
+package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.kaupenjoe.moswords.block.ModBlocks;
-import net.kaupenjoe.moswords.item.ModItems;
+import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
@@ -26,6 +26,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RUBY, Models.GENERATED);
         itemModelGenerator.register(ModItems.SAPHIRE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_RUBY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BIG_RUBY_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.RAW_SAPHIRE, Models.GENERATED);
         itemModelGenerator.register(ModItems.DEVILS_EYE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RUBY_SWORD, Models.HANDHELD);

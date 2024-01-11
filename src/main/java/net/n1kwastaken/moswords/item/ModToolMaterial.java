@@ -1,6 +1,6 @@
-package net.kaupenjoe.moswords.item;
+package net.n1kwastaken.moswords.item;
 
-import net.fabricmc.yarn.constants.MiningLevels;
+//import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
