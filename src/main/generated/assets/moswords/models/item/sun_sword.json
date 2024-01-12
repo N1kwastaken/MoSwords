@@ -1,6 +1,26 @@
 {
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "moswords:item/sun_sword"
-  }
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "moswords:item/sun_sword"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 4, 0.5],
+			"scale": [0.85, 0.85, 0.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [90, 0, 0],
+			"translation": [-6, -2, -4]
+		}
+	},
+	"groups": [
+		{
+			"name": "sun_sword",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": []
+		}
+	]
 }
