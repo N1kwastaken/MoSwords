@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 public enum ModToolMaterial implements ToolMaterial {
     RUBY(5, 4000, 5, 6, 40,
             () -> Ingredient.ofItems(ModItems.RUBY)),
-    SAPHIRE(4, 3000, 16, 3, 30,
+    SAPHIRE(4, 3000, 10, 2, 30,
             () -> Ingredient.ofItems(ModItems.SAPHIRE));
 
 

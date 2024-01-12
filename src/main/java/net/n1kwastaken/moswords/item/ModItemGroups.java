@@ -29,6 +29,8 @@ public class ModItemGroups {
                         entries.add(ModItems.DEVILS_EYE_SWORD);
                         entries.add(ModItems.SUN_SWORD);
                         entries.add(ModItems.MOON_SWORD);
+                        entries.add(ModItems.SAPHIRE_SWORD);
+                        entries.add(ModItems.THIN_SAPHIRE_SWORD);
 
 
 

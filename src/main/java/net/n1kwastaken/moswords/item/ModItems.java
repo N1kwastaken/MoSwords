@@ -9,6 +9,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+import java.io.StringWriter;
+
 public class ModItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item RAW_RUBY = registerItem("raw_ruby", new Item(new FabricItemSettings()));
@@ -17,16 +19,24 @@ public class ModItems {
     public static final Item RAW_SAPHIRE = registerItem("raw_saphire", new Item(new FabricItemSettings()));
 
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
-            new SwordItem(ModToolMaterial.RUBY, 15, 4, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.RUBY, 15, 1, new FabricItemSettings()));
+
+    public static final Item SAPHIRE_SWORD = registerItem("saphire_sword",
+            new SwordItem(ModToolMaterial.SAPHIRE, 13, 4, new FabricItemSettings()));
+
     public static final Item DEVILS_EYE_SWORD = registerItem("devils_eye_sword",
-            new SwordItem(ModToolMaterial.RUBY, 50, 0.5f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.RUBY, 50, -2.5f, new FabricItemSettings()));
     public static final Item MOON_SWORD = registerItem("moon_sword",
-            new SwordItem(ModToolMaterial.SAPHIRE, 15, 6, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.SAPHIRE, 15, 2, new FabricItemSettings()));
 
     public static final Item SUN_SWORD = registerItem("sun_sword",
-            new SwordItem(ModToolMaterial.RUBY, 30, 0.3f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.RUBY, 30, -3, new FabricItemSettings()));
     public static final Item BIG_RUBY_SWORD = registerItem("big_ruby_sword",
-            new SwordItem(ModToolMaterial.RUBY, 30, 2, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.RUBY, 30, -3.5f, new FabricItemSettings()));
+
+    public  static final Item THIN_SAPHIRE_SWORD = registerItem("thin_saphire_sword",
+            new SwordItem(ModToolMaterial.SAPHIRE, 12, 6, new FabricItemSettings()));
+
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);
@@ -39,6 +49,8 @@ public class ModItems {
         entries.add(SUN_SWORD);
         entries.add(MOON_SWORD);
         entries.add(BIG_RUBY_SWORD);
+        entries.add(SAPHIRE_SWORD);
+        entries.add(THIN_SAPHIRE_SWORD);
 
     }
 
