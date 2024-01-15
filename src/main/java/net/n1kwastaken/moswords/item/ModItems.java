@@ -17,6 +17,8 @@ public class ModItems {
     public static final Item DEVILS_EYE = registerItem("devils_eye", new Item(new FabricItemSettings()));
     public static final Item SAPPHIRE = registerItem("sapphire", new Item(new FabricItemSettings()));
     public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
+    public static final Item TITANIUM_INGOT = registerItem("titanium_sword", new Item(new FabricItemSettings()));
+    public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
 
 
 
@@ -76,6 +78,7 @@ public class ModItems {
         entries.add(SLIME_SWORD);
         entries.add(EMERALD_SWORD);
         entries.add(ACOUSTIC_GUITAR);
+        entries.add(TITANIUM_INGOT);
 
     }
 

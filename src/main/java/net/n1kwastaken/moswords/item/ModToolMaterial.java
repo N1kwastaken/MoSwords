@@ -22,7 +22,10 @@ public enum ModToolMaterial implements ToolMaterial {
             () -> Ingredient.ofItems(Items.EMERALD)),
 
     SLIME(2, 250, 10, 3, 25,
-            () -> Ingredient.ofItems(Items.SLIME_BALL));
+            () -> Ingredient.ofItems(Items.SLIME_BALL)),
+
+    TITANIUM(3, 10000, 1, 5, 30,
+            () -> Ingredient.ofItems(ModItems.TITANIUM_INGOT));
 
 
     private final int miningLevel;

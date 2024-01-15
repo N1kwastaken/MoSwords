@@ -5,7 +5,7 @@
   "experience": 3.0,
   "group": "sapphire",
   "ingredient": {
-    "item": "moswords:sapphire_ore"
+    "item": "moswords:raw_sapphire"
   },
-  "result": "moswords:ruby"
+  "result": "moswords:sapphire"
 }

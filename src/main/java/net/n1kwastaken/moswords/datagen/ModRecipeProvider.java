@@ -17,7 +17,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final List<ItemConvertible>RUBY_SMELTABLES = List.of(ModItems.RAW_RUBY,
             ModBlocks.RUBY_DEEPSLATE_ORE);
-    private static final List<ItemConvertible>SAPHIRE_SMELTABLES = List.of(ModItems.RAW_SAPPHIRE,
+    private static final List<ItemConvertible>SAPPHIRE_SMELTABLES = List.of(ModItems.RAW_SAPPHIRE,
             ModBlocks.SAPPHIRE_ORE);
 
     public ModRecipeProvider(FabricDataOutput output) {
@@ -33,9 +33,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY, RecipeCategory.MISC,
                 ModBlocks.RUBY_BLOCK);
 
-        offerSmelting(exporter, SAPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
+        offerSmelting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE,
                 3f, 100, "sapphire");
-        offerBlasting(exporter, SAPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
+            offerBlasting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE,
                 3f, 60, "sapphire");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE, RecipeCategory.MISC,
                 ModBlocks.SAPPHIRE_BLOCK);

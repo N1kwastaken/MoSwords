@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ruby_from_smelting_raw_sapphire"
+        "recipe": "minecraft:sapphire_from_smelting_raw_sapphire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ruby_from_smelting_raw_sapphire"
+      "minecraft:sapphire_from_smelting_raw_sapphire"
     ]
   }
 }

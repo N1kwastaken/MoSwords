@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sapphire_ore": {
+    "has_raw_sapphire": {
       "conditions": {
         "items": [
           {
             "items": [
-              "moswords:sapphire_ore"
+              "moswords:raw_sapphire"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ruby_from_blasting_sapphire_ore"
+        "recipe": "minecraft:sapphire_from_blasting_raw_sapphire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_sapphire_ore"
+      "has_raw_sapphire"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ruby_from_blasting_sapphire_ore"
+      "minecraft:sapphire_from_blasting_raw_sapphire"
     ]
   }
 }
