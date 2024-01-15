@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_stone",
-      "has_ruby",
-      "has_the_recipe"
+      "has_ruby"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:raw_ruby"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

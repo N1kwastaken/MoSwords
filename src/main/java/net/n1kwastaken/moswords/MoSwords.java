@@ -3,6 +3,7 @@ package net.n1kwastaken.moswords;
 import net.fabricmc.api.ModInitializer;
 
 import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.enchantment.ModEnchantments;
 import net.n1kwastaken.moswords.item.ModItemGroups;
 import net.n1kwastaken.moswords.item.ModItems;
 import org.slf4j.Logger;
@@ -15,9 +16,9 @@ public class MoSwords implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
-
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModEnchantments.registerModEnchantments();
 
 	}
 }

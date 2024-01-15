@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 3.0,
+  "group": "sapphire",
+  "ingredient": {
+    "item": "moswords:sapphire_ore"
+  },
+  "result": "moswords:ruby"
+}

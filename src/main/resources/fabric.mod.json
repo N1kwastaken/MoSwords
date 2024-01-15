@@ -5,7 +5,7 @@
 	"name": "Mo'Swords",
 	"description": "Wanna more swords? we got ya!",
 	"authors": [
-		"N1k, Hollow!"
+		"N1k, Hollow, Playduuh!"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -23,6 +23,9 @@
 		],
 		"fabric-datagen": [
 			"net.n1kwastaken.moswords.MoSwordsDataGenerator"
+		],
+		"rei_client":[
+			"net.n1kwastaken.moswords.compat.MoSwordsREIClientPlugin"
 		]
 	},
 	"mixins": [
@@ -30,7 +33,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.20.1",
+		"minecraft": "~1.20.2",
 		"java": ">=17",
 		"fabric-api": "*"
 	},

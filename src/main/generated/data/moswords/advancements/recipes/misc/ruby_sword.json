@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_stick",
-      "has_ruby",
-      "has_the_recipe"
+      "has_ruby"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:ruby_sword"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

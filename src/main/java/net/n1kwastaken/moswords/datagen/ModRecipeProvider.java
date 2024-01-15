@@ -2,31 +2,30 @@ package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.n1kwastaken.moswords.block.ModBlocks;
-import net.n1kwastaken.moswords.item.ModItems;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
+import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.item.ModItems;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final List<ItemConvertible>RUBY_SMELTABLES = List.of(ModItems.RAW_RUBY,
             ModBlocks.RUBY_DEEPSLATE_ORE);
-    private static final List<ItemConvertible>SAPHIRE_SMELTABLES = List.of(ModItems.RAW_SAPHIRE,
-            ModBlocks.SAPHIRE_ORE);
+    private static final List<ItemConvertible>SAPHIRE_SMELTABLES = List.of(ModItems.RAW_SAPPHIRE,
+            ModBlocks.SAPPHIRE_ORE);
 
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
                 5f, 120, "ruby");
         offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
@@ -35,11 +34,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 ModBlocks.RUBY_BLOCK);
 
         offerSmelting(exporter, SAPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
-                3f, 100, "saphire");
+                3f, 100, "sapphire");
         offerBlasting(exporter, SAPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
-                3f, 60, "saphire");
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPHIRE, RecipeCategory.MISC,
-                ModBlocks.SAPHIRE_BLOCK);
+                3f, 60, "sapphire");
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE, RecipeCategory.MISC,
+                ModBlocks.SAPPHIRE_BLOCK);
 
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_RUBY, 1)
@@ -73,5 +72,38 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                 .criterion(hasItem(ModItems.DEVILS_EYE), conditionsFromItem(ModItems.DEVILS_EYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.DEVILS_EYE_SWORD)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SLIME_SWORD, 1)
+                .pattern("B")
+                .pattern("B")
+                .pattern("S")
+                .input('S', Items.SLIME_BALL)
+                .input('B', Items.SLIME_BLOCK)
+                .criterion(hasItem(Items.SLIME_BALL), conditionsFromItem(Items.SLIME_BALL))
+                .criterion(hasItem(Items.SLIME_BLOCK), conditionsFromItem(Items.SLIME_BLOCK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SLIME_SWORD)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.EMERALD_SWORD, 1)
+                .pattern("E")
+                .pattern("E")
+                .pattern("S")
+                .input('S', Items.STICK)
+                .input('E', Items.EMERALD)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.EMERALD_SWORD)));
+
+       ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AMETHYST_SWORD, 1)
+                .pattern("A")
+                .pattern("A")
+                .pattern("S")
+                .input('S', Items.STICK)
+                .input('A', Items.AMETHYST_SHARD)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.AMETHYST_SWORD)));
+
+
+
     }
 }

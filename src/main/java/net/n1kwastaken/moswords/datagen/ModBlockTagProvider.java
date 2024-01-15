@@ -20,24 +20,21 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.RUBY_BLOCK)
-                .add(ModBlocks.SAPHIRE_BLOCK)
-                .add(ModBlocks.SAPHIRE_ORE)
+                .add(ModBlocks.SAPPHIRE_BLOCK)
+                .add(ModBlocks.SAPPHIRE_ORE)
                 .add(ModBlocks.RUBY_DEEPSLATE_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.RUBY_BLOCK)
-                .add(ModBlocks.SAPHIRE_ORE);
+                .add(ModBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.SAPHIRE_BLOCK);
+                .add(ModBlocks.SAPPHIRE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL);
 
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.RUBY_DEEPSLATE_ORE);
-
-//        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
-//                .add(ModBlocks.RUBY_DEEPSLATE_ORE);
 
     }
 }

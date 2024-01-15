@@ -46,16 +46,15 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_stick",
       "has_ruby",
-      "has_devils_eye",
-      "has_the_recipe"
+      "has_devils_eye"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:devils_eye_sword"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

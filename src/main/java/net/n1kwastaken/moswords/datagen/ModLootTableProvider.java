@@ -24,9 +24,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.RUBY_BLOCK);
-        addDrop(ModBlocks.SAPHIRE_BLOCK);
+        addDrop(ModBlocks.SAPPHIRE_BLOCK);
 
-        addDrop(ModBlocks.SAPHIRE_ORE, copperLikeOreDrops(ModBlocks.SAPHIRE_ORE, ModItems.SAPHIRE));
+        addDrop(ModBlocks.SAPPHIRE_ORE, copperLikeOreDrops(ModBlocks.SAPPHIRE_ORE, ModItems.SAPPHIRE));
         addDrop(ModBlocks.RUBY_DEEPSLATE_ORE, OneDropOnlyCopperLikeOre(ModBlocks.RUBY_DEEPSLATE_ORE, ModItems.RAW_RUBY));
 
 

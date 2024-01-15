@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_ruby_deepslate_ore",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ruby_deepslate_ore"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:ruby_from_blasting_ruby_deepslate_ore"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

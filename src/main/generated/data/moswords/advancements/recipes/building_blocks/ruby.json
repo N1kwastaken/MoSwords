@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_ruby_block",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ruby_block"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:ruby"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
