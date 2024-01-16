@@ -1,16 +1,14 @@
 package net.n1kwastaken.moswords.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemConvertible;
-import net.n1kwastaken.moswords.MoSwords;
-import net.n1kwastaken.moswords.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.n1kwastaken.moswords.enchantment.ModEnchantments;
+import net.n1kwastaken.moswords.MoSwords;
+import net.n1kwastaken.moswords.block.ModBlocks;
 
 public class ModItemGroups {
     public static final ItemGroup RUBY_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -25,7 +23,7 @@ public class ModItemGroups {
                         entries.add(ModItems.RAW_SAPPHIRE);
                         entries.add(ModBlocks.RUBY_DEEPSLATE_ORE);
                         entries.add(ModBlocks.SAPPHIRE_ORE);
-                        entries.add(ModBlocks.CUSTOM_CRAFTING_TABLE);
+                        entries.add(ModBlocks.BIGGER_CRAFTING_TABLE);
 
                         entries.add(ModItems.RUBY_SWORD);
                         entries.add(ModItems.BIG_RUBY_SWORD);
@@ -53,7 +51,7 @@ public class ModItemGroups {
                     }).build());
 
 
-    public static void registerItemGroups() {
-        MoSwords.LOGGER.info("Registering Item Groups for " + MoSwords.MOD_ID);
+    public static void registerModItemGroups() {
+        MoSwords.LOGGER.info("Registering ModItemGroups for " + MoSwords.MOD_ID);
     }
 }
