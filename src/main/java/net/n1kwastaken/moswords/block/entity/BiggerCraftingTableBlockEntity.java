@@ -17,6 +17,8 @@ import net.minecraft.world.World;
 import net.n1kwastaken.moswords.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
+import javax.xml.transform.Result;
+
 
 public class BiggerCraftingTableBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(17, ItemStack.EMPTY);
@@ -87,10 +89,14 @@ public class BiggerCraftingTableBlockEntity extends BlockEntity implements Exten
     }
 
     private void craftItem() {
+        this.removeStack(INPUT_SLOT_00, 1);
+        ItemStack result  = new ItemStack(ModItems.RUBY);
+
+        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
     }
 
     private boolean hasCraftingFinished() {
-        return false;
+
     }
 
     private boolean hasRecipe() {
