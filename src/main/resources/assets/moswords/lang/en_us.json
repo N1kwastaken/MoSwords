@@ -18,11 +18,14 @@
   "item.moswords.emerald_sword": "Emerald Sword",
   "item.moswords.emerald_staff": "Emerald Staff",
   "item.moswords.acoustic_guitar": "Acoustic Guitar",
+  "item.moswords.titanium_ingot": "Titanium Ingot",
+  "item.moswords.handle": "Handle",
 
   "block.moswords.sapphire_ore": "Sapphire Ore",
   "block.moswords.ruby_block": "Ruby Block",
   "block.moswords.sapphire_block": "Sapphire Block",
   "block.moswords.ruby_deepslate_ore": "Ruby Deepslate Ore",
+  "block.moswords.custom_crafting_table": "Custom Crafting Table",
 
   "enchantment.moswords.freezing": "Freezing",
 

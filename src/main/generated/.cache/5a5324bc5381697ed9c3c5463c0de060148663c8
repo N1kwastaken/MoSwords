@@ -1,6 +1,7 @@
-// 1.20.4	2024-01-15T19:15:12.1577351	Mo'Swords/Model Definitions
+// 1.20.4	2024-01-15T21:32:27.8977627	Mo'Swords/Model Definitions
 540ec655c80eefbb86b7f021a3cafef0edf144d7 assets\moswords\models\item\quadruple_sword.json
 d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deepslate_ore.json
+66027cbd69976044af9fd9e4130fc03b3a4fb053 assets\moswords\models\block\custom_crafting_table.json
 9e317d80e03ff0391918264cdf227352c0c1f787 assets\moswords\models\item\sapphire.json
 fcb72ee86155948fa1cf74ae510d5a7efcf8af03 assets\moswords\models\item\handle.json
 7852d9e6863d0b3afb507ef547f38f48463ac917 assets\moswords\models\block\sapphire_ore.json
@@ -14,11 +15,13 @@ a5e603d1b8a8090e655f92433d2d0f5aa9c1e52d assets\moswords\models\item\slime_sword
 78dd92548d96be15fa97517dff121372a4225e30 assets\moswords\blockstates\ruby_block.json
 a6bb2e26a9eebb72ec898f91a2446bfbff09f051 assets\moswords\models\item\ruby_deepslate_ore.json
 23af15b65367279a8101a1e2a8038ed43d9d9694 assets\moswords\models\item\raw_sapphire.json
+1593573afa18b3fd3d82db629cfb672c7bfbd2f3 assets\moswords\models\item\custom_crafting_table.json
 22e6cdbdc53e03533a0eb081ad273bd882d150ef assets\moswords\models\item\sapphire_ore.json
 8e97b93baf90d81de37e94b3c33102be8bc480c9 assets\moswords\models\item\devils_eye_sword.json
 2d67707eb5885148d4fd0c8d54070fe3d34187a9 assets\moswords\models\item\thin_sapphire_sword.json
 b18b6de0f8cb5becd4fb24158381de272de2f633 assets\moswords\models\item\sapphire_block.json
 897e62cf059768eaad735e10c092dffaf38d808a assets\moswords\models\item\devils_eye.json
+dd5195c23fb6c94e3881431f3a6e18b6c6f81b62 assets\moswords\blockstates\custom_crafting_table.json
 f48a83645abb8020051af2c8ace54087759849e3 assets\moswords\models\item\sapphire_sword.json
 9ba128ebc2f63ceaba8617afc87a803fc7c27060 assets\moswords\models\item\ruby_sword.json
 844625a821f8acb4e551d680e113b585de5da128 assets\moswords\models\item\raw_ruby.json

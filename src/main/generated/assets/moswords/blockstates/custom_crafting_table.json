@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "moswords:block/custom_crafting_table"
+    }
+  }
+}

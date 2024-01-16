@@ -25,6 +25,7 @@ public class ModItemGroups {
                         entries.add(ModItems.RAW_SAPPHIRE);
                         entries.add(ModBlocks.RUBY_DEEPSLATE_ORE);
                         entries.add(ModBlocks.SAPPHIRE_ORE);
+                        entries.add(ModBlocks.CUSTOM_CRAFTING_TABLE);
 
                         entries.add(ModItems.RUBY_SWORD);
                         entries.add(ModItems.BIG_RUBY_SWORD);
@@ -40,6 +41,8 @@ public class ModItemGroups {
                         entries.add(ModItems.EMERALD_SWORD);
                         entries.add(ModItems.EMERALD_STAFF);
                         entries.add(ModItems.ACOUSTIC_GUITAR);
+                        entries.add(ModItems.HANDLE);
+                        entries.add(ModItems.TITANIUM_INGOT);
 
 
 

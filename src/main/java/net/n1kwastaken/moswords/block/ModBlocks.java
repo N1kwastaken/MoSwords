@@ -18,6 +18,8 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block SAPPHIRE_BLOCK = registerBlock("sapphire_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+        public static final Block CUSTOM_CRAFTING_TABLE = registerBlock("custom_crafting_table",
+            new Block(FabricBlockSettings.copyOf(Blocks.CRAFTING_TABLE)));
 
     public static final Block RUBY_DEEPSLATE_ORE = registerBlock("ruby_deepslate_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(10, 30), FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(5f)));
