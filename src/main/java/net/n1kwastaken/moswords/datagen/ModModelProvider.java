@@ -2,11 +2,11 @@ package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.n1kwastaken.moswords.block.ModBlocks;
-import net.n1kwastaken.moswords.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.item.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -19,7 +19,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_DEEPSLATE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CUSTOM_CRAFTING_TABLE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BIGGER_CRAFTING_TABLE);
     }
 
     @Override
