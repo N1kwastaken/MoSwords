@@ -14,8 +14,8 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.item.ModItems;
 
-public class ModLootTableProvider extends FabricBlockLootTableProvider {
-    public ModLootTableProvider(FabricDataOutput dataOutput) {
+public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
+    public ModBlockLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
 
@@ -25,9 +25,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SAPPHIRE_BLOCK);
 
         addDrop(ModBlocks.SAPPHIRE_ORE, copperLikeOreDrops(ModBlocks.SAPPHIRE_ORE, ModItems.SAPPHIRE));
-        addDrop(ModBlocks.RUBY_DEEPSLATE_ORE, OneDropOnlyCopperLikeOre(ModBlocks.RUBY_DEEPSLATE_ORE, ModItems.RAW_RUBY));
-
-
+        addDrop(ModBlocks.RUBY_DEEPSLATE_ORE, oneDropOnlyCopperLikeOre(ModBlocks.RUBY_DEEPSLATE_ORE, ModItems.RAW_RUBY));
+        addDrop(ModBlocks.BIGGER_CRAFTING_TABLE);
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {
@@ -37,7 +36,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                         .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
     }
 
-    public LootTable.Builder OneDropOnlyCopperLikeOre(Block drop, Item item) {
+    public LootTable.Builder oneDropOnlyCopperLikeOre(Block drop, Item item) {
         return BlockLootTableGenerator.dropsWithSilkTouch(drop,
                 this.applyExplosionDecay(drop, ItemEntry.builder(item)
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)))

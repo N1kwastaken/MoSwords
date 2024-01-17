@@ -1,4 +1,4 @@
-// 1.20.4	2024-01-17T07:39:47.3182995	Mo'Swords/Model Definitions
+// 1.20.4	2024-01-17T16:49:04.3381405	Mo'Swords/Model Definitions
 22e6cdbdc53e03533a0eb081ad273bd882d150ef assets\moswords\models\item\sapphire_ore.json
 78dd92548d96be15fa97517dff121372a4225e30 assets\moswords\blockstates\ruby_block.json
 e6d018a21ebf16fd69425ab61dc86f271894a8af assets\moswords\models\block\sapphire_block.json
@@ -18,16 +18,16 @@ a6bb2e26a9eebb72ec898f91a2446bfbff09f051 assets\moswords\models\item\ruby_deepsl
 23af15b65367279a8101a1e2a8038ed43d9d9694 assets\moswords\models\item\raw_sapphire.json
 f48a83645abb8020051af2c8ace54087759849e3 assets\moswords\models\item\sapphire_sword.json
 8f4288c50276c7c25f8e82bf1aee50e41873c8b9 assets\moswords\models\block\ruby_block.json
+092f08bc9e32bd9271a4ad11d8fe4989fa26db08 assets\moswords\models\block\bigger_crafting_table.json
 2d67707eb5885148d4fd0c8d54070fe3d34187a9 assets\moswords\models\item\thin_sapphire_sword.json
 9e317d80e03ff0391918264cdf227352c0c1f787 assets\moswords\models\item\sapphire.json
-092f08bc9e32bd9271a4ad11d8fe4989fa26db08 assets\moswords\models\block\bigger_crafting_table.json
 7852d9e6863d0b3afb507ef547f38f48463ac917 assets\moswords\models\block\sapphire_ore.json
 fcb72ee86155948fa1cf74ae510d5a7efcf8af03 assets\moswords\models\item\handle.json
 540ec655c80eefbb86b7f021a3cafef0edf144d7 assets\moswords\models\item\quadruple_sword.json
 b922d13c49474b23a8a2b9772b93af01a6ef1c3d assets\moswords\blockstates\bigger_crafting_table.json
 43658d92904b48d732fc3a4cb2b3337ca78b644b assets\moswords\models\item\big_ruby_sword.json
-64d74497d942333d2314aff997f2769b8428a9ec assets\moswords\models\item\titanium_ingot.json
 d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deepslate_ore.json
+64d74497d942333d2314aff997f2769b8428a9ec assets\moswords\models\item\titanium_ingot.json
 8e97b93baf90d81de37e94b3c33102be8bc480c9 assets\moswords\models\item\devils_eye_sword.json
 844625a821f8acb4e551d680e113b585de5da128 assets\moswords\models\item\raw_ruby.json
 499fc129a813a8473db461be8a8b75fd66dffac2 assets\moswords\models\item\amethyst_sword.json
