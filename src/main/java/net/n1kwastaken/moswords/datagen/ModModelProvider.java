@@ -2,9 +2,11 @@ package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.data.client.TextureMap;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.item.ModItems;
 
@@ -19,7 +21,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_DEEPSLATE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BIGGER_CRAFTING_TABLE);
+        blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.BIGGER_CRAFTING_TABLE, Blocks.OAK_PLANKS, TextureMap::frontSideWithCustomBottom);
+
     }
 
     @Override
