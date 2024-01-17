@@ -1,0 +1,21 @@
+{
+  "type": "moswords:bigger_crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "moswords:ruby"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SRR",
+    "SRR",
+    "SSS"
+  ],
+  "result": {
+    "item": "moswords:raw_ruby"
+  }
+}

@@ -46,22 +46,22 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
         int i;
         this.context = context;
         this.player = playerInventory.player;
-        this.addSlot(new CraftingResultSlot(playerInventory.player, this.input, this.result, 0, 124, 35));
+        this.addSlot(new CraftingResultSlot(playerInventory.player, this.input, this.result, 0, 133, 35));
         // INPUT SLOTS
         for (i = 0; i < 4; ++i) {
             for (j = 0; j < 4; ++j) {
-                this.addSlot(new Slot(this.input, j + i * 4, 30 + j * 18, 17 + i * 18));
+                this.addSlot(new Slot(this.input, j + i * 4, 21 + j * 18, 8 + i * 18));
             }
         }
         // PLAYER INVENTORY
         for (i = 0; i < 3; ++i) {
             for (j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, /*84 + 9*/ 93 + i * 18));
+                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 93 + i * 18));
             }
         }
         // PLAYER HOTBAR
         for (i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, /*142 + 9*/ 151));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 151));
         }
     }
 

@@ -31,15 +31,16 @@ public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHand
         this.recipeBook.initialize(this.width, this.height, this.client, this.narrow, this.handler);
         this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
         this.backgroundHeight = 184;
-        this.y = (this.height - this.backgroundHeight) / 2;
-        this.addDrawableChild(new TexturedButtonWidget(this.x + 5, this.height / 2 - 49, 20, 18, RecipeBookWidget.BUTTON_TEXTURES, button -> {
+        this.playerInventoryTitleY = this.backgroundHeight - 103;
+        this.titleY = -3;
+        this.addDrawableChild(new TexturedButtonWidget(this.x + 131, this.height / 2 - 79, 20, 18, RecipeBookWidget.BUTTON_TEXTURES, button -> {
             this.recipeBook.toggleOpen();
             this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
-            button.setPosition(this.x + 5, this.height / 2 - 49);
+            button.setPosition(this.x + 131, this.height / 2 - 79);
         }));
         this.addSelectableChild(this.recipeBook);
         this.setInitialFocus(this.recipeBook);
-        this.titleX = 29;
+        this.titleX = 20;
     }
 
     @Override
