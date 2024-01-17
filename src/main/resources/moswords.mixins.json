@@ -3,7 +3,9 @@
 	"package": "net.n1kwastaken.moswords.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"MixinEnchantment",
+		"CraftingScreenHandlerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

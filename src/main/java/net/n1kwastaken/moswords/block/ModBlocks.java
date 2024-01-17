@@ -17,7 +17,7 @@ import net.n1kwastaken.moswords.block.custom.BiggerCraftingTableBlock;
 public class ModBlocks {
     public static final Block RUBY_BLOCK = registerBlock("ruby_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block SAPPHIRE_BLOCK = registerBlock("sapphire_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
-    public static final Block BIGGER_CRAFTING_TABLE = registerBlock("bigger_crafting_table.json", new BiggerCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.CRAFTING_TABLE)));
+    public static final Block BIGGER_CRAFTING_TABLE = registerBlock("bigger_crafting_table", new BiggerCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.CRAFTING_TABLE)));
 
     public static final Block RUBY_DEEPSLATE_ORE = registerBlock("ruby_deepslate_ore", new ExperienceDroppingBlock(UniformIntProvider.create(10, 30), FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(5f)));
 
