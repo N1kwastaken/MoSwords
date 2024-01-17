@@ -21,8 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_DEEPSLATE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_ORE);
-        blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.BIGGER_CRAFTING_TABLE, Blocks.OAK_PLANKS, TextureMap::frontSideWithCustomBottom);
-
+        blockStateModelGenerator.registerSimpleState(ModBlocks.BIGGER_CRAFTING_TABLE);
     }
 
     @Override

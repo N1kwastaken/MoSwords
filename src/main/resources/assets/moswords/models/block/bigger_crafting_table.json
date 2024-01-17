@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "down": "moswords:block/bigger_crafting_table_bottom",
+    "east": "moswords:block/bigger_crafting_table_side",
+    "north": "moswords:block/bigger_crafting_table_front",
+    "particle": "moswords:block/bigger_crafting_table_front",
+    "south": "moswords:block/bigger_crafting_table_side",
+    "up": "moswords:block/bigger_crafting_table_top",
+    "west": "moswords:block/bigger_crafting_table_front"
+  }
+}
