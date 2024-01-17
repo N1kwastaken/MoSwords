@@ -16,7 +16,7 @@ import net.n1kwastaken.moswords.MoSwords;
 
 @Environment(EnvType.CLIENT)
 public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHandler> implements RecipeBookProvider {
-    private static final Identifier TEXTURE = new Identifier(MoSwords.MOD_ID, "textures/gui/container/bigger_crafting_table.png");
+    private static final Identifier TEXTURE = new Identifier(MoSwords.MOD_ID, "textures/gui/container/bigger_crafting_table.json.png");
     private final RecipeBookWidget recipeBook = new RecipeBookWidget();
     private boolean narrow;
 
