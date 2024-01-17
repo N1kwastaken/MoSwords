@@ -85,7 +85,7 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
         }
         resultInventory.setStack(0, resultStack);
         handler.setPreviousTrackedSlot(0, resultStack);
-        serverPlayerEntity.networkHandler.sendPacket(new ScreenHandlerSlotUpdateS2CPacket(handler.syncId, handler.nextRevision(), 0, resultStack));
+        serverPlayerEntity.networkHandler.sendPacket(new ScreenHandlerSlotUpdateS2CPacket(handler.syncId, handler.nextRevision(), RESULT_ID, resultStack));
     }
 
     @Override
@@ -125,33 +125,33 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(inventorySlotIndex);
         if (slot.hasStack()) {
-            ItemStack itemStack2 = slot.getStack();
-            itemStack = itemStack2.copy();
-            if (inventorySlotIndex == 0) {
-                this.context.run((world, pos) -> itemStack2.getItem().onCraftByPlayer(itemStack2, world, player));
-                if (!this.insertItem(itemStack2, INVENTORY_START, HOTBAR_END, true)) {
+            ItemStack stackInSlot = slot.getStack();
+            itemStack = stackInSlot.copy();
+            if (inventorySlotIndex == RESULT_ID) { // TAKE FROM OUTPUT
+                this.context.run((world, pos) -> stackInSlot.getItem().onCraftByPlayer(stackInSlot, world, player));
+                if (!this.insertItem(stackInSlot, INVENTORY_START, HOTBAR_END, true)) {
                     return ItemStack.EMPTY;
                 }
-                slot.onQuickTransfer(itemStack2, itemStack);
-            } else if (inventorySlotIndex >= INVENTORY_START && inventorySlotIndex < HOTBAR_END ?
-                    !this.insertItem(itemStack2, INPUT_START, INPUT_END, false) &&
-                            (inventorySlotIndex < INVENTORY_END ?
-                                    !this.insertItem(itemStack2, HOTBAR_START, HOTBAR_END, false) :
-                                    !this.insertItem(itemStack2, INVENTORY_START, INVENTORY_END, false)) :
-                    !this.insertItem(itemStack2, INVENTORY_START, HOTBAR_END, false)) {
+                slot.onQuickTransfer(stackInSlot, itemStack);
+            } else if (inventorySlotIndex >= INVENTORY_START && inventorySlotIndex < HOTBAR_END ? // FROM PLAYER INVENTORY
+                    !this.insertItem(stackInSlot, INPUT_START, INPUT_END, false) && // FROM PLAYER INVENTORY; INSERT TO INPUT SLOTS
+                            (inventorySlotIndex < INVENTORY_END ? // IS FROM MAIN PLAYER INVENTORY
+                                    !this.insertItem(stackInSlot, HOTBAR_START, HOTBAR_END, false) : // INSERT TO HOTBAR
+                                    !this.insertItem(stackInSlot, INVENTORY_START, INVENTORY_END, false)) : // FROM HOTBAR; INSERT TO MAIN PLAYER INVENTORY
+                    !this.insertItem(stackInSlot, INVENTORY_START, HOTBAR_END, false)) { // FROM INPUT SLOT; INSERT TO PLAYER INVENTORY
                 return ItemStack.EMPTY;
             }
-            if (itemStack2.isEmpty()) {
+            if (stackInSlot.isEmpty()) {
                 slot.setStack(ItemStack.EMPTY);
             } else {
                 slot.markDirty();
             }
-            if (itemStack2.getCount() == itemStack.getCount()) {
+            if (stackInSlot.getCount() == itemStack.getCount()) {
                 return ItemStack.EMPTY;
             }
-            slot.onTakeItem(player, itemStack2);
-            if (inventorySlotIndex == 0) {
-                player.dropItem(itemStack2, false);
+            slot.onTakeItem(player, stackInSlot);
+            if (inventorySlotIndex == RESULT_ID) {
+                player.dropItem(stackInSlot, false);
             }
         }
         return itemStack;

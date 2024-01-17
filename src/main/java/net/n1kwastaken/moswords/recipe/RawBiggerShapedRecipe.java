@@ -47,30 +47,30 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
 
     @VisibleForTesting
     static String[] removePadding(List<String> pattern) {
-        int i = Integer.MAX_VALUE;
-        int j = 0;
+        int firstSymbolIndex = Integer.MAX_VALUE;
+        int lastSymbolIndexOrZero = 0;
         int k = 0;
-        int l = 0;
+        int blankLines = 0;
         for (int rowIndex = 0; rowIndex < pattern.size(); ++rowIndex) {
             String row = pattern.get(rowIndex);
-            i = Math.min(i, findFirstSymbol(row));
-            int n = findLastSymbol(row);
-            j = Math.max(j, n);
-            if (n < 0) {
+            firstSymbolIndex = Math.min(firstSymbolIndex, findFirstSymbol(row));
+            int lastSymbolIndex = findLastSymbol(row);
+            lastSymbolIndexOrZero = Math.max(lastSymbolIndexOrZero, lastSymbolIndex);
+            if (lastSymbolIndex < 0) { // BLANK LINE
                 if (k == rowIndex) {
                     ++k;
                 }
-                ++l;
+                ++blankLines;
                 continue;
             }
-            l = 0;
+            blankLines = 0;
         }
-        if (pattern.size() == l) {
+        if (pattern.size() == blankLines) { // PATTERN IS BLANK
             return new String[0];
         }
-        String[] strings = new String[pattern.size() - l - k];
+        String[] strings = new String[pattern.size() - blankLines - k];
         for (int o = 0; o < strings.length; ++o) {
-            strings[o] = pattern.get(o + k).substring(i, j + 1);
+            strings[o] = pattern.get(o + k).substring(firstSymbolIndex, lastSymbolIndexOrZero + 1);
         }
         return strings;
     }

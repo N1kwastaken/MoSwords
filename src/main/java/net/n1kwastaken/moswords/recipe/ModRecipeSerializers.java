@@ -9,6 +9,7 @@ import net.n1kwastaken.moswords.MoSwords;
 
 public class ModRecipeSerializers {
     public static final RecipeSerializer<BiggerShapedRecipe> BIGGER_SHAPED = register("bigger_crafting_shaped", new BiggerShapedRecipe.Serializer());
+    public static final RecipeSerializer<BiggerShapelessRecipe> BIGGER_SHAPELESS = register("bigger_crafting_shapeless", new BiggerShapelessRecipe.Serializer());
 
     public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S register(String id, S serializer) {
         return Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(MoSwords.MOD_ID, id), serializer);
