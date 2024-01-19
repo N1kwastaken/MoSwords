@@ -13,22 +13,22 @@ import net.n1kwastaken.moswords.screen.BiggerCraftingScreen;
 
 public class MoSwordsREIClientPlugin implements REIClientPlugin {
 
-    @Override
-    public void registerCategories(CategoryRegistry registry) {
-//        REIClientPlugin.super.registerCategories(registry);
-        registry.add(new BiggerCraftingCategory());
-        registry.addWorkstations(BiggerCraftingCategory.BIGGER_CRAFTING, EntryStacks.of(ModBlocks.BIGGER_CRAFTING_TABLE));
-    }
+        @Override
+        public void registerCategories(CategoryRegistry registry) {
+            registry.add(new BiggerCraftingCategory());
 
-    @Override
-    public void registerDisplays(DisplayRegistry registry) {
-        registry.registerRecipeFiller(BiggerCraftingRecipe.class, ModRecipeTypes.BIGGER_CRAFTING,
-                BiggerCraftingDisplay::new);
-    }
+            registry.addWorkstations(BiggerCraftingCategory.BIGGER_CRAFTING, EntryStacks.of(ModBlocks.BIGGER_CRAFTING_TABLE));
+        }
 
-    @Override
-    public void registerScreens(ScreenRegistry registry) {
-        registry.registerClickArea(screen -> new Rectangle(75, 30, 20, 30), BiggerCraftingScreen.class,
-                BiggerCraftingCategory.BIGGER_CRAFTING);
+        @Override
+        public void registerDisplays(DisplayRegistry registry) {
+            registry.registerRecipeFiller(BiggerCraftingRecipe.class, ModRecipeTypes.BIGGER_CRAFTING,
+                    BiggerCraftingDisplay::new);
+        }
+
+        @Override
+        public void registerScreens(ScreenRegistry registry) {
+            registry.registerClickArea(screen -> new Rectangle(75, 30, 20, 30), BiggerCraftingScreen.class,
+                    BiggerCraftingCategory.BIGGER_CRAFTING);
+        }
     }
-}
