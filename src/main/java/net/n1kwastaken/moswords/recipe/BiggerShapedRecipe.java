@@ -7,12 +7,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     final RawBiggerShapedRecipe raw;
@@ -39,8 +41,16 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     }
 
     @Override
-    public RecipeType<?> getType() {
-        return ModRecipeTypes.BIGGER_CRAFTING;
+    public List<Ingredient> getIngredientsWithEmpty() {
+        List<Ingredient> ingredients = new ArrayList<>(this.getIngredients());
+        for (int i = this.getWidth(); i < ingredients.size(); ++i) {
+            ingredients.add(i, Ingredient.EMPTY);
+//            this.raw
+        }
+        for (int i = 0; i < 16 - ingredients.size(); ++i) {
+            ingredients.add(Ingredient.EMPTY);
+        }
+        return ingredients;
     }
 
     @Override

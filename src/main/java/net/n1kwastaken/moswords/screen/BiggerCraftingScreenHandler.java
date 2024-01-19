@@ -46,22 +46,22 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
         int i;
         this.context = context;
         this.player = playerInventory.player;
-        this.addSlot(new CraftingResultSlot(playerInventory.player, this.input, this.result, 0, 133, 35));
+        this.addSlot(new CraftingResultSlot(playerInventory.player, this.input, this.result, 0, 133, 44));
         // INPUT SLOTS
         for (i = 0; i < 4; ++i) {
             for (j = 0; j < 4; ++j) {
-                this.addSlot(new Slot(this.input, j + i * 4, 21 + j * 18, 8 + i * 18));
+                this.addSlot(new Slot(this.input, j + i * 4, 21 + j * 18, 17 + i * 18));
             }
         }
         // PLAYER INVENTORY
         for (i = 0; i < 3; ++i) {
             for (j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 93 + i * 18));
+                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 102 + i * 18));
             }
         }
         // PLAYER HOTBAR
         for (i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 151));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 160));
         }
     }
 
@@ -73,14 +73,25 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
         ItemStack resultStack = ItemStack.EMPTY;
         Optional<RecipeEntry<BiggerCraftingRecipe>> firstBiggerCraftingResult = world.getServer().getRecipeManager().getFirstMatch(ModRecipeTypes.BIGGER_CRAFTING, craftingInventory, world);
         Optional<RecipeEntry<CraftingRecipe>> firstCraftingResult = world.getServer().getRecipeManager().getFirstMatch(RecipeType.CRAFTING, craftingInventory, world);
+
+
+//        if (firstBiggerCraftingResult.isPresent() || firstCraftingResult.isPresent()) {
+//            RecipeEntry<? extends CraftingRecipe> recipeEntry = firstBiggerCraftingResult.isPresent() ? firstBiggerCraftingResult.get() : firstCraftingResult.get();
+//            CraftingRecipe craftingRecipe = recipeEntry.value();
+//            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry)) {
+//                ItemStack recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager());
+//                if (recipeOutput.isItemEnabled(world.getEnabledFeatures())) {
+//                    resultStack = recipeOutput;
+//                }
+//            }
+//        }
+
         if (firstBiggerCraftingResult.isPresent() || firstCraftingResult.isPresent()) {
             RecipeEntry<? extends CraftingRecipe> recipeEntry = firstBiggerCraftingResult.isPresent() ? firstBiggerCraftingResult.get() : firstCraftingResult.get();
             CraftingRecipe craftingRecipe = recipeEntry.value();
-            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry)) {
-                ItemStack recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager());
-                if (recipeOutput.isItemEnabled(world.getEnabledFeatures())) {
-                    resultStack = recipeOutput;
-                }
+            ItemStack recipeOutput;
+            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry) && (recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager())).isItemEnabled(world.getEnabledFeatures())) {
+                resultStack = recipeOutput;
             }
         }
         resultInventory.setStack(0, resultStack);
@@ -122,17 +133,17 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int inventorySlotIndex) {
-        ItemStack itemStack = ItemStack.EMPTY;
+        ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(inventorySlotIndex);
         if (slot.hasStack()) {
             ItemStack stackInSlot = slot.getStack();
-            itemStack = stackInSlot.copy();
+            newStack = stackInSlot.copy();
             if (inventorySlotIndex == RESULT_ID) { // TAKE FROM OUTPUT
                 this.context.run((world, pos) -> stackInSlot.getItem().onCraftByPlayer(stackInSlot, world, player));
                 if (!this.insertItem(stackInSlot, INVENTORY_START, HOTBAR_END, true)) {
                     return ItemStack.EMPTY;
                 }
-                slot.onQuickTransfer(stackInSlot, itemStack);
+                slot.onQuickTransfer(stackInSlot, newStack);
             } else if (inventorySlotIndex >= INVENTORY_START && inventorySlotIndex < HOTBAR_END ? // FROM PLAYER INVENTORY
                     !this.insertItem(stackInSlot, INPUT_START, INPUT_END, false) && // FROM PLAYER INVENTORY; INSERT TO INPUT SLOTS
                             (inventorySlotIndex < INVENTORY_END ? // IS FROM MAIN PLAYER INVENTORY
@@ -146,7 +157,7 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
             } else {
                 slot.markDirty();
             }
-            if (stackInSlot.getCount() == itemStack.getCount()) {
+            if (stackInSlot.getCount() == newStack.getCount()) {
                 return ItemStack.EMPTY;
             }
             slot.onTakeItem(player, stackInSlot);
@@ -154,7 +165,7 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
                 player.dropItem(stackInSlot, false);
             }
         }
-        return itemStack;
+        return newStack;
     }
 
     @Override

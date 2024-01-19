@@ -44,8 +44,6 @@ public enum ModToolMaterial implements ToolMaterial {
         this.repairIngredient = repairIngredient;
     }
 
-
-
     @Override
     public int getDurability() {
         return this.itemDurability;

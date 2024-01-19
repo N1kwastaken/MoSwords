@@ -22,6 +22,10 @@ public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHand
 
     public BiggerCraftingScreen(BiggerCraftingScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
+        this.backgroundHeight = 184;
+        this.playerInventoryTitleY = 90;
+//        this.titleY = -3;
+        this.titleX = 20;
     }
 
     @Override
@@ -30,9 +34,6 @@ public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHand
         this.narrow = this.width < 379;
         this.recipeBook.initialize(this.width, this.height, this.client, this.narrow, this.handler);
         this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
-        this.backgroundHeight = 184;
-        this.playerInventoryTitleY = this.backgroundHeight - 103;
-        this.titleY = -3;
         this.addDrawableChild(new TexturedButtonWidget(this.x + 131, this.height / 2 - 79, 20, 18, RecipeBookWidget.BUTTON_TEXTURES, button -> {
             this.recipeBook.toggleOpen();
             this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
@@ -40,7 +41,6 @@ public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHand
         }));
         this.addSelectableChild(this.recipeBook);
         this.setInitialFocus(this.recipeBook);
-        this.titleX = 20;
     }
 
     @Override

@@ -8,6 +8,8 @@ import me.shedaniel.rei.api.client.gui.widgets.Widgets;
 import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
+import me.shedaniel.rei.api.common.entry.EntryIngredient;
+import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -43,6 +45,26 @@ public class BiggerCraftingCategory implements DisplayCategory<BasicDisplay> {
         List<Widget> widgets = new ArrayList<>();
         widgets.add(Widgets.createTexturedWidget(TEXTURE, new Rectangle(startPoint.x, startPoint.y, 175, 82)));
 
+        StringBuilder text = new StringBuilder();
+        text.append("[");
+        for (EntryIngredient inputEntry : display.getInputEntries()) {
+            StringBuilder inputEntryText = new StringBuilder();
+            inputEntryText.append("[");
+            for (EntryStack<?> entryStack : inputEntry) {
+                inputEntryText.append(entryStack.isEmpty() ? "E, " : "T, ");
+            }
+            inputEntryText.append("]");
+            text.append(inputEntryText);
+            text.append(", ");
+        }
+        text.append("]");
+
+
+
+        MoSwords.LOGGER.info("" + display.getInputEntries());
+        MoSwords.LOGGER.info(text.toString());
+        MoSwords.LOGGER.info("" + display.getInputEntries().size());
+
         for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 4; ++j) {
                 widgets.add(Widgets.createSlot(new Point(startPoint.x + 80 + j * 18, startPoint.y + 11 + i * 18))
@@ -56,7 +78,7 @@ public class BiggerCraftingCategory implements DisplayCategory<BasicDisplay> {
                 .markOutput().entries(display.getOutputEntries().get(0)));
 
 
-        return DisplayCategory.super.setupDisplay(display, bounds);
+        return widgets;
     }
 
     @Override

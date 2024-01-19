@@ -9,12 +9,14 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeMatcher;
 import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     final String group;
@@ -57,14 +59,14 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     @Override
     public boolean matches(RecipeInputInventory recipeInputInventory, World world) {
         RecipeMatcher recipeMatcher = new RecipeMatcher();
-        int i = 0;
-        for (int j = 0; j < recipeInputInventory.size(); ++j) {
-            ItemStack itemStack = recipeInputInventory.getStack(j);
+        int nonEmptyStacks = 0;
+        for (int slotIndex = 0; slotIndex < recipeInputInventory.size(); ++slotIndex) {
+            ItemStack itemStack = recipeInputInventory.getStack(slotIndex);
             if (itemStack.isEmpty()) continue;
-            ++i;
+            ++nonEmptyStacks;
             recipeMatcher.addInput(itemStack, 1);
         }
-        return i == this.ingredients.size() && recipeMatcher.match(this, null);
+        return nonEmptyStacks == this.ingredients.size() && recipeMatcher.match(this, null);
     }
 
     @Override
@@ -78,8 +80,12 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     }
 
     @Override
-    public RecipeType<?> getType() {
-        return ModRecipeTypes.BIGGER_CRAFTING;
+    public List<Ingredient> getIngredientsWithEmpty() {
+        List<Ingredient> ingredients = new ArrayList<>(this.getIngredients());
+        for (int i = 0; i < 16 - ingredients.size(); ++i) {
+            ingredients.add(Ingredient.EMPTY);
+        }
+        return ingredients;
     }
 
     public static class Serializer
@@ -106,13 +112,13 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
 
         @Override
         public BiggerShapelessRecipe read(PacketByteBuf packetByteBuf) {
-            String string = packetByteBuf.readString();
-            CraftingRecipeCategory craftingRecipeCategory = packetByteBuf.readEnumConstant(CraftingRecipeCategory.class);
-            int i = packetByteBuf.readVarInt();
-            DefaultedList<Ingredient> defaultedList = DefaultedList.ofSize(i, Ingredient.EMPTY);
-            defaultedList.replaceAll(ignored -> Ingredient.fromPacket(packetByteBuf));
+            String group = packetByteBuf.readString();
+            CraftingRecipeCategory category = packetByteBuf.readEnumConstant(CraftingRecipeCategory.class);
+            int ingredientsLength = packetByteBuf.readVarInt();
+            DefaultedList<Ingredient> ingredients = DefaultedList.ofSize(ingredientsLength, Ingredient.EMPTY);
+            ingredients.replaceAll(ignored -> Ingredient.fromPacket(packetByteBuf));
             ItemStack itemStack = packetByteBuf.readItemStack();
-            return new BiggerShapelessRecipe(string, craftingRecipeCategory, itemStack, defaultedList);
+            return new BiggerShapelessRecipe(group, category, itemStack, ingredients);
         }
 
         @Override
