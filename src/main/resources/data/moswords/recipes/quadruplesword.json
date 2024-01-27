@@ -1,0 +1,33 @@
+{
+  "type": "moswords:bigger_crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "moswords:ruby_sword"
+    },
+    "E": {
+      "item": "moswords:emerald_sword"
+    },
+    "S": {
+      "item": "moswords:sapphire_sword"
+    },
+    "A": {
+      "item": "moswords:amethyst_sword"
+    },
+    "I": {
+      "item": "moswords:titanium_ingot"
+    },
+    "H": {
+      "Item": "moswords:handle"
+    }
+  },
+  "pattern": [
+    "E  R",
+    " IH ",
+    " HI ",
+    "S  A"
+  ],
+  "result": {
+    "item": "moswords:quadruple_sword"
+  }
+}
