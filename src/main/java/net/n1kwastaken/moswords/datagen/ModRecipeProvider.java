@@ -3,6 +3,7 @@ package net.n1kwastaken.moswords.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -10,7 +11,9 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.datagen.server.recipe.BiggerShapedRecipeJsonBuilder;
+import net.n1kwastaken.moswords.datagen.server.recipe.BiggerShapelessRecipeJsonBuilder;
 import net.n1kwastaken.moswords.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -24,6 +27,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
     }
+
+
+//    public static BiggerShapelessRecipeJsonBuilder createBiggerShapelessRecipe(ItemConvertible output, ItemConvertible ... inputs) {
+//        return BiggerShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, outputCount)
+//                .inputs(input)
+//                .criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
+//                .offerTo(exporter, RecipeProvider.convertBetween(output, input));
+//    }
+//
+//    public static void offerBiggerShapelessRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, @Nullable String group, int outputCount) {
+//        createBiggerShapelessRecipe().offerTo(exporter, RecipeProvider.convertBetween(output, input));
+//    }
 
     @Override
     public void generate(RecipeExporter exporter) {
@@ -40,6 +55,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 3f, 60, "sapphire");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE, RecipeCategory.MISC,
                 ModBlocks.SAPPHIRE_BLOCK);
+
+//        offerShapelessRecipe();
 
         BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.QUADRUPLE_SWORD)
                 .pattern("E  R")
