@@ -1,4 +1,4 @@
-// 1.20.4	2024-01-27T12:20:32.8569863	Mo'Swords/Recipes
+// 1.20.4	2024-01-27T14:58:20.7351557	Mo'Swords/Recipes
 da8e1a4730a5e3de799edb115f0c43a06fb89f39 data\moswords\recipes\sapphire_from_blasting_raw_sapphire.json
 9223fa090d0946bdb60412427cd5daf987a05b7a data\moswords\recipes\ruby.json
 d18986d62f9ddb062d7c9e0a3bd762808a7a8a99 data\moswords\recipes\ruby_from_blasting_ruby_deepslate_ore.json
@@ -23,7 +23,9 @@ eed13412460a7406594a7b30d001fe0fe574edac data\moswords\advancements\recipes\misc
 9ae71f072e270e771dfd3eda1adad05dbe3e6812 data\moswords\advancements\recipes\misc\ruby_from_blasting_raw_ruby.json
 10d4c96898692c3386ebb4c0175ccd090ca4da32 data\moswords\advancements\recipes\misc\ruby_from_smelting_ruby_deepslate_ore.json
 608033d7de44b88f6078ec9d5b842e123cf2d424 data\moswords\recipes\sapphire.json
+44988ad4ea34d3639559d027536dff55c33a331d data\moswords\advancements\recipes\decorations\bigger_crafting_table.json
 e7d6f4bd09725fc47a7df64a1a46e3e6f60fa354 data\moswords\recipes\sapphire_from_smelting_sapphire_ore.json
+f776982e312669957fbffee2e58ae1a8dc08d728 data\moswords\recipes\bigger_crafting_table.json
 29886dc9e63afe02ae6da99819c9bc3d8ac33443 data\moswords\advancements\recipes\misc\ruby_block.json
 6296c910167bfb144f7f6143dc0be58ae4465d53 data\moswords\advancements\recipes\misc\sapphire_from_smelting_raw_sapphire.json
 119c8f7cf0877592149b4d3ea1aec1e3dcfb7efe data\moswords\advancements\recipes\misc\ruby_sword.json
@@ -35,3 +37,5 @@ d4774850ae7ff0bc57289864eae2420d6cdcaf53 data\moswords\advancements\recipes\misc
 6c550a6ab8f6ab09b2ff48b691531156076a50df data\moswords\advancements\recipes\misc\raw_ruby.json
 be8561999cb301da1807aaa8c5fd333f9b526db8 data\moswords\advancements\recipes\misc\amethyst_sword.json
 4e44bd6afb39f84d5253156cba3a1a7cdb0bff87 data\moswords\recipes\sapphire_from_blasting_sapphire_ore.json
+2420372610df2ed828f09dbb1239eadad6243c92 data\moswords\recipes\quadruple_sword.json
+051989b7d39109b32aaeff28b414484d96a5c7c2 data\moswords\advancements\recipes\combat\quadruple_sword.json
