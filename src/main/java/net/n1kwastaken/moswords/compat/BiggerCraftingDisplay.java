@@ -16,7 +16,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.util.collection.DefaultedList;
 import net.n1kwastaken.moswords.recipe.BiggerCraftingRecipe;
 import org.jetbrains.annotations.Nullable;
 

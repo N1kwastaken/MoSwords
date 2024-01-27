@@ -1,6 +1,6 @@
-// 1.20.4	2024-01-17T17:52:51.0352781	Mo'Swords/Block Loot Tables
+// 1.20.4	2024-01-27T18:07:16.9342598	Mo'Swords/Block Loot Tables
+250d4b62de41898d53ce1166d10812df94572233 data\moswords\loot_tables\blocks\sapphire_block.json
+40c469cf2ceab646353401b13d29adfaf2479817 data\moswords\loot_tables\blocks\ruby_block.json
+4368a0bb3f2be60898bb268c1d068c414dce1b9b data\moswords\loot_tables\blocks\bigger_crafting_table.json
 9657c876f27ca19e3f12aa69a9d50aa6e565a09c data\moswords\loot_tables\blocks\sapphire_ore.json
 44badf30e16923badc0e62c42996c43e1aa188f7 data\moswords\loot_tables\blocks\ruby_deepslate_ore.json
-250d4b62de41898d53ce1166d10812df94572233 data\moswords\loot_tables\blocks\sapphire_block.json
-4368a0bb3f2be60898bb268c1d068c414dce1b9b data\moswords\loot_tables\blocks\bigger_crafting_table.json
-40c469cf2ceab646353401b13d29adfaf2479817 data\moswords\loot_tables\blocks\ruby_block.json
