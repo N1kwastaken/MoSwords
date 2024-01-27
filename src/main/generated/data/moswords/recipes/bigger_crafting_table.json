@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "B": {
+      "item": "minecraft:blue_dye"
+    },
+    "C": {
+      "item": "minecraft:crafting_table"
+    },
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "R": {
+      "item": "moswords:ruby"
+    },
+    "S": {
+      "item": "moswords:sapphire"
+    }
+  },
+  "pattern": [
+    "EBS",
+    "PCP",
+    "ABR"
+  ],
+  "result": {
+    "item": "moswords:bigger_crafting_table"
+  }
+}
