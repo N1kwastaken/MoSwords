@@ -25,6 +25,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         super(output);
     }
 
+
+//    public static BiggerShapelessRecipeJsonBuilder createBiggerShapelessRecipe(ItemConvertible output, ItemConvertible ... inputs) {
+//        return BiggerShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, outputCount)
+//                .inputs(input)
+//                .criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
+//                .offerTo(exporter, RecipeProvider.convertBetween(output, input));
+//    }
+//
+//    public static void offerBiggerShapelessRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, @Nullable String group, int outputCount) {
+//        createBiggerShapelessRecipe().offerTo(exporter, RecipeProvider.convertBetween(output, input));
+//    }
+
     @Override
     public void generate(RecipeExporter exporter) {
         offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
@@ -40,6 +52,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 3f, 60, "sapphire");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE, RecipeCategory.MISC,
                 ModBlocks.SAPPHIRE_BLOCK);
+
+//        offerShapelessRecipe();
 
         BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.QUADRUPLE_SWORD)
                 .pattern("E  R")
