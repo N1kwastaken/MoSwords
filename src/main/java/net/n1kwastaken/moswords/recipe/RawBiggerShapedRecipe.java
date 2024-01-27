@@ -9,6 +9,7 @@ import it.unimi.dsi.fastutil.chars.CharArraySet;
 import net.minecraft.inventory.RecipeInputInventory;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.util.Util;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.dynamic.Codecs;
 
@@ -20,6 +21,15 @@ import java.util.function.Function;
 public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredient> ingredients, Optional<RawBiggerShapedRecipe.Data> data) {
     public static final MapCodec<RawBiggerShapedRecipe> CODEC = RawBiggerShapedRecipe.Data.CODEC.flatXmap(
             RawBiggerShapedRecipe::fromData, recipe -> recipe.data().map(DataResult::success).orElseGet(() -> DataResult.error(() -> "Cannot encode unpacked recipe")));
+
+    public static RawBiggerShapedRecipe create(Map<Character, Ingredient> key, String ... pattern) {
+        return create(key, List.of(pattern));
+    }
+
+    public static RawBiggerShapedRecipe create(Map<Character, Ingredient> key, List<String> pattern) {
+        Data data = new Data(key, pattern);
+        return Util.getResult(fromData(data), IllegalArgumentException::new);
+    }
 
     private static DataResult<RawBiggerShapedRecipe> fromData(RawBiggerShapedRecipe.Data data) {
         String[] pattern = removePadding(data.pattern);

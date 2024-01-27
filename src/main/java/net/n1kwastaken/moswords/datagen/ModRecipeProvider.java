@@ -9,6 +9,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.datagen.server.recipe.BiggerShapedRecipeJsonBuilder;
 import net.n1kwastaken.moswords.item.ModItems;
 
 import java.util.List;
@@ -24,6 +25,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         super(output);
     }
 
+
+//    public static BiggerShapelessRecipeJsonBuilder createBiggerShapelessRecipe(ItemConvertible output, ItemConvertible ... inputs) {
+//        return BiggerShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, outputCount)
+//                .inputs(input)
+//                .criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
+//                .offerTo(exporter, RecipeProvider.convertBetween(output, input));
+//    }
+//
+//    public static void offerBiggerShapelessRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, @Nullable String group, int outputCount) {
+//        createBiggerShapelessRecipe().offerTo(exporter, RecipeProvider.convertBetween(output, input));
+//    }
+
     @Override
     public void generate(RecipeExporter exporter) {
         offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
@@ -35,10 +48,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerSmelting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE,
                 3f, 100, "sapphire");
-            offerBlasting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE,
+        offerBlasting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE,
                 3f, 60, "sapphire");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE, RecipeCategory.MISC,
                 ModBlocks.SAPPHIRE_BLOCK);
+
+//        offerShapelessRecipe();
+
+        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.QUADRUPLE_SWORD)
+                .pattern("E  R")
+                .pattern(" IH ")
+                .pattern(" HI ")
+                .pattern("S  A")
+                .inputWithCriterion('R', ModItems.RUBY_SWORD)
+                .inputWithCriterion('E', ModItems.EMERALD_SWORD)
+                .inputWithCriterion('S', ModItems.SAPPHIRE_SWORD)
+                .inputWithCriterion('A', ModItems.AMETHYST_SWORD)
+                .inputWithCriterion('I', ModItems.TITANIUM_INGOT)
+                .inputWithCriterion('H', ModItems.HANDLE)
+                .offerTo(exporter);
 
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_RUBY, 1)
@@ -93,7 +121,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.EMERALD_SWORD)));
 
-       ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AMETHYST_SWORD, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AMETHYST_SWORD, 1)
                 .pattern("A")
                 .pattern("A")
                 .pattern("S")
@@ -102,8 +130,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.AMETHYST_SWORD)));
-
-
 
     }
 }
