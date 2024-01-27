@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
@@ -39,11 +38,6 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     }
 
     @Override
-    public RecipeType<?> getType() {
-        return ModRecipeTypes.BIGGER_CRAFTING;
-    }
-
-    @Override
     public String getGroup() {
         return this.group;
     }
@@ -51,6 +45,11 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     @Override
     public CraftingRecipeCategory getCategory() {
         return this.category;
+    }
+
+    @Override
+    public boolean isShapeless() {
+        return false;
     }
 
     @Override
@@ -83,12 +82,24 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
         return this.getResult(dynamicRegistryManager).copy();
     }
 
+    @Override
     public int getWidth() {
         return this.raw.width();
     }
 
+    @Override
     public int getHeight() {
         return this.raw.height();
+    }
+
+    @Override
+    public int getInputWidth(int craftingWidth, int craftingHeight) {
+        return this.getWidth();
+    }
+
+    @Override
+    public int getInputHeight(int craftingWidth, int craftingHeight) {
+        return this.getHeight();
     }
 
     @Override

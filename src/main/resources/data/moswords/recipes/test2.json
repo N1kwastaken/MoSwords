@@ -11,8 +11,8 @@
   },
   "pattern": [
     "SSS",
-    "SRR",
-    "SRR",
+    "SRS",
+    "SRS",
     "SSS"
   ],
   "result": {
