@@ -12,11 +12,7 @@ import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     final String group;
@@ -44,6 +40,31 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     @Override
     public CraftingRecipeCategory getCategory() {
         return this.category;
+    }
+
+    @Override
+    public boolean isShapeless() {
+        return true;
+    }
+
+    @Override
+    public int getWidth() {
+        return 4;
+    }
+
+    @Override
+    public int getHeight() {
+        return 4;
+    }
+
+    @Override
+    public int getInputWidth(int craftingWidth, int craftingHeight) {
+        return Math.min(this.ingredients.size(), craftingWidth);
+    }
+
+    @Override
+    public int getInputHeight(int craftingWidth, int craftingHeight) {
+        return (int) Math.ceil(this.ingredients.size() / (double) getInputWidth(craftingWidth, craftingHeight));
     }
 
     @Override
@@ -79,19 +100,10 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
         return width * height >= this.ingredients.size();
     }
 
-    @Override
-    public List<Ingredient> getIngredientsWithEmpty() {
-        List<Ingredient> ingredients = new ArrayList<>(this.getIngredients());
-        for (int i = 0; i < 16 - ingredients.size(); ++i) {
-            ingredients.add(Ingredient.EMPTY);
-        }
-        return ingredients;
-    }
-
     public static class Serializer
             implements RecipeSerializer<BiggerShapelessRecipe> {
         private static final Codec<BiggerShapelessRecipe> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-                Codecs.createStrictOptionalFieldCodec(Codec.STRING, "group", "").forGetter(recipe -> recipe.group),
+                Codec.STRING.optionalFieldOf("group", "").forGetter(recipe -> recipe.group),
                 CraftingRecipeCategory.CODEC.fieldOf("category").orElse(CraftingRecipeCategory.MISC).forGetter(recipe -> recipe.category),
                 ItemStack.RECIPE_RESULT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
                 Ingredient.DISALLOW_EMPTY_CODEC.listOf().fieldOf("ingredients").flatXmap(ingredientsWithEmpty -> {
@@ -99,7 +111,7 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
                     if (ingredients.length == 0) {
                         return DataResult.error(() -> "No ingredients for shapeless recipe");
                     }
-                    if (ingredients.length > 16) {
+                    if (ingredients.length > BiggerCraftingRecipe.SIZE) {
                         return DataResult.error(() -> "Too many ingredients for shapeless recipe");
                     }
                     return DataResult.success(DefaultedList.copyOf(Ingredient.EMPTY, ingredients));

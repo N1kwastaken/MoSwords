@@ -20,43 +20,41 @@ public class ModItems {
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
 
-
-
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
-            new SwordItem(ModToolMaterial.RUBY, 4, -1, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.RUBY, 4, -1, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
-            new SwordItem(ModToolMaterial.RUBY, 10, 1.5f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.RUBY, 10, 1.5f, new FabricItemSettings()));
 
     public static final Item SAPPHIRE_SWORD = registerItem("sapphire_sword",
-            new SwordItem(ModToolMaterial.SAPPHIRE, 7, 3, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.SAPPHIRE, 7, 3, new FabricItemSettings()));
     public static final Item EMERALD_SWORD = registerItem("emerald_sword",
-            new SwordItem(ModToolMaterial.EMERALD, 0, -1, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.EMERALD, 0, -1, new FabricItemSettings()));
     public static final Item SLIME_SWORD = registerItem("slime_sword",
-            new SwordItem(ModToolMaterial.SLIME, 1, -1.5f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.SLIME, 1, -1.5f, new FabricItemSettings()));
     public static final Item EMERALD_STAFF = registerItem("emerald_staff",
-            new SwordItem(ModToolMaterial.EMERALD, 4, -3f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.EMERALD, 4, -3f, new FabricItemSettings()));
     public static final Item ACOUSTIC_GUITAR = registerItem("acoustic_guitar",
-            new SwordItem(ModToolMaterial.EMERALD, -1, -3f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.EMERALD, -1, -3f, new FabricItemSettings()));
 
 
     public static final Item DEVILS_EYE_SWORD = registerItem("devils_eye_sword",
-            new SwordItem(ModToolMaterial.RUBY, 34, -2.5f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.RUBY, 34, -2.5f, new FabricItemSettings()));
     public static final Item VAMPIRE_SWORD = registerItem("vampire_sword",
-            new SwordItem(ModToolMaterial.AMETHYST, 14, 0, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.AMETHYST, 14, 0, new FabricItemSettings()));
 
     public static final Item MOON_SWORD = registerItem("moon_sword",
-            new SwordItem(ModToolMaterial.SAPPHIRE, 15, 2, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.SAPPHIRE, 15, 2, new FabricItemSettings()));
 
     public static final Item SUN_SWORD = registerItem("sun_sword",
-            new SwordItem(ModToolMaterial.RUBY, 30, -3, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.RUBY, 30, -3, new FabricItemSettings()));
     public static final Item BIG_RUBY_SWORD = registerItem("big_ruby_sword",
-            new SwordItem(ModToolMaterial.RUBY, 23, -3, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.RUBY, 23, -3, new FabricItemSettings()));
 
-    public  static final Item THIN_SAPPHIRE_SWORD = registerItem("thin_sapphire_sword",
-            new SwordItem(ModToolMaterial.AMETHYST, 3, 1, new FabricItemSettings()));
+    public static final Item THIN_SAPPHIRE_SWORD = registerItem("thin_sapphire_sword",
+            new SwordItem(ModToolMaterials.AMETHYST, 3, 1, new FabricItemSettings()));
 
-    public  static final Item QUADRUPLE_SWORD = registerItem("quadruple_sword",
-            new SwordItem(ModToolMaterial.EMARS, 50, -3, new FabricItemSettings()));
+    public static final Item QUADRUPLE_SWORD = registerItem("quadruple_sword",
+            new SwordItem(ModToolMaterials.EMARS, 50, -3, new FabricItemSettings()));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
@@ -89,6 +87,6 @@ public class ModItems {
     public static void registerModItems() {
         MoSwords.LOGGER.info("Registering ModItems for " + MoSwords.MOD_ID);
 
-      ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
     }
 }

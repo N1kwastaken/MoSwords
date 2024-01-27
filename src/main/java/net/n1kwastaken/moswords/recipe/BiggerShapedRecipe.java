@@ -13,9 +13,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     final RawBiggerShapedRecipe raw;
     final ItemStack result;
@@ -41,19 +38,6 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     }
 
     @Override
-    public List<Ingredient> getIngredientsWithEmpty() {
-        List<Ingredient> ingredients = new ArrayList<>(this.getIngredients());
-        for (int i = this.getWidth(); i < ingredients.size(); ++i) {
-            ingredients.add(i, Ingredient.EMPTY);
-//            this.raw
-        }
-        for (int i = 0; i < 16 - ingredients.size(); ++i) {
-            ingredients.add(Ingredient.EMPTY);
-        }
-        return ingredients;
-    }
-
-    @Override
     public String getGroup() {
         return this.group;
     }
@@ -61,6 +45,11 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     @Override
     public CraftingRecipeCategory getCategory() {
         return this.category;
+    }
+
+    @Override
+    public boolean isShapeless() {
+        return false;
     }
 
     @Override
@@ -93,12 +82,24 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
         return this.getResult(dynamicRegistryManager).copy();
     }
 
+    @Override
     public int getWidth() {
         return this.raw.width();
     }
 
+    @Override
     public int getHeight() {
         return this.raw.height();
+    }
+
+    @Override
+    public int getInputWidth(int craftingWidth, int craftingHeight) {
+        return this.getWidth();
+    }
+
+    @Override
+    public int getInputHeight(int craftingWidth, int craftingHeight) {
+        return this.getHeight();
     }
 
     @Override

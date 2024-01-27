@@ -16,6 +16,7 @@ import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.CraftingResultSlot;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.recipe.BiggerCraftingRecipe;
@@ -31,7 +32,7 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
     private static final int INVENTORY_END = 44;
     private static final int HOTBAR_START = 44;
     private static final int HOTBAR_END = 53;
-    private final RecipeInputInventory input = new CraftingInventory(this, 4, 4);
+    private final RecipeInputInventory input = new CraftingInventory(this, BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT);
     private final CraftingResultInventory result = new CraftingResultInventory();
     private final ScreenHandlerContext context;
     private final PlayerEntity player;
@@ -46,11 +47,42 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
         int i;
         this.context = context;
         this.player = playerInventory.player;
-        this.addSlot(new CraftingResultSlot(playerInventory.player, this.input, this.result, 0, 133, 44));
+        this.addSlot(new CraftingResultSlot(this.player, this.input, this.result, 0, 133, 44) {
+            @Override
+            public void onTakeItem(PlayerEntity player, ItemStack stack) {
+                this.onCrafted(stack);
+                DefaultedList<ItemStack> remainingStacks;
+                if (player.getWorld().getRecipeManager().getFirstMatch(ModRecipeTypes.BIGGER_CRAFTING, BiggerCraftingScreenHandler.this.input, player.getWorld()).isPresent()) {
+                    remainingStacks = player.getWorld().getRecipeManager().getRemainingStacks(ModRecipeTypes.BIGGER_CRAFTING, BiggerCraftingScreenHandler.this.input, player.getWorld());
+                } else {
+                    remainingStacks = player.getWorld().getRecipeManager().getRemainingStacks(RecipeType.CRAFTING, BiggerCraftingScreenHandler.this.input, player.getWorld());
+                }
+                for (int i = 0; i < remainingStacks.size(); ++i) {
+                    ItemStack stackInSlot = BiggerCraftingScreenHandler.this.input.getStack(i);
+                    ItemStack remainingStack = remainingStacks.get(i);
+                    if (!stackInSlot.isEmpty()) {
+                        BiggerCraftingScreenHandler.this.input.removeStack(i, 1);
+                        stackInSlot = BiggerCraftingScreenHandler.this.input.getStack(i);
+                    }
+                    if (remainingStack.isEmpty()) continue;
+                    if (stackInSlot.isEmpty()) {
+                        BiggerCraftingScreenHandler.this.input.setStack(i, remainingStack);
+                        continue;
+                    }
+                    if (ItemStack.canCombine(stackInSlot, remainingStack)) {
+                        remainingStack.increment(stackInSlot.getCount());
+                        BiggerCraftingScreenHandler.this.input.setStack(i, remainingStack);
+                        continue;
+                    }
+                    if (playerInventory.insertStack(remainingStack)) continue;
+                    BiggerCraftingScreenHandler.this.player.dropItem(remainingStack, false);
+                }
+            }
+        });
         // INPUT SLOTS
-        for (i = 0; i < 4; ++i) {
-            for (j = 0; j < 4; ++j) {
-                this.addSlot(new Slot(this.input, j + i * 4, 21 + j * 18, 17 + i * 18));
+        for (i = 0; i < BiggerCraftingRecipe.HEIGHT; ++i) {
+            for (j = 0; j < BiggerCraftingRecipe.WIDTH; ++j) {
+                this.addSlot(new Slot(this.input, j + i * BiggerCraftingRecipe.WIDTH, 21 + j * 18, 17 + i * 18));
             }
         }
         // PLAYER INVENTORY
@@ -71,31 +103,31 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
         }
         ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) player;
         ItemStack resultStack = ItemStack.EMPTY;
-        Optional<RecipeEntry<BiggerCraftingRecipe>> firstBiggerCraftingResult = world.getServer().getRecipeManager().getFirstMatch(ModRecipeTypes.BIGGER_CRAFTING, craftingInventory, world);
-        Optional<RecipeEntry<CraftingRecipe>> firstCraftingResult = world.getServer().getRecipeManager().getFirstMatch(RecipeType.CRAFTING, craftingInventory, world);
+        Optional<RecipeEntry<BiggerCraftingRecipe>> firstBiggerCraftingResult = world.getRecipeManager().getFirstMatch(ModRecipeTypes.BIGGER_CRAFTING, craftingInventory, world);
+        Optional<RecipeEntry<CraftingRecipe>> firstCraftingResult = world.getRecipeManager().getFirstMatch(RecipeType.CRAFTING, craftingInventory, world);
 
-
-//        if (firstBiggerCraftingResult.isPresent() || firstCraftingResult.isPresent()) {
-//            RecipeEntry<? extends CraftingRecipe> recipeEntry = firstBiggerCraftingResult.isPresent() ? firstBiggerCraftingResult.get() : firstCraftingResult.get();
-//            CraftingRecipe craftingRecipe = recipeEntry.value();
-//            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry)) {
-//                ItemStack recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager());
-//                if (recipeOutput.isItemEnabled(world.getEnabledFeatures())) {
-//                    resultStack = recipeOutput;
-//                }
-//            }
-//        }
 
         if (firstBiggerCraftingResult.isPresent() || firstCraftingResult.isPresent()) {
             RecipeEntry<? extends CraftingRecipe> recipeEntry = firstBiggerCraftingResult.isPresent() ? firstBiggerCraftingResult.get() : firstCraftingResult.get();
             CraftingRecipe craftingRecipe = recipeEntry.value();
-            ItemStack recipeOutput;
-            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry) && (recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager())).isItemEnabled(world.getEnabledFeatures())) {
-                resultStack = recipeOutput;
+            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry)) {
+                ItemStack recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager());
+                if (recipeOutput.isItemEnabled(world.getEnabledFeatures())) {
+                    resultStack = recipeOutput;
+                }
             }
         }
-        resultInventory.setStack(0, resultStack);
-        handler.setPreviousTrackedSlot(0, resultStack);
+
+//        if (firstBiggerCraftingResult.isPresent()/* || firstCraftingResult.isPresent()*/) {
+//            RecipeEntry<? extends Recipe<RecipeInputInventory>> recipeEntry = /*firstBiggerCraftingResult.isPresent() ? */firstBiggerCraftingResult.get()/* : firstCraftingResult.get()*/;
+//            Recipe<RecipeInputInventory> craftingRecipe = recipeEntry.value();
+//            ItemStack recipeOutput;
+//            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry) && (recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager())).isItemEnabled(world.getEnabledFeatures())) {
+//                resultStack = recipeOutput;
+//            }
+//        }
+        resultInventory.setStack(RESULT_ID, resultStack);
+        handler.setPreviousTrackedSlot(RESULT_ID, resultStack);
         serverPlayerEntity.networkHandler.sendPacket(new ScreenHandlerSlotUpdateS2CPacket(handler.syncId, handler.nextRevision(), RESULT_ID, resultStack));
     }
 
