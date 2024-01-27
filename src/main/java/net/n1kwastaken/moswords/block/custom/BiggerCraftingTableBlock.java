@@ -20,12 +20,12 @@ public class BiggerCraftingTableBlock extends CraftingTableBlock {
     public static final MapCodec<BiggerCraftingTableBlock> CODEC = createCodec(BiggerCraftingTableBlock::new);
     private static final Text TITLE = Text.literal("Bigger Crafting");
 
-    public MapCodec<? extends BiggerCraftingTableBlock> getCodec() {
-        return CODEC;
-    }
-
     public BiggerCraftingTableBlock(AbstractBlock.Settings settings) {
         super(settings);
+    }
+
+    public MapCodec<? extends BiggerCraftingTableBlock> getCodec() {
+        return CODEC;
     }
 
     @Override

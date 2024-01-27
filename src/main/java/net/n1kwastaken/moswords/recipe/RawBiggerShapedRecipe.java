@@ -49,7 +49,7 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
     static String[] removePadding(List<String> pattern) {
         int firstSymbolIndex = Integer.MAX_VALUE;
         int lastSymbolIndexOrZero = 0;
-        int k = 0;
+        int firstNotEmptyLineIndex = 0;
         int blankLines = 0;
         for (int rowIndex = 0; rowIndex < pattern.size(); ++rowIndex) {
             String row = pattern.get(rowIndex);
@@ -57,8 +57,8 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
             int lastSymbolIndex = findLastSymbol(row);
             lastSymbolIndexOrZero = Math.max(lastSymbolIndexOrZero, lastSymbolIndex);
             if (lastSymbolIndex < 0) { // BLANK LINE
-                if (k == rowIndex) {
-                    ++k;
+                if (firstNotEmptyLineIndex == rowIndex) {
+                    ++firstNotEmptyLineIndex;
                 }
                 ++blankLines;
                 continue;
@@ -68,11 +68,11 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
         if (pattern.size() == blankLines) { // PATTERN IS BLANK
             return new String[0];
         }
-        String[] strings = new String[pattern.size() - blankLines - k];
-        for (int o = 0; o < strings.length; ++o) {
-            strings[o] = pattern.get(o + k).substring(firstSymbolIndex, lastSymbolIndexOrZero + 1);
+        String[] patternStringArray = new String[pattern.size() - blankLines - firstNotEmptyLineIndex];
+        for (int o = 0; o < patternStringArray.length; ++o) {
+            patternStringArray[o] = pattern.get(o + firstNotEmptyLineIndex).substring(firstSymbolIndex, lastSymbolIndexOrZero + 1);
         }
-        return strings;
+        return patternStringArray;
     }
 
 
@@ -93,12 +93,12 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
     }
 
     public boolean matches(RecipeInputInventory inventory) {
-        for (int i = 0; i <= inventory.getWidth() - this.width; ++i) {
-            for (int j = 0; j <= inventory.getHeight() - this.height; ++j) {
-                if (this.matches(inventory, i, j, true)) {
+        for (int offestX = 0; offestX <= inventory.getWidth() - this.width; ++offestX) { // TRY WITH EVERY OFFSET; DOESN'T MATTER WHERE YOU PUT THE RECIPE
+            for (int offsetY = 0; offsetY <= inventory.getHeight() - this.height; ++offsetY) {
+                if (this.matches(inventory, offestX, offsetY, true)) {
                     return true;
                 }
-                if (this.matches(inventory, i, j, false)) {
+                if (this.matches(inventory, offestX, offsetY, false)) {
                     return true;
                 }
             }
@@ -109,13 +109,13 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
     private boolean matches(RecipeInputInventory inventory, int offsetX, int offsetY, boolean flipped) {
         for (int i = 0; i < inventory.getWidth(); ++i) {
             for (int j = 0; j < inventory.getHeight(); ++j) {
-                int k = i - offsetX;
-                int l = j - offsetY;
-                Ingredient ingredient = Ingredient.EMPTY;
-                if (k >= 0 && l >= 0 && k < this.width && l < this.height) {
-                    ingredient = flipped ? this.ingredients.get(this.width - k - 1 + l * this.width) : this.ingredients.get(k + l * this.width);
+                int x = i - offsetX;
+                int y = j - offsetY;
+                Ingredient recipeIngredientToTest = Ingredient.EMPTY;
+                if (x >= 0 && y >= 0 && x < this.width && y < this.height) {
+                    recipeIngredientToTest = flipped ? this.ingredients.get(this.width - x - 1 + y * this.width) : this.ingredients.get(x + y * this.width);
                 }
-                if (!ingredient.test(inventory.getStack(i + j * inventory.getWidth()))) {
+                if (!recipeIngredientToTest.test(inventory.getStack(i + j * inventory.getWidth()))) {
                     return false;
                 }
             }

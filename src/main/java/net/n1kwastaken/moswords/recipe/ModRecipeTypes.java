@@ -11,7 +11,13 @@ public class ModRecipeTypes {
     public static final RecipeType<BiggerCraftingRecipe> BIGGER_CRAFTING = register("bigger_crafting");
 
     private static <T extends Recipe<?>> RecipeType<T> register(String id) {
-        return Registry.register(Registries.RECIPE_TYPE, new Identifier(MoSwords.MOD_ID, id), new RecipeType<T>() {});
+        return Registry.register(Registries.RECIPE_TYPE, new Identifier(MoSwords.MOD_ID, id), new RecipeType<T>() {
+
+            @Override
+            public String toString() {
+                return id;
+            }
+        });
     }
 
     public static void registerModRecipeTypes() {

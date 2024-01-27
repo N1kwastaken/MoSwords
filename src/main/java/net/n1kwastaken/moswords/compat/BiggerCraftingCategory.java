@@ -1,32 +1,35 @@
 package net.n1kwastaken.moswords.compat;
 
+import com.google.common.collect.Lists;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.Renderer;
+import me.shedaniel.rei.api.client.gui.widgets.Slot;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import me.shedaniel.rei.api.client.gui.widgets.Widgets;
 import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
-import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
+import me.shedaniel.rei.api.common.display.DisplayMerger;
+import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.entry.EntryStack;
+import me.shedaniel.rei.api.common.entry.InputIngredient;
 import me.shedaniel.rei.api.common.util.EntryStacks;
-import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
 import net.n1kwastaken.moswords.block.ModBlocks;
+import net.n1kwastaken.moswords.recipe.BiggerCraftingRecipe;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Iterator;
 import java.util.List;
 
-public class BiggerCraftingCategory implements DisplayCategory<BasicDisplay> {
-    public static final Identifier TEXTURE = new Identifier(MoSwords.MOD_ID, "textures/gui/container/bigger_crafting_table.png");
+public class BiggerCraftingCategory implements DisplayCategory<BiggerCraftingDisplay> {
     public static final CategoryIdentifier<BiggerCraftingDisplay> BIGGER_CRAFTING =
             CategoryIdentifier.of(MoSwords.MOD_ID, "bigger_crafting");
 
     @Override
-    public CategoryIdentifier<? extends BasicDisplay> getCategoryIdentifier() {
+    public CategoryIdentifier<BiggerCraftingDisplay> getCategoryIdentifier() {
         return BIGGER_CRAFTING;
     }
 
@@ -41,29 +44,76 @@ public class BiggerCraftingCategory implements DisplayCategory<BasicDisplay> {
     }
 
     @Override
-    public List<Widget> setupDisplay(BasicDisplay display, Rectangle bounds) {
-        final Point startPoint = new Point(bounds.getCenterX() - 87, bounds.getCenterY() - 35);
-        List<Widget> widgets = new ArrayList<>();
-        widgets.add(Widgets.createTexturedWidget(TEXTURE, new Rectangle(startPoint.x, startPoint.y, 175, 82)));
+    public List<Widget> setupDisplay(BiggerCraftingDisplay display, Rectangle bounds) {
+        final Point startPoint = new Point(bounds.getCenterX() - 58, bounds.getCenterY() - 36);
 
-        for (int i = 0; i < 4; ++i) {
-            for (int j = 0; j < 4; ++j) {
-                widgets.add(Widgets.createSlot(new Point(startPoint.x + 80 + j * 18, startPoint.y + 11 + i * 18))
-                        .entries(display.getInputEntries().get(i * 4 + j)));
+        List<Widget> widgets = new ArrayList<>();
+
+
+        widgets.add(Widgets.createRecipeBase(bounds));
+        widgets.add(Widgets.createArrow(new Point(startPoint.x + 69, startPoint.y + 27)));
+        widgets.add(Widgets.createResultSlotBackground(new Point(startPoint.x + 104, startPoint.y + 28)));
+        List<InputIngredient<EntryStack<?>>> input = display.getInputIngredients(BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT);
+        List<Slot> slots = Lists.newArrayList();
+        for (int y = 0; y < BiggerCraftingRecipe.HEIGHT; y++) {
+            for (int x = 0; x < BiggerCraftingRecipe.WIDTH; x++) {
+                slots.add(Widgets.createSlot(new Point(startPoint.x - 8 + x * 18, startPoint.y + 1 + y * 18)).markInput());
             }
         }
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 80, startPoint.y + 11))
-                .entries(display.getInputEntries().get(0)));
+        for (InputIngredient<EntryStack<?>> ingredient : input) {
+            slots.get(ingredient.getIndex()).entries(ingredient.get());
+        }
+        widgets.addAll(slots);
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 104, startPoint.y + 28)).entries(display.getOutputEntries().get(0)).disableBackground().markOutput());
+        if (display.isShapeless()) {
+            widgets.add(Widgets.createShapelessIcon(bounds));
+        }
 
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 80, startPoint.y + 59))
-                .markOutput().entries(display.getOutputEntries().get(0)));
-
-
-        return DisplayCategory.super.setupDisplay(display, bounds);
+        return widgets;
     }
 
     @Override
     public int getDisplayHeight() {
-        return 90;
+        return 84;
+    }
+
+    @Override
+    public int getDisplayWidth(BiggerCraftingDisplay display) {
+        return 168;
+    }
+
+    @Override
+    @Nullable
+    public DisplayMerger<BiggerCraftingDisplay> getDisplayMerger() {
+        return new DisplayMerger<>() {
+            @Override
+            public boolean canMerge(BiggerCraftingDisplay first, BiggerCraftingDisplay second) {
+                if (!first.getCategoryIdentifier().equals(second.getCategoryIdentifier())) return false;
+                if (!equals(first.getOrganisedInputEntries(BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT),
+                        second.getOrganisedInputEntries(BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT))) return false;
+                if (!equals(first.getOutputEntries(), second.getOutputEntries())) return false;
+                if (first.isShapeless() != second.isShapeless()) return false;
+                if (first.getWidth() != second.getWidth()) return false;
+                if (first.getHeight() != second.getHeight()) return false;
+                return true;
+            }
+
+            @Override
+            public int hashOf(BiggerCraftingDisplay display) {
+                return display.getCategoryIdentifier().hashCode() * 31 * 31 * 31 +
+                        display.getOrganisedInputEntries(BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT).hashCode() * 31 * 31 +
+                        display.getOutputEntries().hashCode();
+            }
+
+            private boolean equals(List<EntryIngredient> firstEntries, List<EntryIngredient> secondEntries) {
+                if (firstEntries.size() != secondEntries.size()) return false;
+                Iterator<EntryIngredient> firstEntriesIterator = firstEntries.iterator();
+                Iterator<EntryIngredient> secondEntriesIterator = secondEntries.iterator();
+                while (firstEntriesIterator.hasNext() && secondEntriesIterator.hasNext()) {
+                    if (!firstEntriesIterator.next().equals(secondEntriesIterator.next())) return false;
+                }
+                return true;
+            }
+        };
     }
 }

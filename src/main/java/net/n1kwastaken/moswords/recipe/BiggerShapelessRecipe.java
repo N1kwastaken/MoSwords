@@ -6,11 +6,12 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.inventory.RecipeInputInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.*;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.RecipeMatcher;
+import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
 
 public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
@@ -42,6 +43,31 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     }
 
     @Override
+    public boolean isShapeless() {
+        return true;
+    }
+
+    @Override
+    public int getWidth() {
+        return 4;
+    }
+
+    @Override
+    public int getHeight() {
+        return 4;
+    }
+
+    @Override
+    public int getInputWidth(int craftingWidth, int craftingHeight) {
+        return Math.min(this.ingredients.size(), craftingWidth);
+    }
+
+    @Override
+    public int getInputHeight(int craftingWidth, int craftingHeight) {
+        return (int) Math.ceil(this.ingredients.size() / (double) getInputWidth(craftingWidth, craftingHeight));
+    }
+
+    @Override
     public ItemStack getResult(DynamicRegistryManager registryManager) {
         return this.result;
     }
@@ -54,14 +80,14 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     @Override
     public boolean matches(RecipeInputInventory recipeInputInventory, World world) {
         RecipeMatcher recipeMatcher = new RecipeMatcher();
-        int i = 0;
-        for (int j = 0; j < recipeInputInventory.size(); ++j) {
-            ItemStack itemStack = recipeInputInventory.getStack(j);
+        int nonEmptyStacks = 0;
+        for (int slotIndex = 0; slotIndex < recipeInputInventory.size(); ++slotIndex) {
+            ItemStack itemStack = recipeInputInventory.getStack(slotIndex);
             if (itemStack.isEmpty()) continue;
-            ++i;
+            ++nonEmptyStacks;
             recipeMatcher.addInput(itemStack, 1);
         }
-        return i == this.ingredients.size() && recipeMatcher.match(this, null);
+        return nonEmptyStacks == this.ingredients.size() && recipeMatcher.match(this, null);
     }
 
     @Override
@@ -74,15 +100,10 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
         return width * height >= this.ingredients.size();
     }
 
-    @Override
-    public RecipeType<?> getType() {
-        return ModRecipeTypes.BIGGER_CRAFTING;
-    }
-
     public static class Serializer
             implements RecipeSerializer<BiggerShapelessRecipe> {
         private static final Codec<BiggerShapelessRecipe> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-                Codecs.createStrictOptionalFieldCodec(Codec.STRING, "group", "").forGetter(recipe -> recipe.group),
+                Codec.STRING.optionalFieldOf("group", "").forGetter(recipe -> recipe.group),
                 CraftingRecipeCategory.CODEC.fieldOf("category").orElse(CraftingRecipeCategory.MISC).forGetter(recipe -> recipe.category),
                 ItemStack.RECIPE_RESULT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
                 Ingredient.DISALLOW_EMPTY_CODEC.listOf().fieldOf("ingredients").flatXmap(ingredientsWithEmpty -> {
@@ -90,7 +111,7 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
                     if (ingredients.length == 0) {
                         return DataResult.error(() -> "No ingredients for shapeless recipe");
                     }
-                    if (ingredients.length > 16) {
+                    if (ingredients.length > BiggerCraftingRecipe.SIZE) {
                         return DataResult.error(() -> "Too many ingredients for shapeless recipe");
                     }
                     return DataResult.success(DefaultedList.copyOf(Ingredient.EMPTY, ingredients));
@@ -103,13 +124,13 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
 
         @Override
         public BiggerShapelessRecipe read(PacketByteBuf packetByteBuf) {
-            String string = packetByteBuf.readString();
-            CraftingRecipeCategory craftingRecipeCategory = packetByteBuf.readEnumConstant(CraftingRecipeCategory.class);
-            int i = packetByteBuf.readVarInt();
-            DefaultedList<Ingredient> defaultedList = DefaultedList.ofSize(i, Ingredient.EMPTY);
-            defaultedList.replaceAll(ignored -> Ingredient.fromPacket(packetByteBuf));
+            String group = packetByteBuf.readString();
+            CraftingRecipeCategory category = packetByteBuf.readEnumConstant(CraftingRecipeCategory.class);
+            int ingredientsLength = packetByteBuf.readVarInt();
+            DefaultedList<Ingredient> ingredients = DefaultedList.ofSize(ingredientsLength, Ingredient.EMPTY);
+            ingredients.replaceAll(ignored -> Ingredient.fromPacket(packetByteBuf));
             ItemStack itemStack = packetByteBuf.readItemStack();
-            return new BiggerShapelessRecipe(string, craftingRecipeCategory, itemStack, defaultedList);
+            return new BiggerShapelessRecipe(group, category, itemStack, ingredients);
         }
 
         @Override
