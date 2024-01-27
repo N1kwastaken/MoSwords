@@ -53,6 +53,12 @@ public class BiggerShapedRecipeJsonBuilder implements CraftingRecipeJsonBuilder 
         return this.input(c, Ingredient.fromTag(tag));
     }
 
+    public BiggerShapedRecipeJsonBuilder inputWithCriterion(Character c, TagKey<Item> tag) {
+        return this
+                .input(c, Ingredient.fromTag(tag))
+                .criterion("has_" + tag.id().toString(), RecipeProvider.conditionsFromTag(tag));
+    }
+
     public BiggerShapedRecipeJsonBuilder input(Character c, ItemConvertible itemProvider) {
         return this.input(c, Ingredient.ofItems(itemProvider));
     }
