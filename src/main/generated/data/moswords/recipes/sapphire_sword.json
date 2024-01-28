@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "moswords:sapphire"
+    }
+  },
+  "pattern": [
+    "S",
+    "S",
+    "E"
+  ],
+  "result": {
+    "item": "moswords:sapphire_sword"
+  }
+}

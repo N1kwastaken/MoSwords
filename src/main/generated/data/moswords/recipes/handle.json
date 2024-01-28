@@ -1,0 +1,27 @@
+{
+  "type": "moswords:bigger_crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:flint"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "T": {
+      "item": "moswords:titanium_ingot"
+    }
+  },
+  "pattern": [
+    "  II",
+    " SFI",
+    "TFS ",
+    "TT  "
+  ],
+  "result": {
+    "item": "moswords:handle"
+  }
+}
