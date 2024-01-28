@@ -47,9 +47,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         BiggerShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HANDLE)
                  .pattern("  II")
-                 .pattern(" SFI")
-                 .pattern("TFS ")
-                 .pattern("TT  ")
+                 .pattern(" STI")
+                 .pattern("FTS ")
+                 .pattern("FF  ")
                  .inputWithCriterion('T', ModItems.TITANIUM_INGOT)
                  .inputWithCriterion('F', Items.FLINT)
                  .inputWithCriterion('S', Items.STONE)
@@ -66,6 +66,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .inputWithCriterion('S', ModItems.SAPPHIRE_SWORD)
                 .inputWithCriterion('A', ModItems.AMETHYST_SWORD)
                 .inputWithCriterion('I', ModItems.TITANIUM_INGOT)
+                .inputWithCriterion('H', ModItems.HANDLE)
+                .offerTo(exporter);
+
+        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.BIG_RUBY_SWORD)
+                .pattern("   I")
+                .pattern(" IH ")
+                .pattern(" RI ")
+                .pattern("S   ")
+                .inputWithCriterion('R', ModItems.RUBY_SWORD)
+                .inputWithCriterion('S', Items.STICK)
+                .inputWithCriterion('I', ModItems.RUBY)
                 .inputWithCriterion('H', ModItems.HANDLE)
                 .offerTo(exporter);
 

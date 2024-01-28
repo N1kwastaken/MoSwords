@@ -17,9 +17,9 @@
   },
   "pattern": [
     "  II",
-    " SFI",
-    "TFS ",
-    "TT  "
+    " STI",
+    "FTS ",
+    "FF  "
   ],
   "result": {
     "item": "moswords:handle"

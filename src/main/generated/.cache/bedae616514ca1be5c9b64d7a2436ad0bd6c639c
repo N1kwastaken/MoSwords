@@ -1,7 +1,7 @@
-// 1.20.4	2024-01-28T13:21:21.2406397	Mo'Swords/Recipes
+// 1.20.4	2024-01-28T13:41:19.5290928	Mo'Swords/Recipes
 da8e1a4730a5e3de799edb115f0c43a06fb89f39 data\moswords\recipes\sapphire_from_blasting_raw_sapphire.json
 9223fa090d0946bdb60412427cd5daf987a05b7a data\moswords\recipes\ruby.json
-97680a8cc3051b5bdd20cd0c2af396da3eceeaf5 data\moswords\recipes\handle.json
+e83f2d40d1b7db19c43ef58a201b88610a3435a0 data\moswords\recipes\handle.json
 d18986d62f9ddb062d7c9e0a3bd762808a7a8a99 data\moswords\recipes\ruby_from_blasting_ruby_deepslate_ore.json
 55def53b74d3f3ded092da671234f74feeb7f566 data\moswords\recipes\amethyst_sword.json
 8ee54b487566bd156d2892982f34ad46918f5037 data\moswords\recipes\sapphire_from_smelting_raw_sapphire.json
@@ -19,6 +19,7 @@ c74e7599111fea3e5c895c0bbc8c2b67783d943c data\moswords\recipes\devils_eye_sword.
 7441ae12fef3680ff1cb10b066a160c5ce0f90d6 data\moswords\recipes\slime_sword.json
 b5bcf23e0c87ec38a147b7b147a40d4973cbc90b data\moswords\advancements\recipes\misc\slime_sword.json
 e9afe6c51dd6db89ff3b0f71b9e3a9911fd92ec1 data\moswords\recipes\sapphire_block.json
+16fb946168cb784aaa1358f2bb87861624186a30 data\moswords\recipes\big_ruby_sword.json
 19cd310698ac6c9078bdb139abbfadcc87370229 data\moswords\recipes\ruby_from_smelting_ruby_deepslate_ore.json
 eed13412460a7406594a7b30d001fe0fe574edac data\moswords\advancements\recipes\misc\emerald_sword.json
 208fb400679272b26c76600803c059ac331df3a9 data\moswords\advancements\recipes\misc\sapphire_from_smelting_sapphire_ore.json
@@ -36,6 +37,7 @@ e7d6f4bd09725fc47a7df64a1a46e3e6f60fa354 data\moswords\recipes\sapphire_from_sme
 e630050c6cfcc15c0d1ea47ac2fed6dfda3f632c data\moswords\advancements\recipes\building_blocks\ruby.json
 434e5fc0f79bdb39f1c2dd63a2a695dabbd08c11 data\moswords\recipes\raw_ruby.json
 923d2c5b43cbe4281efa0334c0231e1e71104fb5 data\moswords\recipes\ruby_from_smelting_raw_ruby.json
+7c57f21a0315fb29f48ac69e4f793948adf8a9c7 data\moswords\advancements\recipes\combat\big_ruby_sword.json
 7d0164bd4848bce573dc902b140388c2ea2666d7 data\moswords\advancements\recipes\combat\sapphire_sword.json
 d4774850ae7ff0bc57289864eae2420d6cdcaf53 data\moswords\advancements\recipes\misc\sapphire_from_blasting_raw_sapphire.json
 6c550a6ab8f6ab09b2ff48b691531156076a50df data\moswords\advancements\recipes\misc\raw_ruby.json

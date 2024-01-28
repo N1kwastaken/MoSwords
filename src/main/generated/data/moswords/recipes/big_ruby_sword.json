@@ -1,0 +1,27 @@
+{
+  "type": "moswords:bigger_crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": {
+      "item": "moswords:handle"
+    },
+    "I": {
+      "item": "moswords:ruby"
+    },
+    "R": {
+      "item": "moswords:ruby_sword"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "   I",
+    " IH ",
+    " RI ",
+    "S   "
+  ],
+  "result": {
+    "item": "moswords:big_ruby_sword"
+  }
+}
