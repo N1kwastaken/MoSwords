@@ -4,6 +4,7 @@
     "moswords:ruby_block",
     "moswords:sapphire_block",
     "moswords:sapphire_ore",
-    "moswords:ruby_deepslate_ore"
+    "moswords:ruby_deepslate_ore",
+    "moswords:titanium_ore"
   ]
 }

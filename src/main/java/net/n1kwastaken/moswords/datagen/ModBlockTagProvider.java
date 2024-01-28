@@ -1,5 +1,6 @@
 package net.n1kwastaken.moswords.datagen;
 
+
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryKeys;
@@ -22,7 +23,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.RUBY_BLOCK)
                 .add(ModBlocks.SAPPHIRE_BLOCK)
                 .add(ModBlocks.SAPPHIRE_ORE)
-                .add(ModBlocks.RUBY_DEEPSLATE_ORE);
+                .add(ModBlocks.RUBY_DEEPSLATE_ORE)
+                .add(ModBlocks.TITANIUM_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.RUBY_BLOCK)
@@ -31,7 +33,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.SAPPHIRE_BLOCK);
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL);
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.TITANIUM_ORE);
 
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.RUBY_DEEPSLATE_ORE);

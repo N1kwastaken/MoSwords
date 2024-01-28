@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RUBY_DEEPSLATE_ORE);
                         entries.add(ModBlocks.SAPPHIRE_ORE);
                         entries.add(ModBlocks.BIGGER_CRAFTING_TABLE);
+                        entries.add(ModBlocks.TITANIUM_ORE);
 
                         entries.add(ModItems.RUBY_SWORD);
                         entries.add(ModItems.BIG_RUBY_SWORD);
