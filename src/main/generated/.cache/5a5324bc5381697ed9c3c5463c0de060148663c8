@@ -1,12 +1,12 @@
-// 1.20.4	2024-01-27T14:58:20.7361512	Mo'Swords/Model Definitions
+// 1.20.4	2024-01-28T13:21:21.2416407	Mo'Swords/Model Definitions
 540ec655c80eefbb86b7f021a3cafef0edf144d7 assets\moswords\models\item\quadruple_sword.json
 d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deepslate_ore.json
 9e317d80e03ff0391918264cdf227352c0c1f787 assets\moswords\models\item\sapphire.json
 fcb72ee86155948fa1cf74ae510d5a7efcf8af03 assets\moswords\models\item\handle.json
 7852d9e6863d0b3afb507ef547f38f48463ac917 assets\moswords\models\block\sapphire_ore.json
 f5d1972aaf8088ff165b319f43e200fc585926dd assets\moswords\models\item\sun_sword.json
-862396bfa4cd85bef633541b9b0ec9662e833c05 assets\moswords\models\item\ruby.json
 5a8b5af7300756e3fa2cd3130eb76dd6a12159ba assets\moswords\models\item\moon_sword.json
+862396bfa4cd85bef633541b9b0ec9662e833c05 assets\moswords\models\item\ruby.json
 64d74497d942333d2314aff997f2769b8428a9ec assets\moswords\models\item\titanium_ingot.json
 43658d92904b48d732fc3a4cb2b3337ca78b644b assets\moswords\models\item\big_ruby_sword.json
 b922d13c49474b23a8a2b9772b93af01a6ef1c3d assets\moswords\blockstates\bigger_crafting_table.json
