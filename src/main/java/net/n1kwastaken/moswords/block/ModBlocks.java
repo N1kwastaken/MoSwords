@@ -23,6 +23,9 @@ public class ModBlocks {
 
     public static final Block SAPPHIRE_ORE = registerBlock("sapphire_ore", new ExperienceDroppingBlock(UniformIntProvider.create(7, 20), FabricBlockSettings.copyOf(Blocks.STONE).strength(3f)));
 
+    public static final Block TITANIUM_ORE = registerBlock("titanium_ore", new ExperienceDroppingBlock(UniformIntProvider.create(3, 10), FabricBlockSettings.copyOf(Blocks.STONE).strength(2f)));
+
+
     private static Block registerBlock(String id, Block block) {
         registerBlockItem(id, block);
         return Registry.register(Registries.BLOCK, new Identifier(MoSwords.MOD_ID, id), block);

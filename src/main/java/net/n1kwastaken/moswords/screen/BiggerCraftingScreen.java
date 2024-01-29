@@ -36,6 +36,7 @@ public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHand
         super(handler, inventory, title);
         this.backgroundHeight = 184;
         this.playerInventoryTitleY = 90;
+//        this.titleY = -3;
         this.titleX = 20;
     }
 

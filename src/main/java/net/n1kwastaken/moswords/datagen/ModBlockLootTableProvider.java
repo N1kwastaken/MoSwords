@@ -27,6 +27,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SAPPHIRE_ORE, copperLikeOreDrops(ModBlocks.SAPPHIRE_ORE, ModItems.SAPPHIRE));
         addDrop(ModBlocks.RUBY_DEEPSLATE_ORE, oneDropOnlyCopperLikeOre(ModBlocks.RUBY_DEEPSLATE_ORE, ModItems.RAW_RUBY));
         addDrop(ModBlocks.BIGGER_CRAFTING_TABLE);
+
+        addDrop(ModBlocks.TITANIUM_ORE, oneDropOnlyCopperLikeOre(ModBlocks.TITANIUM_ORE, ModItems.TITANIUM_INGOT));
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {

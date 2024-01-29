@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_handle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moswords:handle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moswords:ruby"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ruby_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moswords:ruby_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:stick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "moswords:big_ruby_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ruby_sword",
+      "has_stick",
+      "has_ruby",
+      "has_handle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "moswords:big_ruby_sword"
+    ]
+  }
+}

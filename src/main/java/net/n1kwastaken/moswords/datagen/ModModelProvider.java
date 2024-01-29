@@ -20,6 +20,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_DEEPSLATE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_ORE);
         blockStateModelGenerator.registerSimpleState(ModBlocks.BIGGER_CRAFTING_TABLE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TITANIUM_ORE);
     }
 
     @Override

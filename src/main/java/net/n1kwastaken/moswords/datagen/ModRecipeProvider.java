@@ -2,11 +2,13 @@ package net.n1kwastaken.moswords.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.datagen.server.recipe.BiggerShapedRecipeJsonBuilder;
@@ -26,16 +28,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
 
-//    public static BiggerShapelessRecipeJsonBuilder createBiggerShapelessRecipe(ItemConvertible output, ItemConvertible ... inputs) {
-//        return BiggerShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, outputCount)
-//                .inputs(input)
-//                .criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input))
-//                .offerTo(exporter, RecipeProvider.convertBetween(output, input));
-//    }
-//
-//    public static void offerBiggerShapelessRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, @Nullable String group, int outputCount) {
-//        createBiggerShapelessRecipe().offerTo(exporter, RecipeProvider.convertBetween(output, input));
-//    }
 
     @Override
     public void generate(RecipeExporter exporter) {
@@ -53,7 +45,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE, RecipeCategory.MISC,
                 ModBlocks.SAPPHIRE_BLOCK);
 
-//        offerShapelessRecipe();
+        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HANDLE)
+                 .pattern("  II")
+                 .pattern(" STI")
+                 .pattern("FTS ")
+                 .pattern("FF  ")
+                 .inputWithCriterion('T', ModItems.TITANIUM_INGOT)
+                 .inputWithCriterion('F', Items.FLINT)
+                 .inputWithCriterion('S', Items.STONE)
+                 .inputWithCriterion('I', Items.IRON_INGOT)
+                 .offerTo(exporter);
 
         BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.QUADRUPLE_SWORD)
                 .pattern("E  R")
@@ -65,6 +66,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .inputWithCriterion('S', ModItems.SAPPHIRE_SWORD)
                 .inputWithCriterion('A', ModItems.AMETHYST_SWORD)
                 .inputWithCriterion('I', ModItems.TITANIUM_INGOT)
+                .inputWithCriterion('H', ModItems.HANDLE)
+                .offerTo(exporter);
+
+        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.BIG_RUBY_SWORD)
+                .pattern("   I")
+                .pattern(" IH ")
+                .pattern(" RI ")
+                .pattern("S   ")
+                .inputWithCriterion('R', ModItems.RUBY_SWORD)
+                .inputWithCriterion('S', Items.STICK)
+                .inputWithCriterion('I', ModItems.RUBY)
                 .inputWithCriterion('H', ModItems.HANDLE)
                 .offerTo(exporter);
 
@@ -130,6 +142,52 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.AMETHYST_SWORD)));
+
+//        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BIGGER_CRAFTING_TABLE,1 )
+//              .pattern("BPPB")
+//              .pattern("ECCS")
+//              .pattern("ACCR")
+//              .pattern("BPPB")
+//              .inputWithCriterion('B', Items.BLUE_DYE)
+//              .inputWithCriterion('P', ItemTags.PLANKS)
+//              .inputWithCriterion('E', Items.EMERALD)
+//              .inputWithCriterion('A', Items.AMETHYST_SHARD)
+//              .inputWithCriterion('S', ModItems.SAPPHIRE)
+//              .inputWithCriterion('R', ModItems.RUBY)
+//              .inputWithCriterion('C', Blocks.CRAFTING_TABLE)
+//              .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.SAPPHIRE_SWORD, 1 )
+                        .pattern("S")
+                        .pattern("S")
+                        .pattern("E")
+                        .input('S', ModItems.SAPPHIRE)
+                        .input('E', Items.STICK)
+                        .criterion(hasItem(ModItems.SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE))
+                        .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                        .offerTo(exporter, new Identifier(getRecipeName(ModItems.SAPPHIRE_SWORD)));
+
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BIGGER_CRAFTING_TABLE,1 )
+        .pattern("EBS")
+        .pattern("PCP")
+        .pattern("ABR")
+        .input('B', Items.BLUE_DYE)
+        .input('P', ItemTags.PLANKS)
+        .input('E', Items.EMERALD)
+        .input('A', Items.AMETHYST_SHARD)
+        .input('S', ModItems.SAPPHIRE)
+        .input('R', ModItems.RUBY)
+        .input('C', Blocks.CRAFTING_TABLE)
+        .criterion(hasItem(ModItems.SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE))
+        .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
+        .criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
+        .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
+        .criterion(hasItem(Items.BLUE_DYE), conditionsFromItem(Items.BLUE_DYE))
+        .criterion(hasItem(Blocks.CRAFTING_TABLE), conditionsFromItem(Blocks.CRAFTING_TABLE))
+        .criterion("has_planks", conditionsFromTag(ItemTags.PLANKS))
+        .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BIGGER_CRAFTING_TABLE)));
 
     }
 }

@@ -28,6 +28,7 @@ public class MoSwordsREIClientPlugin implements REIClientPlugin {
 
     @Override
     public void registerCategories(CategoryRegistry registry) {
+//        REIClientPlugin.super.registerCategories(registry);
         registry.add(new BiggerCraftingCategory());
         registry.addWorkstations(BiggerCraftingCategory.BIGGER_CRAFTING, EntryStacks.of(ModBlocks.BIGGER_CRAFTING_TABLE));
     }
@@ -40,7 +41,8 @@ public class MoSwordsREIClientPlugin implements REIClientPlugin {
 
     @Override
     public void registerScreens(ScreenRegistry registry) {
-        registry.registerContainerClickArea(screen -> new Rectangle(97, 41, 28, 23), BiggerCraftingScreen.class, BiggerCraftingCategory.BIGGER_CRAFTING); // arrow in bigger crafting table
+//        registry.registerContainerClickArea(new Rectangle(75, 30, 20, 30), BiggerCraftingScreen.class, BiggerCraftingCategory.BIGGER_CRAFTING);
+        registry.registerContainerClickArea(screen -> new Rectangle(88 + 9, 32 + 9, 28, 23), BiggerCraftingScreen.class, BiggerCraftingCategory.BIGGER_CRAFTING); // arrow in bigger crafting table
     }
 
     @Override

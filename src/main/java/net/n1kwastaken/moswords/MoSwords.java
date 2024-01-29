@@ -9,6 +9,7 @@ import net.n1kwastaken.moswords.item.ModItems;
 import net.n1kwastaken.moswords.recipe.ModRecipeSerializers;
 import net.n1kwastaken.moswords.recipe.ModRecipeTypes;
 import net.n1kwastaken.moswords.screen.ModScreenHandlerTypes;
+import net.n1kwastaken.moswords.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,5 +27,6 @@ public class MoSwords implements ModInitializer {
 		ModScreenHandlerTypes.registerModScreenHandlerTypes();
 		ModRecipeTypes.registerModRecipeTypes();
 		ModRecipeSerializers.registerModRecipeSerializers();
+		ModWorldGeneration.generateModWorldGen();
 	}
 }
