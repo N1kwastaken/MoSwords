@@ -44,7 +44,10 @@ public class BiggerShapelessRecipeJsonBuilder implements CraftingRecipeJsonBuild
         return new BiggerShapelessRecipeJsonBuilder(category, output, count);
     }
 
-    public BiggerShapelessRecipeJsonBuilder input(TagKey<Item> ... tags) {
+    // Possible heap pollution from parameterized vararg type
+
+    @SafeVarargs
+    public final BiggerShapelessRecipeJsonBuilder input(TagKey<Item>... tags) {
         for (TagKey<Item> tag : tags) {
             this.input(Ingredient.fromTag(tag));
         }

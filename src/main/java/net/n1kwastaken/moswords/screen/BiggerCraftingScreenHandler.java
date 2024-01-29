@@ -32,6 +32,7 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
     private static final int INVENTORY_END = 44;
     private static final int HOTBAR_START = 44;
     private static final int HOTBAR_END = 53;
+    public boolean onlyBiggerRecipes = false;
     private final RecipeInputInventory input = new CraftingInventory(this, BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT);
     private final CraftingResultInventory result = new CraftingResultInventory();
     private final ScreenHandlerContext context;

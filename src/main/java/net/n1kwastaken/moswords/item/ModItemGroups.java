@@ -43,10 +43,6 @@ public class ModItemGroups {
                         entries.add(ModItems.HANDLE);
                         entries.add(ModItems.TITANIUM_INGOT);
 
-
-
-
-
                         entries.add(ModItems.DEVILS_EYE);
 
                     }).build());
