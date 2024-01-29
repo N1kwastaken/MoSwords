@@ -11,9 +11,9 @@ import net.n1kwastaken.moswords.MoSwords;
 import net.n1kwastaken.moswords.block.ModBlocks;
 
 public class ModItemGroups {
-    public static final ItemGroup RUBY_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(MoSwords.MOD_ID, "ruby"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
+    public static final ItemGroup MOSWORDS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(MoSwords.MOD_ID, "moswords"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.moswords"))
                     .icon(() -> new ItemStack(ModItems.DEVILS_EYE)).entries((displayContext, entries) -> {
                         entries.add(ModItems.RUBY);
                         entries.add(ModItems.SAPPHIRE);
@@ -41,10 +41,6 @@ public class ModItemGroups {
                         entries.add(ModItems.ACOUSTIC_GUITAR);
                         entries.add(ModItems.HANDLE);
                         entries.add(ModItems.TITANIUM_INGOT);
-
-
-
-
 
                         entries.add(ModItems.DEVILS_EYE);
 

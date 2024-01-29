@@ -1,4 +1,4 @@
-// 1.20.4	2024-01-27T18:07:16.938387	Mo'Swords/Model Definitions
+// 1.20.4	2024-01-27T19:43:28.7272887	Mo'Swords/Model Definitions
 78dd92548d96be15fa97517dff121372a4225e30 assets\moswords\blockstates\ruby_block.json
 8e97b93baf90d81de37e94b3c33102be8bc480c9 assets\moswords\models\item\devils_eye_sword.json
 b922d13c49474b23a8a2b9772b93af01a6ef1c3d assets\moswords\blockstates\bigger_crafting_table.json
@@ -10,9 +10,9 @@ d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deeps
 99de366d241b9515e3fce5e3eb2f102d1a499156 assets\moswords\blockstates\sapphire_ore.json
 f5d1972aaf8088ff165b319f43e200fc585926dd assets\moswords\models\item\sun_sword.json
 540ec655c80eefbb86b7f021a3cafef0edf144d7 assets\moswords\models\item\quadruple_sword.json
+b18b6de0f8cb5becd4fb24158381de272de2f633 assets\moswords\models\item\sapphire_block.json
 897e62cf059768eaad735e10c092dffaf38d808a assets\moswords\models\item\devils_eye.json
 844625a821f8acb4e551d680e113b585de5da128 assets\moswords\models\item\raw_ruby.json
-b18b6de0f8cb5becd4fb24158381de272de2f633 assets\moswords\models\item\sapphire_block.json
 fcb72ee86155948fa1cf74ae510d5a7efcf8af03 assets\moswords\models\item\handle.json
 f48a83645abb8020051af2c8ace54087759849e3 assets\moswords\models\item\sapphire_sword.json
 a5e603d1b8a8090e655f92433d2d0f5aa9c1e52d assets\moswords\models\item\slime_sword.json
@@ -20,13 +20,13 @@ a5e603d1b8a8090e655f92433d2d0f5aa9c1e52d assets\moswords\models\item\slime_sword
 0f195f26e15f17b3ce9a81fd6358af623411494e assets\moswords\models\item\bigger_crafting_table.json
 862396bfa4cd85bef633541b9b0ec9662e833c05 assets\moswords\models\item\ruby.json
 532712c2df62195fd527785c26b7181f0ae71a95 assets\moswords\models\item\emerald_sword.json
-8b043ccf5d8db4bc06416472a9e08a1d2ffaafd5 assets\moswords\models\item\vampire_sword.json
 5f1bc37379c433be0437c77733898b0d7ae8acad assets\moswords\blockstates\ruby_deepslate_ore.json
+8b043ccf5d8db4bc06416472a9e08a1d2ffaafd5 assets\moswords\models\item\vampire_sword.json
 58bdb6daaddaea431ad04dc1b7cce87754374f64 assets\moswords\models\item\emerald_staff.json
 43658d92904b48d732fc3a4cb2b3337ca78b644b assets\moswords\models\item\big_ruby_sword.json
 a6bb2e26a9eebb72ec898f91a2446bfbff09f051 assets\moswords\models\item\ruby_deepslate_ore.json
-bde3de95390bb9354859ceaceb18e67e7980e3b7 assets\moswords\models\item\acoustic_guitar.json
 23af15b65367279a8101a1e2a8038ed43d9d9694 assets\moswords\models\item\raw_sapphire.json
+bde3de95390bb9354859ceaceb18e67e7980e3b7 assets\moswords\models\item\acoustic_guitar.json
 2d67707eb5885148d4fd0c8d54070fe3d34187a9 assets\moswords\models\item\thin_sapphire_sword.json
 e6d018a21ebf16fd69425ab61dc86f271894a8af assets\moswords\models\block\sapphire_block.json
 0571911651c38f130b5ade10ccb6ad81deb9fa1b assets\moswords\models\item\ruby_block.json
