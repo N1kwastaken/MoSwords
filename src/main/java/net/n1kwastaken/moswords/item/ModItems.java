@@ -21,18 +21,17 @@ public class ModItems {
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
 
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
-            new SwordItem(ModToolMaterials.RUBY, 4, -1, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
-            new SwordItem(ModToolMaterials.RUBY, 10, 1.5f, new FabricItemSettings()));
-
+            new SwordItem(ModToolMaterials.RUBY, -2, -1.7f, new FabricItemSettings()));
     public static final Item SAPPHIRE_SWORD = registerItem("sapphire_sword",
-            new SwordItem(ModToolMaterials.SAPPHIRE, 7, 3, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.SAPPHIRE, 3, -1, new FabricItemSettings()));
     public static final Item EMERALD_SWORD = registerItem("emerald_sword",
-            new SwordItem(ModToolMaterials.EMERALD, 0, -1, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.EMERALD, 0, -1.5f, new FabricItemSettings()));
     public static final Item SLIME_SWORD = registerItem("slime_sword",
-            new SwordItem(ModToolMaterials.SLIME, 1, -1.5f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.SLIME, -1, 1, new FabricItemSettings()));
     public static final Item EMERALD_STAFF = registerItem("emerald_staff",
-            new SwordItem(ModToolMaterials.EMERALD, 4, -3f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.EMERALD, 9, -3f, new FabricItemSettings()));
     public static final Item ACOUSTIC_GUITAR = registerItem("acoustic_guitar",
             new SwordItem(ModToolMaterials.EMERALD, -1, -3f, new FabricItemSettings()));
 
@@ -48,13 +47,13 @@ public class ModItems {
     public static final Item SUN_SWORD = registerItem("sun_sword",
             new SwordItem(ModToolMaterials.RUBY, 30, -3, new FabricItemSettings()));
     public static final Item BIG_RUBY_SWORD = registerItem("big_ruby_sword",
-            new SwordItem(ModToolMaterials.RUBY, 23, -3, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.RUBY, 5, -3.5f, new FabricItemSettings()));
 
     public static final Item THIN_SAPPHIRE_SWORD = registerItem("thin_sapphire_sword",
-            new SwordItem(ModToolMaterials.AMETHYST, 3, 1, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.AMETHYST, 0, 1, new FabricItemSettings()));
 
     public static final Item QUADRUPLE_SWORD = registerItem("quadruple_sword",
-            new SwordItem(ModToolMaterials.EMARS, 50, -3, new FabricItemSettings()));
+            new SwordItem(ModToolMaterials.EMARS, 28, -3.2f, new FabricItemSettings()));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
