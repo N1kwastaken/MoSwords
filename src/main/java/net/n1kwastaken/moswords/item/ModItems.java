@@ -3,14 +3,13 @@ package net.n1kwastaken.moswords.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
 import net.n1kwastaken.moswords.item.custom.BatWings;
+import net.n1kwastaken.moswords.item.custom.BloodBottle;
 
 import javax.swing.*;
 
@@ -23,8 +22,7 @@ public class ModItems {
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item BAT_WINGS = registerItem("bat_wings", new BatWings(new FabricItemSettings()));
-
-
+    public static final Item BLOOD_BOTTLE = registerItem("blood_bottle", new BloodBottle());
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
@@ -37,12 +35,15 @@ public class ModItems {
             new SwordItem(ModToolMaterials.SLIME, -1, 1, new FabricItemSettings()));
     public static final Item EMERALD_STAFF = registerItem("emerald_staff",
             new SwordItem(ModToolMaterials.EMERALD, 9, -3f, new FabricItemSettings()));
-    public static final Item ACOUSTIC_GUITAR = registerItem("acoustic_guitar",
-            new SwordItem(ModToolMaterials.EMERALD, -1, -3f, new FabricItemSettings()));
-
 
     public static final Item DEVILS_EYE_SWORD = registerItem("devils_eye_sword",
             new SwordItem(ModToolMaterials.RUBY, 34, -2.5f, new FabricItemSettings()));
+    public static final Item WOODEN_DAGGER = registerItem("wooden_dagger",
+            new SwordItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
+        public static final Item BLOODY_WOODEN_DAGGER = registerItem("bloody_wooden_dagger",
+            new SwordItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
+
+
     public static final Item VAMPIRE_SWORD = registerItem("vampire_sword",
             new SwordItem(ModToolMaterials.AMETHYST, 14, 0, new FabricItemSettings()));
 
@@ -79,9 +80,9 @@ public class ModItems {
         entries.add(VAMPIRE_SWORD);
         entries.add(SLIME_SWORD);
         entries.add(EMERALD_SWORD);
-        entries.add(ACOUSTIC_GUITAR);
         entries.add(TITANIUM_INGOT);
         entries.add(BAT_WINGS);
+        entries.add(BLOOD_BOTTLE);
 
     }
 

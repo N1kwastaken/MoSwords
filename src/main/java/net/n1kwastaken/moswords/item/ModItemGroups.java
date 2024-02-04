@@ -15,9 +15,9 @@ public class ModItemGroups {
             new Identifier(MoSwords.MOD_ID, "moswords"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.moswords"))
                     .icon(() -> new ItemStack(ModItems.DEVILS_EYE)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.RUBY);
-                        entries.add(ModItems.SAPPHIRE);
-                        entries.add(ModItems.TITANIUM_INGOT);
+
+                        //Blocks
+
                         entries.add(ModBlocks.RUBY_BLOCK);
                         entries.add(ModBlocks.SAPPHIRE_BLOCK);
                         entries.add(ModItems.RAW_RUBY);
@@ -27,6 +27,17 @@ public class ModItemGroups {
                         entries.add(ModBlocks.TITANIUM_ORE);
                         entries.add(ModBlocks.BIGGER_CRAFTING_TABLE);
 
+                        //Items
+
+                        entries.add(ModItems.RUBY);
+                        entries.add(ModItems.SAPPHIRE);
+                        entries.add(ModItems.TITANIUM_INGOT);
+                        entries.add(ModItems.HANDLE);
+                        entries.add(ModItems.BAT_WINGS);
+                        entries.add(ModItems.BLOOD_BOTTLE);
+                        entries.add(ModItems.DEVILS_EYE);
+
+                        //sword
                         entries.add(ModItems.RUBY_SWORD);
                         entries.add(ModItems.BIG_RUBY_SWORD);
                         entries.add(ModItems.DEVILS_EYE_SWORD);
@@ -40,12 +51,9 @@ public class ModItemGroups {
                         entries.add(ModItems.SLIME_SWORD);
                         entries.add(ModItems.EMERALD_SWORD);
                         entries.add(ModItems.EMERALD_STAFF);
-                        entries.add(ModItems.ACOUSTIC_GUITAR);
-                        entries.add(ModItems.HANDLE);
-                        entries.add(ModItems.BAT_WINGS);
+                        entries.add(ModItems.WOODEN_DAGGER);
+                        entries.add(ModItems.BLOODY_WOODEN_DAGGER);
 
-
-                        entries.add(ModItems.DEVILS_EYE);
 
                     }).build());
 

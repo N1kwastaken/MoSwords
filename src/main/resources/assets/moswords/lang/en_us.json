@@ -17,10 +17,12 @@
   "item.moswords.slime_sword": "Slime Sword",
   "item.moswords.emerald_sword": "Emerald Sword",
   "item.moswords.emerald_staff": "Emerald Staff",
-  "item.moswords.acoustic_guitar": "Acoustic Guitar",
   "item.moswords.titanium_ingot": "Titanium Ingot",
   "item.moswords.handle": "Handle",
   "item.moswords.bat_wings": "Bat Wings",
+  "item.moswords.blood_bottle": "Blood Bottle",
+  "item.moswords.wooden_dagger": "Wooden Dagger",
+  "item.moswords.bloody_wooden_dagger": "Bloody Wooden Dagger",
 
   "tooltip.moswords.bigger_crafting_table.tooltip": "A crafting table, but bigger ",
   "tooltip.moswords.press_shift.tooltip": "Press SHIFT for more info",
