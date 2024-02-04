@@ -118,15 +118,6 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
                 }
             }
         }
-
-//        if (firstBiggerCraftingResult.isPresent()/* || firstCraftingResult.isPresent()*/) {
-//            RecipeEntry<? extends Recipe<RecipeInputInventory>> recipeEntry = /*firstBiggerCraftingResult.isPresent() ? */firstBiggerCraftingResult.get()/* : firstCraftingResult.get()*/;
-//            Recipe<RecipeInputInventory> craftingRecipe = recipeEntry.value();
-//            ItemStack recipeOutput;
-//            if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, recipeEntry) && (recipeOutput = craftingRecipe.craft(craftingInventory, world.getRegistryManager())).isItemEnabled(world.getEnabledFeatures())) {
-//                resultStack = recipeOutput;
-//            }
-//        }
         resultInventory.setStack(RESULT_ID, resultStack);
         handler.setPreviousTrackedSlot(RESULT_ID, resultStack);
         serverPlayerEntity.networkHandler.sendPacket(new ScreenHandlerSlotUpdateS2CPacket(handler.syncId, handler.nextRevision(), RESULT_ID, resultStack));

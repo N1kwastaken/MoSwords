@@ -3,15 +3,16 @@ package net.n1kwastaken.moswords.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
-import net.n1kwastaken.moswords.item.custom.BatWings;
-import net.n1kwastaken.moswords.item.custom.BloodBottle;
-
-import javax.swing.*;
+import net.n1kwastaken.moswords.item.custom.BatWingsItem;
+import net.n1kwastaken.moswords.item.custom.BloodBottleItem;
+import net.n1kwastaken.moswords.item.custom.WoodenDaggerItem;
 
 public class ModItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
@@ -21,8 +22,13 @@ public class ModItems {
     public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
-    public static final Item BAT_WINGS = registerItem("bat_wings", new BatWings(new FabricItemSettings()));
-    public static final Item BLOOD_BOTTLE = registerItem("blood_bottle", new BloodBottle());
+    public static final Item BAT_WINGS = registerItem("bat_wings", new BatWingsItem(new FabricItemSettings()));
+    public static final Item BLOOD_BOTTLE = registerItem("blood_bottle", new BloodBottleItem(new FabricItemSettings().food(new FoodComponent.Builder()
+            .hunger(1)
+            .saturationModifier(0.1f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 25 * 20), 0.8f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 10 * 20), 1.0f)
+            .build())));
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
@@ -39,8 +45,8 @@ public class ModItems {
     public static final Item DEVILS_EYE_SWORD = registerItem("devils_eye_sword",
             new SwordItem(ModToolMaterials.RUBY, 34, -2.5f, new FabricItemSettings()));
     public static final Item WOODEN_DAGGER = registerItem("wooden_dagger",
-            new SwordItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
-        public static final Item BLOODY_WOODEN_DAGGER = registerItem("bloody_wooden_dagger",
+            new WoodenDaggerItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
+    public static final Item BLOODY_WOODEN_DAGGER = registerItem("bloody_wooden_dagger",
             new SwordItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
 
 

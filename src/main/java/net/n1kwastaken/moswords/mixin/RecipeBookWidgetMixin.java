@@ -1,5 +1,6 @@
 package net.n1kwastaken.moswords.mixin;
 
+import com.llamalad7.mixinextras.sugar.Local;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.recipebook.RecipeBookWidget;
@@ -16,7 +17,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +28,8 @@ public abstract class RecipeBookWidgetMixin {
     @Shadow @Final private RecipeMatcher recipeFinder;
     @Shadow private ClientRecipeBook recipeBook;
 
-    @Inject(method = "refreshResults", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/recipebook/RecipeBookResults;setResults(Ljava/util/List;Z)V"), locals = LocalCapture.CAPTURE_FAILHARD)
-    private void onRefreshResults(boolean resetCurrentPage, CallbackInfo ci, List<RecipeResultCollection> immutableRecipes,
-                                  List<RecipeResultCollection> recipes, String searchText) {
+    @Inject(method = "refreshResults", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/recipebook/RecipeBookResults;setResults(Ljava/util/List;Z)V"))
+    private void onRefreshResults(boolean resetCurrentPage, CallbackInfo ci, @Local(name = "list2") List<RecipeResultCollection> recipes) {
         if (this.craftingScreenHandler instanceof BiggerCraftingScreenHandler biggerCraftingScreenHandler &&
                 biggerCraftingScreenHandler.onlyBiggerRecipes) {
             recipes.replaceAll(resultCollection -> {

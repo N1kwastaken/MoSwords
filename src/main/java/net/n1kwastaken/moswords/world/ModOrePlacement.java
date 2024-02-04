@@ -16,12 +16,4 @@ public class ModOrePlacement {
     public static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
         return modifiers(RarityFilterPlacementModifier.of(chance), heightModifier);
     }
-
-
-
-
-
-
-
-
 }

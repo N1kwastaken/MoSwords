@@ -49,7 +49,6 @@ public class BiggerCraftingCategory implements DisplayCategory<BiggerCraftingDis
 
         List<Widget> widgets = new ArrayList<>();
 
-
         widgets.add(Widgets.createRecipeBase(bounds));
         widgets.add(Widgets.createArrow(new Point(startPoint.x + 69, startPoint.y + 27)));
         widgets.add(Widgets.createResultSlotBackground(new Point(startPoint.x + 104, startPoint.y + 28)));

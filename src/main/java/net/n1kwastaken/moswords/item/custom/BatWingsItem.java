@@ -11,8 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class BatWings extends Item {
-    public BatWings(Settings settings) {
+public class BatWingsItem extends Item {
+    public BatWingsItem(Settings settings) {
         super(settings);
     }
 

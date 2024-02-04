@@ -36,7 +36,6 @@ public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHand
         super(handler, inventory, title);
         this.backgroundHeight = 184;
         this.playerInventoryTitleY = 90;
-//        this.titleY = -3;
         this.titleX = 20;
     }
 
@@ -52,12 +51,9 @@ public class BiggerCraftingScreen extends HandledScreen<BiggerCraftingScreenHand
             this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
             button.setPosition(this.x + 131, this.height / 2 - 79);
         }));
-//        this.toggleOnlyBiggerRecipesButton.setvisible
         this.toggleOnlyBiggerRecipesButton = new ToggleButtonWidget((this.width - 147) / 2 + 24, (this.height - 166) / 2 + 137, 27, 17, false);
         this.toggleOnlyBiggerRecipesButton.setTextures(BIGGER_ONLY_FILTER_BUTTON_TEXTURES);
-        if (!this.recipeBook.isOpen()) {
-            this.toggleOnlyBiggerRecipesButton.visible = false;
-        }
+        this.toggleOnlyBiggerRecipesButton.visible = this.recipeBook.isOpen();
         this.updateToggleBiggerRecipesTooltip();
 
         this.addDrawableChild(this.toggleOnlyBiggerRecipesButton);

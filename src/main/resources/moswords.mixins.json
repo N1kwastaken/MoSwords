@@ -5,8 +5,7 @@
   "mixins": [
     "RecipeGridAlignerMixin",
     "SweepingEnchantmentMixin",
-    "DamageEnchantmentMixin",
-    "VillagerEntityMixin"
+    "DamageEnchantmentMixin"
   ],
   "injectors": {
     "defaultRequire": 1
