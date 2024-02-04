@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "moswords:amethyst_sword"
+    },
+    "B": {
+      "item": "moswords:blood_bottle"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "moswords:bat_wings"
+    }
+  },
+  "pattern": [
+    " A ",
+    "WBW",
+    " S "
+  ],
+  "result": {
+    "item": "moswords:vampire_sword"
+  }
+}

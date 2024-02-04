@@ -80,6 +80,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .inputWithCriterion('H', ModItems.HANDLE)
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPIRE_SWORD, 1)
+                 .pattern(" A ")
+                 .pattern("WBW")
+                 .pattern(" S ")
+                 .input('A', ModItems.AMETHYST_SWORD)
+                 .input('B', ModItems.BLOOD_BOTTLE)
+                 .input('W', ModItems.BAT_WINGS)
+                 .input('S', Items.STICK)
+                 .criterion(hasItem( ModItems.AMETHYST_SWORD), conditionsFromItem( ModItems.AMETHYST_SWORD))
+                 .criterion(hasItem( ModItems.BLOOD_BOTTLE), conditionsFromItem( ModItems.BLOOD_BOTTLE))
+                 .criterion(hasItem( ModItems.BAT_WINGS), conditionsFromItem( ModItems.BAT_WINGS))
+                 .criterion(hasItem( Items.STICK), conditionsFromItem( Items.STICK))
+                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPIRE_SWORD)));
+
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_RUBY, 1)
                 .pattern("SSS")
