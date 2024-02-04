@@ -10,6 +10,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
+import net.n1kwastaken.moswords.item.custom.BatWings;
 
 import javax.swing.*;
 
@@ -21,7 +22,7 @@ public class ModItems {
     public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
-    public static final Item BAT_WINGS = registerItem("bat_wings", new Item(new FabricItemSettings()));
+    public static final Item BAT_WINGS = registerItem("bat_wings", new BatWings(new FabricItemSettings()));
 
 
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
