@@ -20,6 +20,10 @@
   "item.moswords.acoustic_guitar": "Acoustic Guitar",
   "item.moswords.titanium_ingot": "Titanium Ingot",
   "item.moswords.handle": "Handle",
+  "item.moswords.bat_wings": "Bat Wings",
+
+  "tooltip.moswords.bigger_crafting_table.tooltip": "A crafting table, but bigger ",
+  "tooltip.moswords.press_shift.tooltip": "Press SHIFT for more info",
 
   "block.moswords.sapphire_ore": "Sapphire Ore",
   "block.moswords.titanium_ore": "Titanium Ore",

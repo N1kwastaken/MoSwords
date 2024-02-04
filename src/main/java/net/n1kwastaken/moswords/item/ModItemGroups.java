@@ -42,6 +42,7 @@ public class ModItemGroups {
                         entries.add(ModItems.EMERALD_STAFF);
                         entries.add(ModItems.ACOUSTIC_GUITAR);
                         entries.add(ModItems.HANDLE);
+                        entries.add(ModItems.BAT_WINGS);
 
 
                         entries.add(ModItems.DEVILS_EYE);

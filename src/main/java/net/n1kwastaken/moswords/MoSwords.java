@@ -1,6 +1,9 @@
 package net.n1kwastaken.moswords;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.loot.LootTables;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.block.entity.ModBlockEntities;
 import net.n1kwastaken.moswords.enchantment.ModEnchantments;
@@ -15,6 +18,7 @@ import org.slf4j.LoggerFactory;
 
 public class MoSwords implements ModInitializer {
 	public static final String MOD_ID = "moswords";
+
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
@@ -28,5 +32,6 @@ public class MoSwords implements ModInitializer {
 		ModRecipeTypes.registerModRecipeTypes();
 		ModRecipeSerializers.registerModRecipeSerializers();
 		ModWorldGeneration.generateModWorldGen();
+
 	}
 }

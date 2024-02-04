@@ -11,6 +11,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
 
+import javax.swing.*;
+
 public class ModItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item RAW_RUBY = registerItem("raw_ruby", new Item(new FabricItemSettings()));
@@ -19,6 +21,8 @@ public class ModItems {
     public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
+    public static final Item BAT_WINGS = registerItem("bat_wings", new Item(new FabricItemSettings()));
+
 
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
@@ -76,6 +80,7 @@ public class ModItems {
         entries.add(EMERALD_SWORD);
         entries.add(ACOUSTIC_GUITAR);
         entries.add(TITANIUM_INGOT);
+        entries.add(BAT_WINGS);
 
     }
 

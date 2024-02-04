@@ -1,5 +1,6 @@
 package net.n1kwastaken.moswords.datagen;
 
+import com.ibm.icu.text.Normalizer2;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -46,6 +47,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.EMERALD_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.EMERALD_STAFF, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ACOUSTIC_GUITAR, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BAT_WINGS, Models.GENERATED);
     }
 }
 
