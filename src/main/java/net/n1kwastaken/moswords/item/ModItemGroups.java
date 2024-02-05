@@ -53,6 +53,7 @@ public class ModItemGroups {
                         entries.add(ModItems.EMERALD_STAFF);
                         entries.add(ModItems.WOODEN_DAGGER);
                         entries.add(ModItems.BLOODY_WOODEN_DAGGER);
+                        entries.add(ModItems.MERCURY_BOOTS);
 
 
                     }).build());

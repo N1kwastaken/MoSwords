@@ -3,6 +3,7 @@ package net.n1kwastaken.moswords.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -10,10 +11,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
-import net.n1kwastaken.moswords.item.custom.BatWingsItem;
-import net.n1kwastaken.moswords.item.custom.BloodBottleItem;
-import net.n1kwastaken.moswords.item.custom.LifeStealSwordItem;
-import net.n1kwastaken.moswords.item.custom.WoodenDaggerItem;
+import net.n1kwastaken.moswords.item.custom.*;
 
 public class ModItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
@@ -30,6 +28,9 @@ public class ModItems {
             .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 25 * 20), 0.8f)
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 10 * 20), 1.0f)
             .build())));
+
+
+    public static final MercuryBoots MERCURY_BOOTS = new MercuryBoots(ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new FabricItemSettings());
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
@@ -91,6 +92,7 @@ public class ModItems {
         entries.add(TITANIUM_INGOT);
         entries.add(BAT_WINGS);
         entries.add(BLOOD_BOTTLE);
+        entries.add(MERCURY_BOOTS);
 
     }
 
