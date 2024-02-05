@@ -3,7 +3,6 @@ package net.n1kwastaken.moswords.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -30,9 +29,8 @@ public class ModItems {
             .build())));
 
 
-
     public static final Item MERCURY_BOOTS = registerItem("mercury_boots",
-            new MercuryBoots(ArmorMaterials.IRON,  ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new MercuryBootsItem(ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
