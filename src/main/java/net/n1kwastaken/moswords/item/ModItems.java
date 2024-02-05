@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
 import net.n1kwastaken.moswords.item.custom.BatWingsItem;
 import net.n1kwastaken.moswords.item.custom.BloodBottleItem;
+import net.n1kwastaken.moswords.item.custom.LifeStealSwordItem;
 import net.n1kwastaken.moswords.item.custom.WoodenDaggerItem;
 
 public class ModItems {
@@ -51,7 +52,8 @@ public class ModItems {
 
 
     public static final Item VAMPIRE_SWORD = registerItem("vampire_sword",
-            new SwordItem(ModToolMaterials.AMETHYST, 14, 0, new FabricItemSettings()));
+            new LifeStealSwordItem(ModToolMaterials.AMETHYST, 5, 0, new FabricItemSettings()));
+
 
     public static final Item MOON_SWORD = registerItem("moon_sword",
             new SwordItem(ModToolMaterials.SAPPHIRE, 15, 2, new FabricItemSettings()));
