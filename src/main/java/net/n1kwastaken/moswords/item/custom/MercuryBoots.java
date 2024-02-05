@@ -18,11 +18,10 @@ public class MercuryBoots extends ArmorItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (entity instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) entity;
+        if (entity instanceof PlayerEntity player) {
             if (player.getEquippedStack(EquipmentSlot.FEET).equals(stack)) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 20*60*5, 0)); // Resistência ao fogo por 5 minutos
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20*60*5, 0)); // Aumento de velocidade por 5 minutos
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 20*10, 0)); // Resistência ao fogo por 5 minutos
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20*10, 0)); // Aumento de velocidade por 5 minutos
             }
         }
     }
