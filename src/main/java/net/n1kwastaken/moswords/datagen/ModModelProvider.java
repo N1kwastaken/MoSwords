@@ -1,12 +1,9 @@
 package net.n1kwastaken.moswords.datagen;
 
-import com.ibm.icu.text.Normalizer2;
-import dev.architectury.platform.Mod;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.item.ModItems;
