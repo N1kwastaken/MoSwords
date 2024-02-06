@@ -28,5 +28,6 @@ public class MoSwords implements ModInitializer {
 		ModRecipeTypes.registerModRecipeTypes();
 		ModRecipeSerializers.registerModRecipeSerializers();
 		ModWorldGeneration.generateModWorldGen();
+
 	}
 }

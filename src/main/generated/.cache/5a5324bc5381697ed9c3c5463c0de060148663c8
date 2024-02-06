@@ -1,4 +1,4 @@
-// 1.20.4	2024-02-04T18:35:40.426621	Mo'Swords/Model Definitions
+// 1.20.4	2024-02-06T14:36:40.0652531	Mo'Swords/Model Definitions
 540ec655c80eefbb86b7f021a3cafef0edf144d7 assets\moswords\models\item\quadruple_sword.json
 d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deepslate_ore.json
 69a42f44b8d708b719665a6313ad097e076ac776 assets\moswords\models\item\bloody_wooden_dagger.json
@@ -19,19 +19,20 @@ a5e603d1b8a8090e655f92433d2d0f5aa9c1e52d assets\moswords\models\item\slime_sword
 a6bb2e26a9eebb72ec898f91a2446bfbff09f051 assets\moswords\models\item\ruby_deepslate_ore.json
 23af15b65367279a8101a1e2a8038ed43d9d9694 assets\moswords\models\item\raw_sapphire.json
 22e6cdbdc53e03533a0eb081ad273bd882d150ef assets\moswords\models\item\sapphire_ore.json
-2d67707eb5885148d4fd0c8d54070fe3d34187a9 assets\moswords\models\item\thin_sapphire_sword.json
 8e97b93baf90d81de37e94b3c33102be8bc480c9 assets\moswords\models\item\devils_eye_sword.json
+2d67707eb5885148d4fd0c8d54070fe3d34187a9 assets\moswords\models\item\thin_sapphire_sword.json
 625fea9a4812604ae44ab7ed4540eb5446169a45 assets\moswords\blockstates\titanium_ore.json
 b18b6de0f8cb5becd4fb24158381de272de2f633 assets\moswords\models\item\sapphire_block.json
 897e62cf059768eaad735e10c092dffaf38d808a assets\moswords\models\item\devils_eye.json
+591660dddea30e4fd66ec842399936ed64a66d64 assets\moswords\models\item\mercury_boots.json
 0f195f26e15f17b3ce9a81fd6358af623411494e assets\moswords\models\item\bigger_crafting_table.json
 f48a83645abb8020051af2c8ace54087759849e3 assets\moswords\models\item\sapphire_sword.json
 9ba128ebc2f63ceaba8617afc87a803fc7c27060 assets\moswords\models\item\ruby_sword.json
 844625a821f8acb4e551d680e113b585de5da128 assets\moswords\models\item\raw_ruby.json
 8b72efe4fc8a00ccc7462e4787dc41a3d6cd559f assets\moswords\models\item\blood_bottle.json
 9b9f4fc80d47868211f565e4202aef4046f86ef0 assets\moswords\models\block\titanium_ore.json
-a2e58cfce56f55dcba184e16617e8a092270e09e assets\moswords\models\item\titanium_ore.json
 840e9b187469d9c0c679fd7a6b66b47f13d937e0 assets\moswords\models\item\wooden_dagger.json
+a2e58cfce56f55dcba184e16617e8a092270e09e assets\moswords\models\item\titanium_ore.json
 e6d018a21ebf16fd69425ab61dc86f271894a8af assets\moswords\models\block\sapphire_block.json
 8f4288c50276c7c25f8e82bf1aee50e41873c8b9 assets\moswords\models\block\ruby_block.json
 c6bf8847d73f0d32abd2644e7ff25b384eff24e9 assets\moswords\blockstates\sapphire_block.json

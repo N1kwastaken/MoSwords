@@ -30,7 +30,7 @@ public class ModItems {
 
 
     public static final Item MERCURY_BOOTS = registerItem("mercury_boots",
-            new MercuryBootsItem(ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new MercuryBootsItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
