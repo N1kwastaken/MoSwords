@@ -22,7 +22,6 @@ public class ModItems {
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item BAT_WINGS = registerItem("bat_wings", new BatWingsItem(new FabricItemSettings()));
 
-    public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new TridentItem(new FabricItemSettings()));
     public static final Item BLOOD_BOTTLE = registerItem("blood_bottle", new BloodBottleItem(new FabricItemSettings().food(new FoodComponent.Builder()
             .hunger(1)
             .saturationModifier(0.1f)
@@ -71,6 +70,11 @@ public class ModItems {
     public static final Item QUADRUPLE_SWORD = registerItem("quadruple_sword",
             new SwordItem(ModToolMaterials.EMARS, 28, -3.2f, new FabricItemSettings()));
 
+    //LOL
+    public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new SorcerersShoes(new FabricItemSettings().maxCount(1)));
+
+    public static final Item BERSERKERS_GREAVES = registerItem("berserkers_greaves", new BerserkersGreaves(new FabricItemSettings().maxCount(1)));
+    public static final Item PLATED_STEEELCAPS = registerItem("plated_steelcaps", new PlatedSteelcaps(new FabricItemSettings().maxCount(1)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);
@@ -93,6 +97,9 @@ public class ModItems {
         entries.add(TITANIUM_INGOT);
         entries.add(BAT_WINGS);
         entries.add(BLOOD_BOTTLE);
+        entries.add(SORCERERS_SHOES);
+        entries.add(BERSERKERS_GREAVES);
+        entries.add(PLATED_STEEELCAPS);
 
     }
 

@@ -1,4 +1,4 @@
-// 1.20.4	2024-02-06T14:36:40.0652531	Mo'Swords/Model Definitions
+// 1.20.4	2024-02-12T17:47:35.2256861	Mo'Swords/Model Definitions
 540ec655c80eefbb86b7f021a3cafef0edf144d7 assets\moswords\models\item\quadruple_sword.json
 d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deepslate_ore.json
 69a42f44b8d708b719665a6313ad097e076ac776 assets\moswords\models\item\bloody_wooden_dagger.json
@@ -12,19 +12,21 @@ f5d1972aaf8088ff165b319f43e200fc585926dd assets\moswords\models\item\sun_sword.j
 43658d92904b48d732fc3a4cb2b3337ca78b644b assets\moswords\models\item\big_ruby_sword.json
 57bf6120e91c6a4063abd1094871931fb2fdcdfe assets\moswords\models\item\bat_wings.json
 b922d13c49474b23a8a2b9772b93af01a6ef1c3d assets\moswords\blockstates\bigger_crafting_table.json
+4547ad361341e01587395395a9b149e0c3b72188 assets\moswords\models\item\sorcerers_shoes.json
 5f1bc37379c433be0437c77733898b0d7ae8acad assets\moswords\blockstates\ruby_deepslate_ore.json
 a5e603d1b8a8090e655f92433d2d0f5aa9c1e52d assets\moswords\models\item\slime_sword.json
 8b043ccf5d8db4bc06416472a9e08a1d2ffaafd5 assets\moswords\models\item\vampire_sword.json
 78dd92548d96be15fa97517dff121372a4225e30 assets\moswords\blockstates\ruby_block.json
 a6bb2e26a9eebb72ec898f91a2446bfbff09f051 assets\moswords\models\item\ruby_deepslate_ore.json
+a71049da786a44823b51577d87c37e0d5f37be0c assets\moswords\models\item\berserkers_greaves.json
 23af15b65367279a8101a1e2a8038ed43d9d9694 assets\moswords\models\item\raw_sapphire.json
 22e6cdbdc53e03533a0eb081ad273bd882d150ef assets\moswords\models\item\sapphire_ore.json
+b6188dbbe1799b6c98159c9ce0ded2935e0e2f70 assets\moswords\models\item\plated_steelcaps.json
 8e97b93baf90d81de37e94b3c33102be8bc480c9 assets\moswords\models\item\devils_eye_sword.json
 2d67707eb5885148d4fd0c8d54070fe3d34187a9 assets\moswords\models\item\thin_sapphire_sword.json
 625fea9a4812604ae44ab7ed4540eb5446169a45 assets\moswords\blockstates\titanium_ore.json
 b18b6de0f8cb5becd4fb24158381de272de2f633 assets\moswords\models\item\sapphire_block.json
 897e62cf059768eaad735e10c092dffaf38d808a assets\moswords\models\item\devils_eye.json
-591660dddea30e4fd66ec842399936ed64a66d64 assets\moswords\models\item\mercury_boots.json
 0f195f26e15f17b3ce9a81fd6358af623411494e assets\moswords\models\item\bigger_crafting_table.json
 f48a83645abb8020051af2c8ace54087759849e3 assets\moswords\models\item\sapphire_sword.json
 9ba128ebc2f63ceaba8617afc87a803fc7c27060 assets\moswords\models\item\ruby_sword.json

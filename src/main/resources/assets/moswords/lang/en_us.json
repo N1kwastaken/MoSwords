@@ -23,7 +23,9 @@
   "item.moswords.blood_bottle": "Blood Bottle",
   "item.moswords.wooden_dagger": "Wooden Dagger",
   "item.moswords.bloody_wooden_dagger": "Bloody Wooden Dagger",
-  "item.moswords.sorcerers_shoes": "Sorcerers Shoes",
+  "item.moswords.sorcerers_shoes": "Sorcerer's Shoes",
+  "item.moswords.berserkers_greaves": "Berserker's Greaves",
+  "item.moswords.plated_steelcaps": "Plated Steelcaps",
 
   "tooltip.moswords.bigger_crafting_table.tooltip": "A crafting table, but bigger ",
   "tooltip.moswords.press_shift.tooltip": "Press SHIFT for more info",
