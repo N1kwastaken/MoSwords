@@ -21,6 +21,8 @@ public class ModItems {
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item BAT_WINGS = registerItem("bat_wings", new BatWingsItem(new FabricItemSettings()));
+
+    public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new TridentItem(new FabricItemSettings()));
     public static final Item BLOOD_BOTTLE = registerItem("blood_bottle", new BloodBottleItem(new FabricItemSettings().food(new FoodComponent.Builder()
             .hunger(1)
             .saturationModifier(0.1f)
@@ -48,6 +50,7 @@ public class ModItems {
             new WoodenDaggerItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
     public static final Item BLOODY_WOODEN_DAGGER = registerItem("bloody_wooden_dagger",
             new SwordItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
+
 
 
     public static final Item VAMPIRE_SWORD = registerItem("vampire_sword",
