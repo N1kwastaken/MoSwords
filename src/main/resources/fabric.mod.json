@@ -5,7 +5,7 @@
 	"name": "Mo'Swords",
 	"description": "Wanna more swords? we got ya!",
 	"authors": [
-		"N1k, Hollow, Playduuh, and the greatest, 7410!"
+		"N1k, and the greatest, 7410!"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -36,7 +36,7 @@
 		"minecraft": "~1.20.4",
 		"java": ">=17",
 		"fabric-api": "*",
-		"geckolib": ">=4.4.2"
+		"trinkets": ">=3.8.0"
 	},
 	"suggests": {
 		"another-mod": "*"
