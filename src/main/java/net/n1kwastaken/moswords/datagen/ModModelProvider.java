@@ -52,6 +52,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SORCERERS_SHOES, Models.GENERATED);
         itemModelGenerator.register(ModItems.BERSERKERS_GREAVES, Models.GENERATED);
         itemModelGenerator.register(ModItems.PLATED_STEEELCAPS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MERCURY_TREADS, Models.GENERATED);
 
     }
 }

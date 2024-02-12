@@ -39,6 +39,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SORCERERS_SHOES);
                         entries.add(ModItems.BERSERKERS_GREAVES);
                         entries.add(ModItems.PLATED_STEEELCAPS);
+                        entries.add(ModItems.MERCURY_TREADS);
 
                         //sword
                         entries.add(ModItems.RUBY_SWORD);

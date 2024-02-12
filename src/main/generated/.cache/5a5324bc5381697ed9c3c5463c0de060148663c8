@@ -1,9 +1,10 @@
-// 1.20.4	2024-02-12T17:47:35.2256861	Mo'Swords/Model Definitions
+// 1.20.4	2024-02-12T19:01:04.7338568	Mo'Swords/Model Definitions
 540ec655c80eefbb86b7f021a3cafef0edf144d7 assets\moswords\models\item\quadruple_sword.json
 d3b6e098e32da7cddfa41aee3fdc0ae5d2e02191 assets\moswords\models\block\ruby_deepslate_ore.json
 69a42f44b8d708b719665a6313ad097e076ac776 assets\moswords\models\item\bloody_wooden_dagger.json
 9e317d80e03ff0391918264cdf227352c0c1f787 assets\moswords\models\item\sapphire.json
 fcb72ee86155948fa1cf74ae510d5a7efcf8af03 assets\moswords\models\item\handle.json
+694f485be02e141fba890a6e702e6767c4fb9e7b assets\moswords\models\item\mercury_tread.json
 7852d9e6863d0b3afb507ef547f38f48463ac917 assets\moswords\models\block\sapphire_ore.json
 f5d1972aaf8088ff165b319f43e200fc585926dd assets\moswords\models\item\sun_sword.json
 5a8b5af7300756e3fa2cd3130eb76dd6a12159ba assets\moswords\models\item\moon_sword.json
@@ -20,8 +21,8 @@ a5e603d1b8a8090e655f92433d2d0f5aa9c1e52d assets\moswords\models\item\slime_sword
 a6bb2e26a9eebb72ec898f91a2446bfbff09f051 assets\moswords\models\item\ruby_deepslate_ore.json
 a71049da786a44823b51577d87c37e0d5f37be0c assets\moswords\models\item\berserkers_greaves.json
 23af15b65367279a8101a1e2a8038ed43d9d9694 assets\moswords\models\item\raw_sapphire.json
-22e6cdbdc53e03533a0eb081ad273bd882d150ef assets\moswords\models\item\sapphire_ore.json
 b6188dbbe1799b6c98159c9ce0ded2935e0e2f70 assets\moswords\models\item\plated_steelcaps.json
+22e6cdbdc53e03533a0eb081ad273bd882d150ef assets\moswords\models\item\sapphire_ore.json
 8e97b93baf90d81de37e94b3c33102be8bc480c9 assets\moswords\models\item\devils_eye_sword.json
 2d67707eb5885148d4fd0c8d54070fe3d34187a9 assets\moswords\models\item\thin_sapphire_sword.json
 625fea9a4812604ae44ab7ed4540eb5446169a45 assets\moswords\blockstates\titanium_ore.json
