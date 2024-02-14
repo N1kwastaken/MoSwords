@@ -40,6 +40,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BERSERKERS_GREAVES);
                         entries.add(ModItems.PLATED_STEEELCAPS);
                         entries.add(ModItems.MERCURY_TREADS);
+                        entries.add(ModItems.ICEBORN_GAUNTLET);
 
                         //sword
                         entries.add(ModItems.RUBY_SWORD);

@@ -76,6 +76,7 @@ public class ModItems {
     public static final Item BERSERKERS_GREAVES = registerItem("berserkers_greaves", new BerserkersGreaves(new FabricItemSettings().maxCount(1)));
     public static final Item PLATED_STEEELCAPS = registerItem("plated_steelcaps", new PlatedSteelcaps(new FabricItemSettings().maxCount(1)));
     public static final Item MERCURY_TREADS = registerItem("mercury_treads", new MercuryTreads(new FabricItemSettings().maxCount(1)));
+    public static final Item ICEBORN_GAUNTLET = registerItem("iceborn_gauntlet", new IcebornGauntlet(new FabricItemSettings().maxCount(1)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);
@@ -102,6 +103,7 @@ public class ModItems {
         entries.add(BERSERKERS_GREAVES);
         entries.add(PLATED_STEEELCAPS);
         entries.add(MERCURY_TREADS);
+        entries.add(ICEBORN_GAUNTLET);
 
     }
 
