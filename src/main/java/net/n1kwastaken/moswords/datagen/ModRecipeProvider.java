@@ -54,7 +54,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                  .inputWithCriterion('F', Items.FLINT)
                  .inputWithCriterion('S', Items.STONE)
                  .inputWithCriterion('I', Items.IRON_INGOT)
-                 .offerTo(exporter);
+                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANDLE)));
 
         BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.QUADRUPLE_SWORD)
                 .pattern("E  R")
@@ -67,7 +67,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .inputWithCriterion('A', ModItems.AMETHYST_SWORD)
                 .inputWithCriterion('I', ModItems.TITANIUM_INGOT)
                 .inputWithCriterion('H', ModItems.HANDLE)
-                .offerTo(exporter);
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.QUADRUPLE_SWORD)));
 
         BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.BIG_RUBY_SWORD)
                 .pattern("   I")
@@ -78,7 +78,30 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .inputWithCriterion('S', Items.STICK)
                 .inputWithCriterion('I', ModItems.RUBY)
                 .inputWithCriterion('H', ModItems.HANDLE)
-                .offerTo(exporter);
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BIG_RUBY_SWORD)));
+
+        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.EMERALD_STAFF)
+                .pattern("   E")
+                .pattern(" HS ")
+                .pattern(" SH ")
+                .pattern("E   ")
+                .inputWithCriterion('E', Items.EMERALD)
+                .inputWithCriterion('S', Items.STICK)
+                .inputWithCriterion('H', ModItems.HANDLE)
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.EMERALD_STAFF)));
+
+        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.THIN_SAPPHIRE_SWORD)
+                .pattern("   S")
+                .pattern(" WS ")
+                .pattern(" SH ")
+                .pattern("M   ")
+                .inputWithCriterion('M', Items.STICK)
+                .inputWithCriterion('S', ModItems.SAPPHIRE)
+                .inputWithCriterion('W', ModItems.SAPPHIRE_SWORD)
+                .inputWithCriterion('H', ModItems.HANDLE)
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.THIN_SAPPHIRE_SWORD)));
+
+        // normal crafting
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPIRE_SWORD, 1)
                  .pattern(" A ")
@@ -156,6 +179,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.AMETHYST_SWORD)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODEN_DAGGER, 1)
+                .pattern("  F")
+                .pattern(" T ")
+                .pattern("S  ")
+                .input('S', Items.STICK)
+                .input('F', Items.FLINT)
+                .input('T', ModItems.TITANIUM_INGOT)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
+                .criterion(hasItem(ModItems.TITANIUM_INGOT), conditionsFromItem(ModItems. TITANIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODEN_DAGGER)));
 
 //        BiggerShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BIGGER_CRAFTING_TABLE,1 )
 //              .pattern("BPPB")

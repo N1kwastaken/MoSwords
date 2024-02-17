@@ -1,0 +1,24 @@
+{
+  "type": "moswords:bigger_crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "H": {
+      "item": "moswords:handle"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "   E",
+    " HS ",
+    " SH ",
+    "E   "
+  ],
+  "result": {
+    "item": "moswords:emerald_staff"
+  }
+}

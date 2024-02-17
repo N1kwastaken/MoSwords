@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:flint"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "moswords:titanium_ingot"
+    }
+  },
+  "pattern": [
+    "  F",
+    " T ",
+    "S  "
+  ],
+  "result": {
+    "item": "moswords:wooden_dagger"
+  }
+}

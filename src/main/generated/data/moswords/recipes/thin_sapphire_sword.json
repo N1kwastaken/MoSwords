@@ -1,0 +1,27 @@
+{
+  "type": "moswords:bigger_crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": {
+      "item": "moswords:handle"
+    },
+    "M": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "moswords:sapphire"
+    },
+    "W": {
+      "item": "moswords:sapphire_sword"
+    }
+  },
+  "pattern": [
+    "   S",
+    " WS ",
+    " SH ",
+    "M   "
+  ],
+  "result": {
+    "item": "moswords:thin_sapphire_sword"
+  }
+}

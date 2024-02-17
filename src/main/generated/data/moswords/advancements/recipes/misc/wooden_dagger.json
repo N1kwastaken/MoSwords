@@ -1,36 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_handle": {
+    "has_flint": {
       "conditions": {
         "items": [
           {
             "items": [
-              "moswords:handle"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_ruby": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "moswords:ruby"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_ruby_sword": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "moswords:ruby_sword"
+              "minecraft:flint"
             ]
           }
         ]
@@ -51,23 +27,34 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:big_ruby_sword"
+        "recipe": "minecraft:wooden_dagger"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_titanium_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moswords:titanium_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_ruby_sword",
       "has_stick",
-      "has_ruby",
-      "has_handle"
+      "has_flint",
+      "has_titanium_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:big_ruby_sword"
+      "minecraft:wooden_dagger"
     ]
   }
 }

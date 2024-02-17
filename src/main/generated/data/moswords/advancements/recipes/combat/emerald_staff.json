@@ -1,36 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_emerald": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:emerald"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_handle": {
       "conditions": {
         "items": [
           {
             "items": [
               "moswords:handle"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_ruby": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "moswords:ruby"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_ruby_sword": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "moswords:ruby_sword"
             ]
           }
         ]
@@ -51,7 +39,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:big_ruby_sword"
+        "recipe": "minecraft:emerald_staff"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -59,15 +47,14 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ruby_sword",
+      "has_emerald",
       "has_stick",
-      "has_ruby",
       "has_handle"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:big_ruby_sword"
+      "minecraft:emerald_staff"
     ]
   }
 }
