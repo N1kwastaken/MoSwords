@@ -28,10 +28,13 @@
   "item.moswords.plated_steelcaps": "Plated Steelcaps",
   "item.moswords.mercury_treads": "Mercury Treads",
   "item.moswords.iceborn_gauntlet": "Iceborn Gauntlet",
+  "item.moswords.refillable_potion_bottle": "Refillable Potion Bottle",
+  "item.moswords.refillable_potion": "Refillable Potion",
 
   "tooltip.moswords.bigger_crafting_table.tooltip": "A crafting table, but bigger ",
   "tooltip.moswords.press_shift.tooltip": "Press SHIFT for more info",
   "tooltip.moswords.bat_wings.tooltip": "A 1 in 100 chance drop, why would it be this rare, you ask me? I don't know, I'm just a tooltip.",
+  "tooltip.moswords.refillable_potion": "A potion that heals you and can be used 3 times! What could go wrong? Right?",
 
   "block.moswords.sapphire_ore": "Sapphire Ore",
   "block.moswords.titanium_ore": "Titanium Ore",

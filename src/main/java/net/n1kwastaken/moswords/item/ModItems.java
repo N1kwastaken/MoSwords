@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.stat.Stat;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
 import net.n1kwastaken.moswords.item.custom.*;
@@ -18,6 +19,7 @@ public class ModItems {
     public static final Item DEVILS_EYE = registerItem("devils_eye", new Item(new FabricItemSettings()));
     public static final Item SAPPHIRE = registerItem("sapphire", new Item(new FabricItemSettings()));
     public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
+    public static final Item REFILLABLE_POTION_BOTTLE = registerItem("refillable_potion_bottle", new Item(new FabricItemSettings()));
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item BAT_WINGS = registerItem("bat_wings", new BatWingsItem(new FabricItemSettings()));
@@ -29,7 +31,13 @@ public class ModItems {
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 10 * 20), 1.0f)
             .build())));
 
-
+    public static final Item REFILLABLE_POTION = registerItem("refillable_potion", new RefillablePotion(new FabricItemSettings()
+            .maxCount(1)
+            .food(new FoodComponent.Builder()
+            .hunger(1)
+            .saturationModifier(0.1f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 20), 1)
+            .build())));
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
@@ -70,6 +78,8 @@ public class ModItems {
     public static final Item QUADRUPLE_SWORD = registerItem("quadruple_sword",
             new SwordItem(ModToolMaterials.EMARS, 28, -3.2f, new FabricItemSettings()));
 
+
+
     //LOL
     public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new SorcerersShoes(new FabricItemSettings().maxCount(1)));
 
@@ -104,6 +114,8 @@ public class ModItems {
         entries.add(PLATED_STEEELCAPS);
         entries.add(MERCURY_TREADS);
         entries.add(ICEBORN_GAUNTLET);
+        entries.add(REFILLABLE_POTION_BOTTLE);
+        entries.add(REFILLABLE_POTION);
 
     }
 

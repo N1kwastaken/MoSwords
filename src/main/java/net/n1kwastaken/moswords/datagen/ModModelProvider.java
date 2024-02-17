@@ -54,6 +54,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PLATED_STEEELCAPS, Models.GENERATED);
         itemModelGenerator.register(ModItems.MERCURY_TREADS, Models.GENERATED);
         itemModelGenerator.register(ModItems.ICEBORN_GAUNTLET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REFILLABLE_POTION_BOTTLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REFILLABLE_POTION, Models.GENERATED);
 
     }
 }

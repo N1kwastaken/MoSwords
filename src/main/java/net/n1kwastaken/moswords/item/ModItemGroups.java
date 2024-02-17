@@ -41,6 +41,8 @@ public class ModItemGroups {
                         entries.add(ModItems.PLATED_STEEELCAPS);
                         entries.add(ModItems.MERCURY_TREADS);
                         entries.add(ModItems.ICEBORN_GAUNTLET);
+                        entries.add(ModItems.REFILLABLE_POTION_BOTTLE);
+                        entries.add(ModItems.REFILLABLE_POTION);
 
                         //sword
                         entries.add(ModItems.RUBY_SWORD);
