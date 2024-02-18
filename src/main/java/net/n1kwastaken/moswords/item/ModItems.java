@@ -23,7 +23,6 @@ public class ModItems {
     public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item BAT_WINGS = registerItem("bat_wings", new BatWingsItem(new FabricItemSettings()));
-
     public static final Item BLOOD_BOTTLE = registerItem("blood_bottle", new BloodBottleItem(new FabricItemSettings().food(new FoodComponent.Builder()
             .hunger(1)
             .saturationModifier(0.1f)
@@ -82,7 +81,7 @@ public class ModItems {
 
     //LOL
     public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new SorcerersShoes(new FabricItemSettings().maxCount(1)));
-
+    public static final Item YOUMUUS_GHOSTBLADE = registerItem("youmuus_ghostblade", new YoumuusGhostblade(new FabricItemSettings().maxCount(1)));
     public static final Item BERSERKERS_GREAVES = registerItem("berserkers_greaves", new BerserkersGreaves(new FabricItemSettings().maxCount(1)));
     public static final Item PLATED_STEEELCAPS = registerItem("plated_steelcaps", new PlatedSteelcaps(new FabricItemSettings().maxCount(1)));
     public static final Item MERCURY_TREADS = registerItem("mercury_treads", new MercuryTreads(new FabricItemSettings().maxCount(1)));
@@ -116,7 +115,7 @@ public class ModItems {
         entries.add(ICEBORN_GAUNTLET);
         entries.add(REFILLABLE_POTION_BOTTLE);
         entries.add(REFILLABLE_POTION);
-
+        entries.add(YOUMUUS_GHOSTBLADE);
     }
 
     private static Item registerItem(String id, Item item) {

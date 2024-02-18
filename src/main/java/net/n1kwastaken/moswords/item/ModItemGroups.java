@@ -43,6 +43,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ICEBORN_GAUNTLET);
                         entries.add(ModItems.REFILLABLE_POTION_BOTTLE);
                         entries.add(ModItems.REFILLABLE_POTION);
+                        entries.add(ModItems.YOUMUUS_GHOSTBLADE);
 
                         //sword
                         entries.add(ModItems.RUBY_SWORD);

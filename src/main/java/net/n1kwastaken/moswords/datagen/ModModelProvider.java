@@ -56,6 +56,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ICEBORN_GAUNTLET, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFILLABLE_POTION_BOTTLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFILLABLE_POTION, Models.GENERATED);
+        itemModelGenerator.register(ModItems.YOUMUUS_GHOSTBLADE, Models.HANDHELD);
 
     }
 }

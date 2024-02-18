@@ -11,20 +11,16 @@ import net.minecraft.item.ItemStack;
 
 import java.util.UUID;
 
-public class IcebornGauntlet extends TrinketItem {
-    public IcebornGauntlet(Settings settings) {
+public class YoumuusGhostblade extends TrinketItem {
+    public YoumuusGhostblade(Settings settings) {
         super(settings);
     }
     public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
         var modifiers = super.getModifiers(stack, slot, entity, uuid);
-        modifiers.put(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(uuid, "moswords:armor",
+        modifiers.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(uuid, "moswords:attack_damage",
                 0.50, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, new EntityAttributeModifier(uuid, "moswords:max_health",
+        modifiers.put(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, new EntityAttributeModifier(uuid, "moswords:attack_knockback",
                 2, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifiers.put(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, new EntityAttributeModifier(uuid, "moswords:max_health",
-                1, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
-
         return modifiers;
-
     }
 }

@@ -1,5 +1,6 @@
 package net.n1kwastaken.moswords.item.custom;
 
+import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -7,7 +8,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
-public class BloodBottleItem extends Item {
+public class BloodBottleItem extends TrinketItem {
     public BloodBottleItem(Item.Settings settings) {
         super(settings);
     }
