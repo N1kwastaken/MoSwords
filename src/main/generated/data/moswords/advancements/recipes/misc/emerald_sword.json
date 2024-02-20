@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:emerald_sword"
+        "recipe": "moswords:emerald_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:emerald_sword"
+      "moswords:emerald_sword"
     ]
   }
 }

@@ -15,6 +15,7 @@ public class YoumuusGhostblade extends TrinketItem {
     public YoumuusGhostblade(Settings settings) {
         super(settings);
     }
+
     public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
         var modifiers = super.getModifiers(stack, slot, entity, uuid);
         modifiers.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(uuid, "moswords:attack_damage",

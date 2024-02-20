@@ -28,7 +28,7 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<BiggerShapelessRecipe> getSerializer() {
         return ModRecipeSerializers.BIGGER_SHAPELESS;
     }
 
@@ -111,7 +111,7 @@ public class BiggerShapelessRecipe implements BiggerCraftingRecipe {
                     if (ingredients.length == 0) {
                         return DataResult.error(() -> "No ingredients for shapeless recipe");
                     }
-                    if (ingredients.length > BiggerCraftingRecipe.SIZE) {
+                    if (ingredients.length > 16) {
                         return DataResult.error(() -> "Too many ingredients for shapeless recipe");
                     }
                     return DataResult.success(DefaultedList.copyOf(Ingredient.EMPTY, ingredients));

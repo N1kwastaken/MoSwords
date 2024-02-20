@@ -5,12 +5,8 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 
 public interface BiggerCraftingRecipe extends CraftingRecipe {
-    int WIDTH = 4;
-    int HEIGHT = 4;
-    int SIZE = WIDTH * HEIGHT;
-
     @Override
-    default RecipeType<?> getType() {
+    default RecipeType<? extends BiggerCraftingRecipe> getType() {
         return ModRecipeTypes.BIGGER_CRAFTING;
     }
 

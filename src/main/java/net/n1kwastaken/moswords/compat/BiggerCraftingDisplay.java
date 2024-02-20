@@ -16,7 +16,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.util.collection.DefaultedList;
 import net.n1kwastaken.moswords.recipe.BiggerCraftingRecipe;
+import net.n1kwastaken.moswords.recipe.BiggerShapedRecipe;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -40,7 +42,7 @@ public class BiggerCraftingDisplay extends BasicDisplay implements SimpleGridMen
     }
 
     public static int getSlotWithSize(BiggerCraftingDisplay display, int index, int craftingGridWidth) {
-        return getSlotWithSize(display.getInputWidth(craftingGridWidth, BiggerCraftingRecipe.HEIGHT), index, craftingGridWidth);
+        return getSlotWithSize(display.getInputWidth(craftingGridWidth, BiggerShapedRecipe.HEIGHT), index, craftingGridWidth);
     }
 
     public static int getSlotWithSize(int recipeWidth, int index, int craftingGridWidth) {
@@ -50,7 +52,7 @@ public class BiggerCraftingDisplay extends BasicDisplay implements SimpleGridMen
     }
 
     @Override
-    public CategoryIdentifier<?> getCategoryIdentifier() {
+    public CategoryIdentifier<BiggerCraftingDisplay> getCategoryIdentifier() {
         return BiggerCraftingCategory.BIGGER_CRAFTING;
     }
 
@@ -85,8 +87,8 @@ public class BiggerCraftingDisplay extends BasicDisplay implements SimpleGridMen
     @Override
     @SuppressWarnings({"removal", "unchecked"})
     public List<InputIngredient<EntryStack<?>>> getInputIngredients(MenuSerializationContext<?, ?, ?> context, MenuInfo<?, ?> info, boolean fill) {
-        int craftingWidth = BiggerCraftingRecipe.WIDTH;
-        int craftingHeight = BiggerCraftingRecipe.HEIGHT;
+        int craftingWidth = BiggerShapedRecipe.WIDTH;
+        int craftingHeight = BiggerShapedRecipe.HEIGHT;
 
         if (info instanceof SimpleGridMenuInfo && fill) {
             craftingWidth = ((SimpleGridMenuInfo<ScreenHandler, ?>) info).getCraftingWidth(context.getMenu());
@@ -98,11 +100,11 @@ public class BiggerCraftingDisplay extends BasicDisplay implements SimpleGridMen
 
     @Override
     public List<InputIngredient<EntryStack<?>>> getInputIngredients(@Nullable ScreenHandler menu, @Nullable PlayerEntity player) {
-        return this.getInputIngredients(BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT);
+        return this.getInputIngredients(BiggerShapedRecipe.WIDTH, BiggerShapedRecipe.HEIGHT);
     }
 
     public List<InputIngredient<EntryStack<?>>> getInputIngredients() {
-        return this.getInputIngredients(BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT);
+        return this.getInputIngredients(BiggerShapedRecipe.WIDTH, BiggerShapedRecipe.HEIGHT);
     }
 
     public List<InputIngredient<EntryStack<?>>> getInputIngredients(int craftingWidth, int craftingHeight) {
@@ -129,7 +131,7 @@ public class BiggerCraftingDisplay extends BasicDisplay implements SimpleGridMen
             int slotX = i % inputWidth;
             int slotY = i / inputWidth;
 
-            InputIngredient<EntryStack<?>> ingredient = InputIngredient.of(indexInIngredients, BiggerCraftingRecipe.WIDTH * slotY + slotX, stacks);
+            InputIngredient<EntryStack<?>> ingredient = InputIngredient.of(indexInIngredients, BiggerShapedRecipe.WIDTH * slotY + slotX, stacks);
             int slotIndex = craftingWidth * slotY + slotX;
             inputIngredients.set(slotIndex, ingredient);
         }
@@ -145,10 +147,7 @@ public class BiggerCraftingDisplay extends BasicDisplay implements SimpleGridMen
     }
 
     public List<EntryIngredient> getOrganisedInputEntries(int craftingWidth, int craftingHeight) {
-        List<EntryIngredient> organisedInputEntries = new ArrayList<>(craftingWidth * craftingHeight);
-        for (int i = 0; i < craftingWidth * craftingHeight; i++) {
-            organisedInputEntries.add(EntryIngredient.empty());
-        }
+        List<EntryIngredient> organisedInputEntries = DefaultedList.ofSize(craftingWidth * craftingHeight, EntryIngredient.empty());
         for (int i = 0; i < this.getInputEntries().size(); i++) {
             organisedInputEntries.set(getSlotWithSize(this, i, craftingWidth), this.getInputEntries().get(i));
         }

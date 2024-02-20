@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:amethyst_sword"
+        "recipe": "moswords:amethyst_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:amethyst_sword"
+      "moswords:amethyst_sword"
     ]
   }
 }

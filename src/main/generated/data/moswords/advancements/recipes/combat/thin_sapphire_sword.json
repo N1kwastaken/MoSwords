@@ -51,7 +51,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:thin_sapphire_sword"
+        "recipe": "moswords:thin_sapphire_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -67,7 +67,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:thin_sapphire_sword"
+      "moswords:thin_sapphire_sword"
     ]
   }
 }

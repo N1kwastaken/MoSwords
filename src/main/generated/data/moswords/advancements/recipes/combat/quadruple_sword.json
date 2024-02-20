@@ -63,7 +63,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:quadruple_sword"
+        "recipe": "moswords:quadruple_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -93,7 +93,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:quadruple_sword"
+      "moswords:quadruple_sword"
     ]
   }
 }

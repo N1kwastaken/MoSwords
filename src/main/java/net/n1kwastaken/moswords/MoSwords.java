@@ -14,21 +14,21 @@ import net.n1kwastaken.moswords.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class 	MoSwords implements ModInitializer {
-	public static final String MOD_ID = "moswords";
+public class MoSwords implements ModInitializer {
+    public static final String MOD_ID = "moswords";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	@Override
-	public void onInitialize() {
-		ModItemGroups.registerModItemGroups();
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
-		ModEnchantments.registerModEnchantments();
-		ModBlockEntities.registerModBlockEntities();
-		ModScreenHandlerTypes.registerModScreenHandlerTypes();
-		ModRecipeTypes.registerModRecipeTypes();
-		ModRecipeSerializers.registerModRecipeSerializers();
-		ModWorldGeneration.generateModWorldGen();
-		ModLootTableModifiers.modifyLootTables();
-	}
+    @Override
+    public void onInitialize() {
+        ModItemGroups.registerModItemGroups();
+        ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
+        ModEnchantments.registerModEnchantments();
+        ModBlockEntities.registerModBlockEntities();
+        ModScreenHandlerTypes.registerModScreenHandlerTypes();
+        ModRecipeTypes.registerModRecipeTypes();
+        ModRecipeSerializers.registerModRecipeSerializers();
+        ModWorldGeneration.generateModWorldGen();
+        ModLootTableModifiers.modifyLootTables();
+    }
 }

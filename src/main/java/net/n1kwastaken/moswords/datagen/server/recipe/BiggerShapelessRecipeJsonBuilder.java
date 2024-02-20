@@ -27,8 +27,7 @@ public class BiggerShapelessRecipeJsonBuilder implements CraftingRecipeJsonBuild
     private final int count;
     private final DefaultedList<Ingredient> inputs = DefaultedList.of();
     private final Map<String, AdvancementCriterion<?>> advancementBuilder = new LinkedHashMap<>();
-    @Nullable
-    private String group;
+    @Nullable private String group;
 
     public BiggerShapelessRecipeJsonBuilder(RecipeCategory category, ItemConvertible output, int count) {
         this.category = category;
@@ -45,7 +44,6 @@ public class BiggerShapelessRecipeJsonBuilder implements CraftingRecipeJsonBuild
     }
 
     // Possible heap pollution from parameterized vararg type
-
     @SafeVarargs
     public final BiggerShapelessRecipeJsonBuilder input(TagKey<Item>... tags) {
         for (TagKey<Item> tag : tags) {
@@ -54,7 +52,7 @@ public class BiggerShapelessRecipeJsonBuilder implements CraftingRecipeJsonBuild
         return this;
     }
 
-    public BiggerShapelessRecipeJsonBuilder input(ItemConvertible ... items) {
+    public BiggerShapelessRecipeJsonBuilder input(ItemConvertible... items) {
         for (ItemConvertible item : items) {
             this.input(item, 1);
         }
@@ -68,7 +66,7 @@ public class BiggerShapelessRecipeJsonBuilder implements CraftingRecipeJsonBuild
         return this;
     }
 
-    public BiggerShapelessRecipeJsonBuilder input(Ingredient ... ingredients) {
+    public BiggerShapelessRecipeJsonBuilder input(Ingredient... ingredients) {
         for (Ingredient ingredient : ingredients) {
             this.input(ingredient, 1);
         }

@@ -39,7 +39,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:emerald_staff"
+        "recipe": "moswords:emerald_staff"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -54,7 +54,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:emerald_staff"
+      "moswords:emerald_staff"
     ]
   }
 }

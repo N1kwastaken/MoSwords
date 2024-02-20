@@ -27,12 +27,16 @@ import java.util.List;
 public class BiggerCraftingTableBlock extends CraftingTableBlock {
     public static final MapCodec<BiggerCraftingTableBlock> CODEC = createCodec(BiggerCraftingTableBlock::new);
     private static final Text TITLE = Text.literal("Bigger Crafting");
+
     public BiggerCraftingTableBlock(AbstractBlock.Settings settings) {
         super(settings);
     }
-    public MapCodec<? extends BiggerCraftingTableBlock> getCodec() {
+
+    @Override
+    public MapCodec<BiggerCraftingTableBlock> getCodec() {
         return CODEC;
     }
+
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) {
@@ -41,17 +45,18 @@ public class BiggerCraftingTableBlock extends CraftingTableBlock {
         player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
         return ActionResult.CONSUME;
     }
+
     @Override
     public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
         return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> new BiggerCraftingScreenHandler(syncId, inventory, ScreenHandlerContext.create(world, pos)), TITLE);
-
     }
+
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         if (Screen.hasShiftDown()) {
-        tooltip.add(Text.translatable("tooltip.moswords.bigger_crafting_table.tooltip").formatted(Formatting.DARK_GRAY));
-        } else{
-        tooltip.add(Text.translatable("tooltip.moswords.press_shift.tooltip").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("block.moswords.bigger_crafting_table.tooltip").formatted(Formatting.DARK_GRAY));
+        } else {
+            tooltip.add(Text.translatable("tooltip.moswords.press_shift").formatted(Formatting.GRAY));
         }
         super.appendTooltip(stack, world, tooltip, options);
     }

@@ -21,42 +21,43 @@ repositories {
 	maven {
 		url 'https://maven.shedaniel.me'
 	}
+
 	maven {
-		name = "TerraformersMC"
-		url = "https://maven.terraformersmc.com/"
+		name = 'TerraformersMC'
+		url = 'https://maven.terraformersmc.com/'
+	}
+
+	maven {
+		name = 'Ladysnake Mods'
+		url = 'https://maven.ladysnake.org/releases'
 	}
 }
 
-ext {
-	trinkets_version = "3.8.0"
-
-}
 fabricApi {
 	configureDataGeneration()
 }
 
 dependencies {
+
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+	// Replace modImplementation with modApi if you expose components in your own API
+	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
 
-	// Replace modImplementation with modApi if you expose components in your own AP
-
-	modImplementation "dev.emi:trinkets:${trinkets_version}"
-
-
+	// for trinkets to work
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 
-	modApi("me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}") {
+	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
@@ -66,7 +67,6 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-
 }
 
 processResources {

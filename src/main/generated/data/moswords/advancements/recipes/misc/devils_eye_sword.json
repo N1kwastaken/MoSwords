@@ -39,7 +39,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:devils_eye_sword"
+        "recipe": "moswords:devils_eye_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -54,7 +54,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:devils_eye_sword"
+      "moswords:devils_eye_sword"
     ]
   }
 }

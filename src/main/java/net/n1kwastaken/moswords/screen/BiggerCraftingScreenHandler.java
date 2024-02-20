@@ -20,6 +20,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.n1kwastaken.moswords.block.ModBlocks;
 import net.n1kwastaken.moswords.recipe.BiggerCraftingRecipe;
+import net.n1kwastaken.moswords.recipe.BiggerShapedRecipe;
 import net.n1kwastaken.moswords.recipe.ModRecipeTypes;
 
 import java.util.Optional;
@@ -33,7 +34,7 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
     private static final int HOTBAR_START = 44;
     private static final int HOTBAR_END = 53;
     public boolean onlyBiggerRecipes = false;
-    private final RecipeInputInventory input = new CraftingInventory(this, BiggerCraftingRecipe.WIDTH, BiggerCraftingRecipe.HEIGHT);
+    private final RecipeInputInventory input = new CraftingInventory(this, BiggerShapedRecipe.WIDTH, BiggerShapedRecipe.HEIGHT);
     private final CraftingResultInventory result = new CraftingResultInventory();
     private final ScreenHandlerContext context;
     private final PlayerEntity player;
@@ -81,9 +82,9 @@ public class BiggerCraftingScreenHandler extends AbstractRecipeScreenHandler<Rec
             }
         });
         // INPUT SLOTS
-        for (i = 0; i < BiggerCraftingRecipe.HEIGHT; ++i) {
-            for (j = 0; j < BiggerCraftingRecipe.WIDTH; ++j) {
-                this.addSlot(new Slot(this.input, j + i * BiggerCraftingRecipe.WIDTH, 21 + j * 18, 17 + i * 18));
+        for (i = 0; i < BiggerShapedRecipe.HEIGHT; ++i) {
+            for (j = 0; j < BiggerShapedRecipe.WIDTH; ++j) {
+                this.addSlot(new Slot(this.input, j + i * BiggerShapedRecipe.WIDTH, 21 + j * 18, 17 + i * 18));
             }
         }
         // PLAYER INVENTORY

@@ -13,7 +13,7 @@ public class ModToolMaterial implements ToolMaterial {
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredient;
 
-    ModToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attack, int enchantability, Supplier<Ingredient> repairIngredient) {
+    public ModToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attack, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;

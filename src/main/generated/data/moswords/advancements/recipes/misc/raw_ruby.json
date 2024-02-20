@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:raw_ruby"
+        "recipe": "moswords:raw_ruby"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:raw_ruby"
+      "moswords:raw_ruby"
     ]
   }
 }

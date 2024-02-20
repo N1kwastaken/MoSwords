@@ -51,7 +51,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:big_ruby_sword"
+        "recipe": "moswords:big_ruby_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -67,7 +67,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:big_ruby_sword"
+      "moswords:big_ruby_sword"
     ]
   }
 }
