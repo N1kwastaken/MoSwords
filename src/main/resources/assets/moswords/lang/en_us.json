@@ -32,11 +32,17 @@
   "item.moswords.refillable_potion": "Refillable Potion",
   "item.moswords.youmuus_ghostblade": "Youmuu's Ghostblade",
 
-  "tooltip.moswords.bigger_crafting_table.tooltip": "A crafting table, but bigger ",
-  "tooltip.moswords.press_shift.tooltip": "Press SHIFT for more info",
-  "tooltip.moswords.bat_wings.tooltip": "A 1 in 100 chance drop, why would it be this rare, you ask me? I don't know, I'm just a tooltip.",
-  "tooltip.moswords.refillable_potion": "A potion that heals you and can be used 3 times! What could go wrong? Right?",
-  "tooltip.moswords.wooden_dagger": "...What would happened if you kill someone with this?",
+  "block.moswords.bigger_crafting_table.tooltip": "A crafting table, but bigger",
+  "tooltip.moswords.press_shift": "Press SHIFT for more info",
+
+  "item.moswords.bat_wings.tooltip.line_1": "A 1 in 100 chance drop.",
+  "item.moswords.bat_wings.tooltip.line_2": "Why would it be this rare, you ask me?",
+  "item.moswords.bat_wings.tooltip.line_3": "I don't know, I'm just a tooltip.",
+
+  "item.moswords.refillable_potion.tooltip.line_1": "A potion that heals you",
+  "item.moswords.refillable_potion.tooltip.line_2": "and can be used 3 times!",
+  "item.moswords.refillable_potion.tooltip.line_3": "What could go wrong? Right?",
+  "tooltip.moswords.wooden_dagger": "...What would happen if you kill something with this?",
 
   "block.moswords.sapphire_ore": "Sapphire Ore",
   "block.moswords.titanium_ore": "Titanium Ore",
@@ -47,7 +53,6 @@
 
 
   "enchantment.moswords.slowing": "Freezing",
-
-
+  
   "itemgroup.moswords": "Mo'Swords"
 }

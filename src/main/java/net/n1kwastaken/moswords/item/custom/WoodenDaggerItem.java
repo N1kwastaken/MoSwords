@@ -37,7 +37,7 @@ public class WoodenDaggerItem extends SwordItem {
         if (Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("tooltip.moswords.wooden_dagger").formatted(Formatting.DARK_GRAY));
         } else {
-            tooltip.add(Text.translatable("tooltip.moswords.press_shift.tooltip").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("tooltip.moswords.press_shift").formatted(Formatting.GRAY));
         }
         super.appendTooltip(stack, world, tooltip, context);
     }

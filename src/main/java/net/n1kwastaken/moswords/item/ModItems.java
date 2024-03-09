@@ -8,7 +8,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.stat.Stat;
 import net.minecraft.util.Identifier;
 import net.n1kwastaken.moswords.MoSwords;
 import net.n1kwastaken.moswords.item.custom.*;
@@ -30,13 +29,14 @@ public class ModItems {
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 10 * 20), 1.0f)
             .build())));
 
-    public static final Item REFILLABLE_POTION = registerItem("refillable_potion", new RefillablePotion(new FabricItemSettings()
+    public static final Item REFILLABLE_POTION = registerItem("refillable_potion", new RefillablePotionItem(new FabricItemSettings()
             .maxCount(1)
             .food(new FoodComponent.Builder()
-            .hunger(1)
-            .saturationModifier(0.1f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 20), 1)
-            .build())));
+                    .hunger(1)
+                    .saturationModifier(0.1f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 20), 1)
+                    .alwaysEdible()
+                    .build())));
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 2, -2.7f, new FabricItemSettings()));
     public static final Item AMETHYST_SWORD = registerItem("amethyst_sword",
@@ -49,43 +49,32 @@ public class ModItems {
             new SwordItem(ModToolMaterials.SLIME, -1, 1, new FabricItemSettings()));
     public static final Item EMERALD_STAFF = registerItem("emerald_staff",
             new SwordItem(ModToolMaterials.EMERALD, 9, -3f, new FabricItemSettings()));
-
     public static final Item DEVILS_EYE_SWORD = registerItem("devils_eye_sword",
             new SwordItem(ModToolMaterials.RUBY, 34, -2.5f, new FabricItemSettings()));
     public static final Item WOODEN_DAGGER = registerItem("wooden_dagger",
-            new WoodenDaggerItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
+            new WoodenDaggerItem(ToolMaterials.IRON, 0, -1, new FabricItemSettings()));
     public static final Item BLOODY_WOODEN_DAGGER = registerItem("bloody_wooden_dagger",
-            new SwordItem(ToolMaterials.IRON,0, -1, new FabricItemSettings()));
-
-
-
+            new SwordItem(ToolMaterials.IRON, 0, -1, new FabricItemSettings()));
     public static final Item VAMPIRE_SWORD = registerItem("vampire_sword",
             new LifeStealSwordItem(ModToolMaterials.AMETHYST, 5, 0, new FabricItemSettings()));
-
-
     public static final Item MOON_SWORD = registerItem("moon_sword",
             new SwordItem(ModToolMaterials.SAPPHIRE, 15, 2, new FabricItemSettings()));
-
     public static final Item SUN_SWORD = registerItem("sun_sword",
             new SwordItem(ModToolMaterials.RUBY, 30, -3, new FabricItemSettings()));
     public static final Item BIG_RUBY_SWORD = registerItem("big_ruby_sword",
             new SwordItem(ModToolMaterials.RUBY, 5, -3.5f, new FabricItemSettings()));
-
     public static final Item THIN_SAPPHIRE_SWORD = registerItem("thin_sapphire_sword",
             new SwordItem(ModToolMaterials.AMETHYST, 0, 1, new FabricItemSettings()));
-
     public static final Item QUADRUPLE_SWORD = registerItem("quadruple_sword",
             new SwordItem(ModToolMaterials.EMARS, 28, -3.2f, new FabricItemSettings()));
 
-
-
     //LOL
-    public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new SorcerersShoes(new FabricItemSettings().maxCount(1)));
+    public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new SorcerersShoesItem(new FabricItemSettings().maxCount(1)));
     public static final Item YOUMUUS_GHOSTBLADE = registerItem("youmuus_ghostblade", new YoumuusGhostblade(new FabricItemSettings().maxCount(1)));
-    public static final Item BERSERKERS_GREAVES = registerItem("berserkers_greaves", new BerserkersGreaves(new FabricItemSettings().maxCount(1)));
-    public static final Item PLATED_STEEELCAPS = registerItem("plated_steelcaps", new PlatedSteelcaps(new FabricItemSettings().maxCount(1)));
-    public static final Item MERCURY_TREADS = registerItem("mercury_treads", new MercuryTreads(new FabricItemSettings().maxCount(1)));
-    public static final Item ICEBORN_GAUNTLET = registerItem("iceborn_gauntlet", new IcebornGauntlet(new FabricItemSettings().maxCount(1)));
+    public static final Item BERSERKERS_GREAVES = registerItem("berserkers_greaves", new BerserkersGreavesItem(new FabricItemSettings().maxCount(1)));
+    public static final Item PLATED_STEEELCAPS = registerItem("plated_steelcaps", new PlatedSteelcapsItem(new FabricItemSettings().maxCount(1)));
+    public static final Item MERCURY_TREADS = registerItem("mercury_treads", new MercuryTreadsItem(new FabricItemSettings().maxCount(1)));
+    public static final Item ICEBORN_GAUNTLET = registerItem("iceborn_gauntlet", new IcebornGauntletItem(new FabricItemSettings().maxCount(1)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);

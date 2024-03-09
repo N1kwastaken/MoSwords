@@ -118,7 +118,7 @@ public class BiggerShapedRecipeJsonBuilder implements CraftingRecipeJsonBuilder 
                 .rewards(AdvancementRewards.Builder.recipe(recipeId))
                 .criteriaMerger(AdvancementRequirements.CriterionMerger.OR);
         this.criteria.forEach(builder::criterion);
-        BiggerShapedRecipe biggerShapedRecipe = new BiggerShapedRecipe( 
+        BiggerShapedRecipe biggerShapedRecipe = new BiggerShapedRecipe(
                 this.group != null ? this.group : "",
                 CraftingRecipeJsonBuilder.toCraftingCategory(this.category),
                 rawBiggerShapedRecipe,

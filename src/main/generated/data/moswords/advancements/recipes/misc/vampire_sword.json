@@ -51,7 +51,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vampire_sword"
+        "recipe": "moswords:vampire_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -67,7 +67,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vampire_sword"
+      "moswords:vampire_sword"
     ]
   }
 }

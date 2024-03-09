@@ -28,7 +28,6 @@ public class MoSwordsREIClientPlugin implements REIClientPlugin {
 
     @Override
     public void registerCategories(CategoryRegistry registry) {
-//        REIClientPlugin.super.registerCategories(registry);
         registry.add(new BiggerCraftingCategory());
         registry.addWorkstations(BiggerCraftingCategory.BIGGER_CRAFTING, EntryStacks.of(ModBlocks.BIGGER_CRAFTING_TABLE));
     }
@@ -41,15 +40,14 @@ public class MoSwordsREIClientPlugin implements REIClientPlugin {
 
     @Override
     public void registerScreens(ScreenRegistry registry) {
-//        registry.registerContainerClickArea(new Rectangle(75, 30, 20, 30), BiggerCraftingScreen.class, BiggerCraftingCategory.BIGGER_CRAFTING);
-        registry.registerContainerClickArea(screen -> new Rectangle(88 + 9, 32 + 9, 28, 23), BiggerCraftingScreen.class, BiggerCraftingCategory.BIGGER_CRAFTING); // arrow in bigger crafting table
+        registry.registerContainerClickArea(screen -> new Rectangle(97, 41, 28, 23), BiggerCraftingScreen.class, BiggerCraftingCategory.BIGGER_CRAFTING); // arrow in bigger crafting table
     }
 
     @Override
     @SuppressWarnings("UnstableApiUsage")
     public void registerTransferHandlers(TransferHandlerRegistry registry) {
         registry.register(SimpleTransferHandler.create(BiggerCraftingScreenHandler.class, BiggerCraftingCategory.BIGGER_CRAFTING,
-                new SimpleTransferHandler.IntRange(1, BiggerCraftingRecipe.SIZE + 1)));
+                new SimpleTransferHandler.IntRange(1, 16 + 1)));
         registry.register(createTransferHandlerWithInputSlots(BiggerCraftingScreenHandler.class, CategoryIdentifier.of("minecraft", "plugins/crafting"),
                 new int[] {
                         1, 2, 3,

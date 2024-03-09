@@ -1,6 +1,5 @@
 package net.n1kwastaken.moswords.world;
 
-
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -23,18 +22,14 @@ public class ModPlacedFeatures {
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, RUBY_DEEPSLATE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RUBY_DEEPSLATE_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(4, // Veins per Chunk
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+        register(context, RUBY_DEEPSLATE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RUBY_DEEPSLATE_ORE_KEY), ModOrePlacement.modifiersWithCount(4, // Veins per Chunk
+                HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
-        register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SAPPHIRE_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(5, // Veins per Chunk
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+        register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SAPPHIRE_ORE_KEY), ModOrePlacement.modifiersWithCount(5, // Veins per Chunk
+                HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
-        register(context, TITANIUM_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(6, // Veins per Chunk
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
-
+        register(context, TITANIUM_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE_KEY), ModOrePlacement.modifiersWithCount(6, // Veins per Chunk
+                HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
     }
 
@@ -42,8 +37,7 @@ public class ModPlacedFeatures {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MoSwords.MOD_ID, name));
     }
 
-    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,
-                                 List<PlacementModifier> modifiers) {
+    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 }

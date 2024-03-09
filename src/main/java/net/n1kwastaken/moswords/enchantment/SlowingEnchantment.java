@@ -25,11 +25,10 @@ public class SlowingEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+        super.onTargetDamaged(user, target, level);
+
         if (target instanceof LivingEntity livingTarget) {
             livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 2 * level, level - 1));
         }
-
-        super.onTargetDamaged(user, target, level);
-
     }
 }

@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:sapphire_sword"
+        "recipe": "moswords:sapphire_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sapphire_sword"
+      "moswords:sapphire_sword"
     ]
   }
 }

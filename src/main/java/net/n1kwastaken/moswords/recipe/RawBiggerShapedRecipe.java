@@ -18,11 +18,12 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 
-public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredient> ingredients, Optional<RawBiggerShapedRecipe.Data> data) {
+public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredient> ingredients,
+                                    Optional<RawBiggerShapedRecipe.Data> data) {
     public static final MapCodec<RawBiggerShapedRecipe> CODEC = RawBiggerShapedRecipe.Data.CODEC.flatXmap(
             RawBiggerShapedRecipe::fromData, recipe -> recipe.data().map(DataResult::success).orElseGet(() -> DataResult.error(() -> "Cannot encode unpacked recipe")));
 
-    public static RawBiggerShapedRecipe create(Map<Character, Ingredient> key, String ... pattern) {
+    public static RawBiggerShapedRecipe create(Map<Character, Ingredient> key, String... pattern) {
         return create(key, List.of(pattern));
     }
 
@@ -151,9 +152,8 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
 
 
     public record Data(Map<Character, Ingredient> key, List<String> pattern) {
-        private static final int MAX_WIDTH_AND_HEIGHT = 4;
         private static final Codec<List<String>> PATTERN_CODEC = Codec.STRING.listOf().comapFlatMap(pattern -> {
-            if (pattern.size() > MAX_WIDTH_AND_HEIGHT) {
+            if (pattern.size() > BiggerShapedRecipe.HEIGHT) {
                 return DataResult.error(() -> "Invalid pattern: too many rows, 3 is maximum");
             }
             if (pattern.isEmpty()) {
@@ -161,7 +161,7 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
             }
             int firstRowLength = pattern.get(0).length();
             for (String row : pattern) {
-                if (row.length() > MAX_WIDTH_AND_HEIGHT) {
+                if (row.length() > BiggerShapedRecipe.WIDTH) {
                     return DataResult.error(() -> "Invalid pattern: too many columns, 3 is maximum");
                 }
 
@@ -181,8 +181,8 @@ public record RawBiggerShapedRecipe(int width, int height, DefaultedList<Ingredi
             return DataResult.success(keyEntry.charAt(0));
         }, String::valueOf);
         public static final MapCodec<RawBiggerShapedRecipe.Data> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-                Codecs.strictUnboundedMap(
-                        KEY_ENTRY_CODEC, Ingredient.DISALLOW_EMPTY_CODEC).fieldOf("key").forGetter(data -> data.key),
+                        Codecs.strictUnboundedMap(
+                                KEY_ENTRY_CODEC, Ingredient.DISALLOW_EMPTY_CODEC).fieldOf("key").forGetter(data -> data.key),
                         PATTERN_CODEC.fieldOf("pattern").forGetter(data -> data.pattern))
                 .apply(instance, RawBiggerShapedRecipe.Data::new));
     }

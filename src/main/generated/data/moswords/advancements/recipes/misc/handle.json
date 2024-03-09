@@ -39,7 +39,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:handle"
+        "recipe": "moswords:handle"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -67,7 +67,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:handle"
+      "moswords:handle"
     ]
   }
 }

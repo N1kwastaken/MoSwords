@@ -19,9 +19,11 @@ public class BatWingsItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.moswords.bat_wings.tooltip").formatted(Formatting.DARK_GRAY));
-        } else{
-            tooltip.add(Text.translatable("tooltip.moswords.press_shift.tooltip").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.moswords.bat_wings.tooltip.line_1").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.moswords.bat_wings.tooltip.line_2").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.moswords.bat_wings.tooltip.line_3").formatted(Formatting.GRAY));
+        } else {
+            tooltip.add(Text.translatable("tooltip.moswords.press_shift").formatted(Formatting.GRAY));
         }
         super.appendTooltip(stack, world, tooltip, context);
     }

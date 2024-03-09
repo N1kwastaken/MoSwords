@@ -85,7 +85,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bigger_crafting_table"
+        "recipe": "moswords:bigger_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -104,7 +104,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bigger_crafting_table"
+      "moswords:bigger_crafting_table"
     ]
   }
 }

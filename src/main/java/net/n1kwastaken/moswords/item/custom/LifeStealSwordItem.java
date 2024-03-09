@@ -15,10 +15,10 @@ public class LifeStealSwordItem extends SwordItem {
 
     public LifeStealSwordItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
-        AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+        AttackEntityCallback.EVENT.register((player, world, hand, target, hitResult) -> { // TODO
             if (player.getStackInHand(hand).getItem() instanceof LifeStealSwordItem) {
-                if (entity instanceof LivingEntity) {
-                    healthMap.put((LivingEntity) entity, ((LivingEntity) entity).getHealth());
+                if (target instanceof LivingEntity livingTarget) {
+                    healthMap.put(livingTarget, livingTarget.getHealth());
                 }
             }
             return ActionResult.PASS;
@@ -27,18 +27,14 @@ public class LifeStealSwordItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (!(attacker instanceof PlayerEntity)) {
+        if (!(attacker instanceof PlayerEntity playerAttacker)) {
             return super.postHit(stack, target, attacker);
         }
 
-        PlayerEntity player = (PlayerEntity) attacker;
         float previousHealth = healthMap.getOrDefault(target, target.getHealth());
         float dealtDamage = previousHealth - target.getHealth();
-        player.heal(dealtDamage);
+        playerAttacker.heal(dealtDamage);
 
         return super.postHit(stack, target, attacker);
     }
 }
-
-
-

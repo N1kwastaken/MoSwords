@@ -14,11 +14,14 @@ import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
 
 public class BiggerShapedRecipe implements BiggerCraftingRecipe {
-    final RawBiggerShapedRecipe raw;
-    final ItemStack result;
-    final String group;
-    final CraftingRecipeCategory category;
-    final boolean showNotification;
+    public static final int WIDTH = 4;
+    public static final int HEIGHT = 4;
+
+    protected final RawBiggerShapedRecipe raw;
+    protected final ItemStack result;
+    protected final String group;
+    protected final CraftingRecipeCategory category;
+    protected final boolean showNotification;
 
     public BiggerShapedRecipe(String group, CraftingRecipeCategory category, RawBiggerShapedRecipe raw, ItemStack result, boolean showNotification) {
         this.group = group;
@@ -33,7 +36,7 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<BiggerShapedRecipe> getSerializer() {
         return ModRecipeSerializers.BIGGER_SHAPED;
     }
 
@@ -110,8 +113,8 @@ public class BiggerShapedRecipe implements BiggerCraftingRecipe {
 
     public static class Serializer implements RecipeSerializer<BiggerShapedRecipe> {
         public static final Codec<BiggerShapedRecipe> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-                Codecs.createStrictOptionalFieldCodec(
-                        Codec.STRING, "group", "").forGetter(recipe -> recipe.group),
+                        Codecs.createStrictOptionalFieldCodec(
+                                Codec.STRING, "group", "").forGetter(recipe -> recipe.group),
                         CraftingRecipeCategory.CODEC.fieldOf("category").orElse(CraftingRecipeCategory.MISC).forGetter(recipe -> recipe.category),
                         RawBiggerShapedRecipe.CODEC.forGetter(recipe -> recipe.raw),
                         ItemStack.RECIPE_RESULT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result),

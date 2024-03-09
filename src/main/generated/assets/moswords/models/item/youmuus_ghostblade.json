@@ -1,41 +1,6 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:item/handheld",
-	"textures": {
-		"layer0": "moswords:item/youmuus_ghostblade"
-	},
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [-3, 90, 55],
-			"translation": [0, 8.25, 3.75],
-			"scale": [1.04, 1.04, 1.04]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [21, 90, -55],
-			"translation": [-1, 8.5, 3.5],
-			"scale": [1.04, 1.04, 1.04]
-		},
-		"firstperson_righthand": {
-			"rotation": [-3, 90, 55],
-			"translation": [0, 8.25, 3.75],
-			"scale": [1.04, 1.04, 1.04]
-		},
-		"firstperson_lefthand": {
-			"rotation": [23, -90, -25],
-			"translation": [0.25, 9.1, 3.3],
-			"scale": [1.04, 1.04, 1.04]
-		},
-		"ground": {
-			"translation": [0, 10.25, 0],
-			"scale": [1.78, 1.78, 1.78]
-		},
-		"gui": {
-			"translation": [2, 2.25, 0],
-			"scale": [1.27, 1.27, 1.27]
-		},
-		"fixed": {
-			"translation": [2.25, 3, 0],
-			"scale": [1.47, 1.47, 1.47]
-		}
-	}
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "moswords:item/youmuus_ghostblade"
+  }
 }

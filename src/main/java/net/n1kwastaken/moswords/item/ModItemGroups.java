@@ -11,12 +11,12 @@ import net.n1kwastaken.moswords.MoSwords;
 import net.n1kwastaken.moswords.block.ModBlocks;
 
 public class ModItemGroups {
-    public static final ItemGroup MOSWORDS_GROUP = Registry.register(Registries.ITEM_GROUP,
+    public static final ItemGroup MOSWORDS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(MoSwords.MOD_ID, "moswords"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.moswords"))
                     .icon(() -> new ItemStack(ModItems.DEVILS_EYE)).entries((displayContext, entries) -> {
 
-                        //Blocks
+                        // Blocks
 
                         entries.add(ModBlocks.RUBY_BLOCK);
                         entries.add(ModBlocks.SAPPHIRE_BLOCK);
@@ -27,7 +27,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.TITANIUM_ORE);
                         entries.add(ModBlocks.BIGGER_CRAFTING_TABLE);
 
-                        //Items
+                        // Items
 
                         entries.add(ModItems.RUBY);
                         entries.add(ModItems.SAPPHIRE);
