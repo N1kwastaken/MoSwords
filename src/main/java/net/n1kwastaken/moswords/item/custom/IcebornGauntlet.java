@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.UUID;
 
-public class IcebornGauntlet extends TrinketItem {
+public class  IcebornGauntlet extends TrinketItem {
     public IcebornGauntlet(Settings settings) {
         super(settings);
     }
@@ -23,6 +23,7 @@ public class IcebornGauntlet extends TrinketItem {
                 2, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
         modifiers.put(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, new EntityAttributeModifier(uuid, "moswords:max_health",
                 1, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+        
 
         return modifiers;
 
