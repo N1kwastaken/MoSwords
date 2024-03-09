@@ -22,10 +22,10 @@
     }
   },
   "pattern": [
-    "A  R",
+    "E  R",
     " IH ",
     " HI ",
-    "E  S"
+    "S  A"
   ],
   "result": {
     "item": "moswords:quadruple_sword"

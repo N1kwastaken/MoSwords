@@ -1,55 +1,6 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:item/handheld",
-	"textures": {
-		"layer0": "moswords:item/quadruple_sword"
-	},
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [21, -90, 21],
-			"translation": [0, -1.75, 1],
-			"scale": [1.5, 1.5, 1.5]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [27, -90, 21],
-			"translation": [0, -0.75, 0.5],
-			"scale": [1.5, 1.5, 1.5]
-		},
-		"firstperson_righthand": {
-			"rotation": [27, -90, 21],
-			"translation": [0, -0.75, 0.5],
-			"scale": [1.5, 1.5, 1.5]
-		},
-		"firstperson_lefthand": {
-			"rotation": [27, -90, 21],
-			"translation": [0, -0.75, 0.5],
-			"scale": [1.5, 1.5, 1.5]
-		},
-		"ground": {
-			"rotation": [90, 0, 81],
-			"translation": [0, -0.75, 0.5],
-			"scale": [1.5, 1.5, 1.5]
-		},
-		"gui": {
-			"scale": [1.5, 1.5, 0]
-		},
-		"fixed": {
-			"scale": [1.5, 1.5, 0]
-		}
-	},
-	"groups": [
-		{
-			"name": "quadruple_sword",
-			"origin": [8, 8, 8],
-			"color": 0,
-			"children": [
-				{
-					"name": "quadruple_sword",
-					"origin": [8, 8, 8],
-					"color": 0,
-					"children": []
-				}
-			]
-		}
-	]
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "moswords:item/quadruple_sword"
+  }
 }
