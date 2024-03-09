@@ -70,11 +70,12 @@ public class ModItems {
 
     //LOL
     public static final Item SORCERERS_SHOES = registerItem("sorcerers_shoes", new SorcerersShoesItem(new FabricItemSettings().maxCount(1)));
-    public static final Item YOUMUUS_GHOSTBLADE = registerItem("youmuus_ghostblade", new YoumuusGhostblade(new FabricItemSettings().maxCount(1)));
     public static final Item BERSERKERS_GREAVES = registerItem("berserkers_greaves", new BerserkersGreavesItem(new FabricItemSettings().maxCount(1)));
     public static final Item PLATED_STEEELCAPS = registerItem("plated_steelcaps", new PlatedSteelcapsItem(new FabricItemSettings().maxCount(1)));
     public static final Item MERCURY_TREADS = registerItem("mercury_treads", new MercuryTreadsItem(new FabricItemSettings().maxCount(1)));
     public static final Item ICEBORN_GAUNTLET = registerItem("iceborn_gauntlet", new IcebornGauntletItem(new FabricItemSettings().maxCount(1)));
+    public static final Item YOUMUUS_GHOSTBLADE = registerItem("youmuus_ghostblade", new SwordItem(ModToolMaterials.SAPPHIRE, 10, 1, new FabricItemSettings()));
+
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);

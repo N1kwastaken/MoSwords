@@ -29,7 +29,7 @@ public abstract class RecipeBookWidgetMixin {
     @Shadow private ClientRecipeBook recipeBook;
 
     @Inject(method = "refreshResults", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/recipebook/RecipeBookResults;setResults(Ljava/util/List;Z)V"))
-    private void onRefreshResults(boolean resetCurrentPage, CallbackInfo ci, @Local(name = "list2") List<RecipeResultCollection> recipes) {
+    private void onRefreshResults(boolean resetCurrentPage, CallbackInfo ci, @Local(index = 3) List<RecipeResultCollection> recipes) {
         if (this.craftingScreenHandler instanceof BiggerCraftingScreenHandler biggerCraftingScreenHandler &&
                 biggerCraftingScreenHandler.onlyBiggerRecipes) {
             recipes.replaceAll(resultCollection -> {
